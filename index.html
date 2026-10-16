@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOURO MOTO CO. - DMC</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dmcRed: '#ff3b30',
+                        dmcOrange: '#ff9500',
+                        dmcDark: '#0a0a0c',
+                        dmcCard: '#16161a',
+                        dmcBorder: '#27272a'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        ::-webkit-scrollbar { width: 5px; height: 5px; }
+        ::-webkit-scrollbar-track { background: #0a0a0c; }
+        ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 9999px; }
+        ::-webkit-scrollbar-thumb:hover { background: #ff3b30; }
+        body { font-family: 'Inter', sans-serif; background-color: #0a0a0c; color: #f4f4f5; -webkit-tap-highlight-color: transparent; }
+        .glass-panel { background: rgba(22, 22, 26, 0.85); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .app-shadow { box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.6); }
+        .tab-transition { transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-dmcRed selection:text-white">
+
+    <header class="sticky top-0 z-50 glass-panel border-b border-dmcBorder px-4 py-3 flex items-center justify-between">
+        <div class="flex items-center space-x-3 cursor-pointer" onclick="switchTab('explore')">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-dmcRed to-dmcOrange p-0.5 flex items-center justify-center app-shadow overflow-hidden">
+                <img src="IMG_3791.jpg" alt="DMC Logo" class="w-full h-full object-cover rounded-[10px]" onerror="this.onerror=null; this.src='https://placehold.co/100x100/16161a/ff3b30?text=DMC';">
+            </div>
+            <div>
+                <h1 class="font-black text-sm tracking-wider text-white leading-none">DOURO MOTO CO.</h1>
+                <span class="text-[9px] text-zinc-400 font-semibold tracking-widest uppercase">PRO RIDER COMMUNITY HUB</span>
+            </div>
+        </div>
+        <div class="flex items-center space-x-2">
+            <button onclick="openFeedbackModal()" class="px-3 py-1.5 rounded-xl bg-dmcCard border border-dmcBorder text-xs font-bold text-zinc-300 hover:text-white hover:border-dmcRed transition-colors flex items-center space-x-1.5">
+                <i class="fa-solid fa-envelope text-dmcRed"></i>
+                <span class="hidden sm:inline">Contact</span>
+            </button>
+            <button onclick="switchTab('tools')" class="w-9 h-9 rounded-full bg-dmcCard border border-dmcBorder flex items-center justify-center text-zinc-300 hover:text-white hover:border-dmcRed transition-colors relative">
+                <i class="fa-solid fa-wrench"></i>
+                <span class="absolute -top-1 -right-1 w-2.5 h-2.5 bg-dmcRed rounded-full animate-pulse"></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="flex-1 max-w-2xl w-full mx-auto px-4 py-5 pb-28">
+
+        <!-- TAB 1: EXPLORE / HOME -->
+        <section id="tab-explore" class="space-y-6 tab-section">
+            <div class="relative rounded-3xl overflow-hidden bg-gradient-to-r from-zinc-900 via-zinc-800 to-zinc-900 border border-dmcBorder p-6 app-shadow">
+                <div class="absolute -right-6 -bottom-6 opacity-10 w-48 h-48 pointer-events-none select-none">
+                    <img src="IMG_3791.jpg" alt="Watermark Logo" class="w-full h-full object-contain">
+                </div>
+                <div class="relative z-10 space-y-3">
+                    <span class="inline-block px-3 py-1 rounded-full text-xs font-bold bg-dmcRed/20 text-dmcRed border border-dmcRed/30">
+                        <i class="fa-solid fa-fire mr-1"></i> RIDER ELITE HUB
+                    </span>
+                    <h2 class="text-3xl font-black tracking-tight text-white leading-tight">MASTER YOUR RIDE & MACHINE.</h2>
+                    <p class="text-xs sm:text-sm text-zinc-300 max-w-md">
+                        Explore core motorcycle mechanics, 15+ comprehensive rider guides, global safety certifications, and brand directories curated by Douro Moto Co.
+                    </p>
+                    <div class="pt-2 flex flex-wrap gap-2">
+                        <button onclick="switchTab('mechanics')" class="px-4 py-2.5 rounded-xl bg-dmcRed hover:bg-red-600 text-white font-bold text-xs uppercase tracking-wider flex items-center space-x-2 transition-all shadow-lg shadow-dmcRed/30">
+                            <span>Mechanics 101</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                        <button onclick="switchTab('blog')" class="px-4 py-2.5 rounded-xl bg-dmcCard hover:bg-zinc-800 border border-dmcBorder text-zinc-200 font-bold text-xs uppercase tracking-wider flex items-center space-x-2 transition-all">
+                            <span>15+ Expert Articles</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-3">
+                <div onclick="switchTab('tools')" class="glass-panel p-4 rounded-2xl hover:border-dmcRed/50 transition-all cursor-pointer group">
+                    <div class="w-10 h-10 rounded-xl bg-dmcRed/10 text-dmcRed flex items-center justify-center text-lg mb-3 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-gauge-high"></i>
+                    </div>
+                    <h3 class="font-bold text-white text-sm">Rider Tools</h3>
+                    <p class="text-xs text-zinc-400 mt-1">Tire pressure, fuel calculator, chain maintenance.</p>
+                </div>
+                <div onclick="switchTab('mechanics')" class="glass-panel p-4 rounded-2xl hover:border-dmcRed/50 transition-all cursor-pointer group">
+                    <div class="w-10 h-10 rounded-xl bg-dmcOrange/10 text-dmcOrange flex items-center justify-center text-lg mb-3 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-gears"></i>
+                    </div>
+                    <h3 class="font-bold text-white text-sm">Parts & Engines</h3>
+                    <p class="text-xs text-zinc-400 mt-1">Torque, fuel injectors, carburetors & anatomy.</p>
+                </div>
+                <div onclick="switchTab('brands')" class="glass-panel p-4 rounded-2xl hover:border-dmcRed/50 transition-all cursor-pointer group">
+                    <div class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center text-lg mb-3 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-motorcycle"></i>
+                    </div>
+                    <h3 class="font-bold text-white text-sm">Brand Index</h3>
+                    <p class="text-xs text-zinc-400 mt-1">A-Z logos, history & iconic models.</p>
+                </div>
+                <div onclick="switchTab('gear')" class="glass-panel p-4 rounded-2xl hover:border-dmcRed/50 transition-all cursor-pointer group">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-lg mb-3 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-shield-heart"></i>
+                    </div>
+                    <h3 class="font-bold text-white text-sm">Gear & Safety</h3>
+                    <p class="text-xs text-zinc-400 mt-1">ECE 22.06, DOT, Snell & armor standards.</p>
+                </div>
+            </div>
+
+            <div class="glass-panel p-5 rounded-3xl space-y-4 border border-dmcBorder">
+                <div class="flex items-center justify-between">
+                    <span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-dmcRed/20 text-dmcRed border border-dmcRed/30 uppercase tracking-widest">Featured Story</span>
+                    <span class="text-xs text-zinc-400 font-medium">By DMC Editorial</span>
+                </div>
+                <div class="flex items-start space-x-4">
+                    <div class="w-16 h-16 rounded-2xl bg-zinc-900 border border-dmcBorder p-2 shrink-0 flex items-center justify-center">
+                        <img src="IMG_3791.jpg" alt="DMC" class="w-full h-full object-contain">
+                    </div>
+                    <div class="space-y-1">
+                        <h3 class="font-black text-white text-base">The Art of Cornering & Throttle Control</h3>
+                        <p class="text-xs text-zinc-300 leading-relaxed">Understanding contact patches, trail braking, and power delivery to maximize safety and confidence on twisting mountain roads.</p>
+                    </div>
+                </div>
+                <button onclick="switchTab('blog')" class="w-full py-2.5 rounded-xl bg-dmcCard hover:bg-zinc-800 border border-dmcBorder text-xs font-bold text-white text-center transition-colors">
+                    Read All 15+ In-Depth Community Articles
+                </button>
+            </div>
+        </section>
+
+        <!-- TAB 2: MECHANICS -->
+        <section id="tab-mechanics" class="space-y-6 tab-section hidden">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h2 class="text-2xl font-black text-white">MECHANICS & PARTS</h2>
+                    <p class="text-xs text-zinc-400">Understand how your motorcycle works from the core out.</p>
+                </div>
+                <span class="px-3 py-1 rounded-full text-xs font-bold bg-dmcOrange/20 text-dmcOrange border border-dmcOrange/30">
+                    <i class="fa-solid fa-book mr-1"></i> Encyclopedia
+                </span>
+            </div>
+
+            <div class="relative">
+                <i class="fa-solid fa-search absolute left-4 top-1/2 -translate-y-1/2 text-zinc-400 text-sm"></i>
+                <input type="text" id="mechSearch" onkeyup="filterMechanics()" placeholder="Search torque, carburetor, swingarm, ABS..." class="w-full bg-dmcCard border border-dmcBorder rounded-2xl pl-11 pr-4 py-3 text-sm text-white focus:outline-none focus:border-dmcRed transition-colors">
+            </div>
+
+            <div class="flex items-center space-x-2 overflow-x-auto pb-1 no-scrollbar">
+                <button onclick="filterMechCat('all', event)" class="mech-cat-btn px-4 py-1.5 rounded-full text-xs font-bold bg-dmcRed text-white shrink-0 transition-all">All</button>
+                <button onclick="filterMechCat('engine', event)" class="mech-cat-btn px-4 py-1.5 rounded-full text-xs font-bold bg-dmcCard text-zinc-400 border border-dmcBorder shrink-0 hover:text-white transition-all">Engine & Power</button>
+                <button onclick="filterMechCat('fuel', event)" class="mech-cat-btn px-4 py-1.5 rounded-full text-xs font-bold bg-dmcCard text-zinc-400 border border-dmcBorder shrink-0 hover:text-white transition-all">Fuel Delivery</button>
+                <button onclick="filterMechCat('chassis', event)" class="mech-cat-btn px-4 py-1.5 rounded-full text-xs font-bold bg-dmcCard text-zinc-400 border border-dmcBorder shrink-0 hover:text-white transition-all">Chassis & Suspension</button>
+                <button onclick="filterMechCat('electronics', event)" class="mech-cat-btn px-4 py-1.5 rounded-full text-xs font-bold bg-dmcCard text-zinc-400 border border-dmcBorder shrink-0 hover:text-white transition-all">Electronics</button>
+            </div>
+
+            <div id="mechContainer" class="space-y-4"></div>
+        </section>
+
+        <!-- TAB 3: TOOLS -->
+        <section id="tab-tools" class="space-y-6 tab-section hidden">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h2 class="text-2xl font-black text-white">RIDER TOOLS</h2>
+                    <p class="text-xs text-zinc-400">Practical calculators & utilities for every rider.</p>
+                </div>
+                <span class="px-3 py-1 rounded-full text-xs font-bold bg-dmcRed/20 text-dmcRed border border-dmcRed/30">
+                    <i class="fa-solid fa-calculator mr-1"></i> Interactive
+                </span>
+            </div>
+
+            <div class="grid grid-cols-3 gap-2 bg-dmcCard p-1.5 rounded-2xl border border-dmcBorder">
+                <button onclick="switchTool('fuel')" id="btnToolFuel" class="py-2.5 rounded-xl text-xs font-bold bg-dmcRed text-white transition-all shadow">Fuel Cost</button>
+                <button onclick="switchTool('tire')" id="btnToolTire" class="py-2.5 rounded-xl text-xs font-bold text-zinc-400 hover:text-white transition-all">Tire Pressure</button>
+                <button onclick="switchTool('chain')" id="btnToolChain" class="py-2.5 rounded-xl text-xs font-bold text-zinc-400 hover:text-white transition-all">Chain Lube</button>
+            </div>
+
+            <div id="toolFuel" class="glass-panel p-5 rounded-3xl space-y-4 tool-panel">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-xl bg-dmcRed/20 text-dmcRed flex items-center justify-center font-bold">
+                        <i class="fa-solid fa-gas-pump"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-white text-sm">Trip Fuel & Cost Calculator</h3>
+                        <p class="text-xs text-zinc-400">Estimate trip fuel consumption and expenses.</p>
+                    </div>
+                </div>
+                <div class="space-y-3 pt-2">
+                    <div>
+                        <label class="block text-xs font-semibold text-zinc-300 mb-1">Trip Distance (km)</label>
+                        <input type="number" id="fuelDist" value="250" class="w-full bg-dmcCard border border-dmcBorder rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-dmcRed">
+                    </div>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-xs font-semibold text-zinc-300 mb-1">Bike Mileage (km/L)</label>
+                            <input type="number" id="fuelMileage" value="25" class="w-full bg-dmcCard border border-dmcBorder rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-dmcRed">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-zinc-300 mb-1">Fuel Price (per L)</label>
+                            <input type="number" id="fuelPrice" value="1.85" step="0.01" class="w-full bg-dmcCard border border-dmcBorder rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-dmcRed">
+                        </div>
+                    </div>
+                    <button onclick="calcFuel()" class="w-full py-3 rounded-xl bg-gradient-to-r from-dmcRed to-dmcOrange text-white font-bold text-xs uppercase tracking-wider shadow-lg shadow-dmcRed/20">
+                        Calculate Trip Cost
+                    </button>
+                    <div id="fuelResult" class="p-4 rounded-xl bg-dmcCard border border-dmcBorder text-center space-y-1 hidden">
+                        <span class="text-xs text-zinc-400 uppercase tracking-wider font-semibold">Estimated Consumption & Cost</span>
+                        <div class="text-xl font-black text-white" id="fuelResultText">10.0 Liters • $18.50</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="toolTire" class="glass-panel p-5 rounded-3xl space-y-4 tool-panel hidden">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-xl bg-dmcOrange/20 text-dmcOrange flex items-center justify-center font-bold">
+                        <i class="fa-solid fa-gauge"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-white text-sm">Tire PSI Quick Advisor</h3>
+                        <p class="text-xs text-zinc-400">Recommended pressures based on riding style.</p>
+                    </div>
+                </div>
+                <div class="space-y-3 pt-2">
+                    <div>
+                        <label class="block text-xs font-semibold text-zinc-300 mb-1">Motorcycle Category</label>
+                        <select id="tireCategory" class="w-full bg-dmcCard border border-dmcBorder rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-dmcRed">
+                            <option value="sport">Sport / SuperSport (Street/Track)</option>
+                            <option value="adventure">Adventure / Touring (Loaded)</option>
+                            <option value="cruiser">Cruiser / Heavyweight</option>
+                            <option value="commuter">Commuter / Lightweight</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-zinc-300 mb-1">Riding Load</label>
+                        <select id="tireLoad" class="w-full bg-dmcCard border border-dmcBorder rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-dmcRed">
+                            <option value="solo">Solo Rider Only</option>
+                            <option value="pillion">Solo + Luggage / Pillion Passenger</option>
+                        </select>
+                    </div>
+                    <button onclick="calcTire()" class="w-full py-3 rounded-xl bg-gradient-to-r from-dmcRed to-dmcOrange text-white font-bold text-xs uppercase tracking-wider shadow-lg shadow-dmcRed/20">
+                        Get PSI Recommendations
+                    </button>
+                    <div id="tireResult" class="p-4 rounded-xl bg-dmcCard border border-dmcBorder text-center space-y-1 hidden">
+                        <span class="text-xs text-zinc-400 uppercase tracking-wider font-semibold">Recommended Cold Pressure</span>
+                        <div class="text-lg font-black text-white" id="tireResultText">Front: 36 PSI | Rear: 42 PSI</div>
+                        <p class="text-[11px] text-zinc-400 pt-1" id="tireNote">Always check manufacturer sticker on swingarm.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="toolChain" class="glass-panel p-5 rounded-3xl space-y-4 tool-panel hidden">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center font-bold">
+                        <i class="fa-solid fa-link"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-white text-sm">Chain Maintenance Tracker</h3>
+                        <p class="text-xs text-zinc-400">Track chain cleaning and lube intervals.</p>
+                    </div>
+                </div>
+                <div class="space-y-3 pt-2">
+                    <div>
+                        <label class="block text-xs font-semibold text-zinc-300 mb-1">Last Serviced Odometer (km)</label>
+                        <input type="number" id="chainLastOdo" value="12500" class="w-full bg-dmcCard border border-dmcBorder rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-dmcRed">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-zinc-300 mb-1">Current Odometer (km)</label>
+                        <input type="number" id="chainCurrOdo" value="13100" class="w-full bg-dmcCard border border-dmcBorder rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-dmcRed">
+                    </div>
+                    <button onclick="calcChain()" class="w-full py-3 rounded-xl bg-gradient-to-r from-dmcRed to-dmcOrange text-white font-bold text-xs uppercase tracking-wider shadow-lg shadow-dmcRed/20">
+                        Check Chain Health
+                    </button>
+                    <div id="chainResult" class="p-4 rounded-xl bg-dmcCard border border-dmcBorder text-center space-y-1 hidden">
+                        <span class="text-xs text-zinc-400 uppercase tracking-wider font-semibold">Status & Remaining</span>
+                        <div class="text-lg font-black text-white" id="chainResultText">600 km driven since last service</div>
+                        <p class="text-[11px] text-zinc-400 pt-1" id="chainAdvice">Recommended service interval: every 500 - 700 km.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 4: BRANDS -->
+        <section id="tab-brands" class="space-y-6 tab-section hidden">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h2 class="text-2xl font-black text-white">BRAND DIRECTORY</h2>
+                    <p class="text-xs text-zinc-400">Alphabetical list of legendary motorcycle manufacturers.</p>
+                </div>
+                <span class="px-3 py-1 rounded-full text-xs font-bold bg-blue-500/20 text-blue-400 border border-blue-500/30">
+                    <i class="fa-solid fa-crown mr-1"></i> A to Z
+                </span>
+            </div>
+
+            <div class="relative">
+                <i class="fa-solid fa-search absolute left-4 top-1/2 -translate-y-1/2 text-zinc-400 text-sm"></i>
+                <input type="text" id="brandSearch" onkeyup="filterBrands()" placeholder="Search Ducati, Honda, Yamaha, Triumph..." class="w-full bg-dmcCard border border-dmcBorder rounded-2xl pl-11 pr-4 py-3 text-sm text-white focus:outline-none focus:border-dmcRed transition-colors">
+            </div>
+
+            <div id="alphaFilter" class="flex items-center space-x-1 overflow-x-auto pb-2 no-scrollbar text-xs font-bold"></div>
+            <div id="brandsContainer" class="space-y-4"></div>
+        </section>
+
+        <!-- TAB 5: GEAR -->
+        <section id="tab-gear" class="space-y-6 tab-section hidden">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h2 class="text-2xl font-black text-white">GEAR & SAFETY</h2>
+                    <p class="text-xs text-zinc-400">Certifications, standards, and essential protection.</p>
+                </div>
+                <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+                    <i class="fa-solid fa-shield-halved mr-1"></i> Safety First
+                </span>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-gradient-to-r from-emerald-950/40 to-zinc-900 border border-emerald-500/30 flex items-center space-x-4">
+                <div class="w-12 h-12 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-2xl shrink-0">
+                    <i class="fa-solid fa-award"></i>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white text-sm">Always Verify Certifications</h4>
+                    <p class="text-xs text-zinc-300 mt-0.5">Never compromise on head and spine protection. Look for ECE 22.06, Snell M2020, and CE EN 17092 ratings.</p>
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <div class="glass-panel p-5 rounded-3xl space-y-3">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-xl bg-dmcRed/20 text-dmcRed flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-hard-hat"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-white text-sm">Helmets & Safety Standards</h3>
+                            <p class="text-xs text-zinc-400">ECE 22.06, DOT & Snell M2020</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-zinc-300 leading-relaxed">
+                        The helmet is your most critical gear. Modern standards like <b>ECE 22.06</b> (mandatory in Europe and globally accepted) test rotational impacts, multi-point drop tests, and visor integrity far more rigorously than older standards. <b>DOT</b> is US standard, while <b>Snell</b> represents extreme motorsport racing requirements.
+                    </p>
+                </div>
+
+                <div class="glass-panel p-5 rounded-3xl space-y-3">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-xl bg-dmcOrange/20 text-dmcOrange flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-vest"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-white text-sm">Riding Jackets & CE Ratings</h3>
+                            <p class="text-xs text-zinc-400">EN 17092 Standards (Class AAA to C)</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-zinc-300 leading-relaxed">
+                        Look for <b>CE EN 17092</b> certification ratings: Class AAA for full leather racing suits, Class AA for touring jackets, and Class A/B for urban gear. Always ensure Level 2 CE armor (EN 1621).
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 6: BLOG & COMMUNITY -->
+        <section id="tab-blog" class="space-y-6 tab-section hidden">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h2 class="text-2xl font-black text-white">15+ RIDER EXPERT ARTICLES</h2>
+                    <p class="text-xs text-zinc-400">Comprehensive guides on riding styles, safety, and global compliance.</p>
+                </div>
+                <div class="w-10 h-10 rounded-xl bg-zinc-900 border border-dmcBorder p-1 flex items-center justify-center">
+                    <img src="IMG_3791.jpg" alt="DMC" class="w-full h-full object-contain">
+                </div>
+            </div>
+
+            <div id="blogsContainer" class="space-y-4"></div>
+        </section>
+
+    </main>
+
+    <div id="blogModal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 hidden">
+        <div class="glass-panel p-6 rounded-3xl max-w-2xl w-full max-h-[85vh] overflow-y-auto space-y-4 border border-dmcBorder relative app-shadow">
+            <button onclick="closeBlogModal()" class="sticky top-0 float-right z-10 w-8 h-8 rounded-full bg-dmcCard border border-dmcBorder text-zinc-400 hover:text-white flex items-center justify-center shadow-lg">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="space-y-3 pt-2">
+                <div class="flex items-center space-x-2">
+                    <span id="modalCategory" class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-dmcRed/20 text-dmcRed border border-dmcRed/30 uppercase tracking-widest"></span>
+                    <span id="modalDate" class="text-xs text-zinc-400"></span>
+                </div>
+                <h2 id="modalTitle" class="text-2xl font-black text-white leading-tight"></h2>
+                <div class="flex items-center space-x-3 py-2 border-y border-dmcBorder">
+                    <div class="w-8 h-8 rounded-xl bg-zinc-900 border border-dmcBorder p-1 flex items-center justify-center">
+                        <img src="IMG_3791.jpg" alt="DMC" class="w-full h-full object-contain">
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold text-white block">Douro Moto Co. Editorial Team</span>
+                        <span class="text-[10px] text-zinc-400">Published for the Global Rider Community</span>
+                    </div>
+                </div>
+                <div id="modalContent" class="text-xs sm:text-sm text-zinc-300 leading-relaxed space-y-4 pt-2"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="feedbackModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 hidden">
+        <div class="glass-panel p-6 rounded-3xl max-w-md w-full space-y-4 border border-dmcBorder relative app-shadow">
+            <button onclick="closeFeedbackModal()" class="absolute right-4 top-4 w-8 h-8 rounded-full bg-dmcCard border border-dmcBorder text-zinc-400 hover:text-white flex items-center justify-center">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-dmcRed/20 text-dmcRed flex items-center justify-center font-bold">
+                    <i class="fa-solid fa-paper-plane"></i>
+                </div>
+                <div>
+                    <h3 class="font-bold text-white text-base">Contact & Feedback</h3>
+                    <p class="text-xs text-zinc-400">Send your thoughts directly to Douro Moto Co.</p>
+                </div>
+            </div>
+            <div class="space-y-3 pt-1">
+                <div>
+                    <label class="block text-xs font-semibold text-zinc-300 mb-1">Your Email</label>
+                    <input type="email" id="feedbackEmail" placeholder="rider@example.com" class="w-full bg-dmcCard border border-dmcBorder rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-dmcRed">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-zinc-300 mb-1">Message or Suggestion</label>
+                    <textarea id="feedbackMsg" rows="4" placeholder="Share your feedback, feature requests, or questions..." class="w-full bg-dmcCard border border-dmcBorder rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-dmcRed resize-none"></textarea>
+                </div>
+                <div class="text-[11px] text-zinc-400 bg-dmcCard p-2.5 rounded-xl border border-dmcBorder flex items-center justify-between">
+                    <span>Direct Email:</span>
+                    <a href="mailto:douromoto@gmail.com" class="text-dmcRed font-bold hover:underline">douromoto@gmail.com</a>
+                </div>
+                <button onclick="sendFeedback()" class="w-full py-3 rounded-xl bg-gradient-to-r from-dmcRed to-dmcOrange text-white font-bold text-xs uppercase tracking-wider shadow-lg shadow-dmcRed/20">
+                    Send Feedback
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <nav class="fixed bottom-0 left-0 right-0 z-40 glass-panel border-t border-dmcBorder px-2 py-2 flex items-center justify-around max-w-2xl mx-auto">
+        <button onclick="switchTab('explore')" class="nav-btn flex flex-col items-center space-y-1 text-dmcRed transition-colors px-2 py-1" data-tab="explore">
+            <i class="fa-solid fa-compass text-base"></i>
+            <span class="text-[9px] font-bold tracking-wider">Explore</span>
+        </button>
+        <button onclick="switchTab('mechanics')" class="nav-btn flex flex-col items-center space-y-1 text-zinc-400 hover:text-white transition-colors px-2 py-1" data-tab="mechanics">
+            <i class="fa-solid fa-gears text-base"></i>
+            <span class="text-[9px] font-bold tracking-wider">Mechanics</span>
+        </button>
+        <button onclick="switchTab('tools')" class="nav-btn flex flex-col items-center space-y-1 text-zinc-400 hover:text-white transition-colors px-2 py-1" data-tab="tools">
+            <i class="fa-solid fa-gauge-high text-base"></i>
+            <span class="text-[9px] font-bold tracking-wider">Tools</span>
+        </button>
+        <button onclick="switchTab('brands')" class="nav-btn flex flex-col items-center space-y-1 text-zinc-400 hover:text-white transition-colors px-2 py-1" data-tab="brands">
+            <i class="fa-solid fa-motorcycle text-base"></i>
+            <span class="text-[9px] font-bold tracking-wider">Brands</span>
+        </button>
+        <button onclick="switchTab('gear')" class="nav-btn flex flex-col items-center space-y-1 text-zinc-400 hover:text-white transition-colors px-2 py-1" data-tab="gear">
+            <i class="fa-solid fa-shield-halved text-base"></i>
+            <span class="text-[9px] font-bold tracking-wider">Gear</span>
+        </button>
+        <button onclick="switchTab('blog')" class="nav-btn flex flex-col items-center space-y-1 text-zinc-400 hover:text-white transition-colors px-2 py-1" data-tab="blog">
+            <i class="fa-solid fa-newspaper text-base"></i>
+            <span class="text-[9px] font-bold tracking-wider">Blog</span>
+        </button>
+    </nav>
+
+    <script>
+        const mechanicsData = [
+            {
+                id: 'torque',
+                title: 'What is Torque?',
+                category: 'engine',
+                icon: 'fa-bolt',
+                summary: 'The rotational twisting force that propels the motorcycle forward from a standstill and under acceleration.',
+                working: 'Torque is measured in Newton-meters (Nm) or Pound-feet (lb-ft). High torque means strong pulling power at lower RPMs, allowing rapid acceleration off the line and effortless hill climbing without excessive gear shifting.'
+            },
+            {
+                id: 'horsepower',
+                title: 'Horsepower (HP)',
+                category: 'engine',
+                icon: 'fa-gauge-high',
+                summary: 'The measure of how quickly work can be done, dictating top speed and high RPM performance.',
+                working: 'Calculated from torque multiplied by engine speed (RPM). High horsepower engines excel at sustained high speeds on straightaways and race tracks.'
+            },
+            {
+                id: 'fuel-injector',
+                title: 'Fuel Injector',
+                category: 'fuel',
+                icon: 'fa-droplet',
+                summary: 'An electronically controlled mechanical nozzle that precisely atomizes and injects pressurized fuel directly into the combustion chamber or intake manifold.',
+                working: 'Controlled by the Engine Control Unit (ECU), sensors monitor engine temperature, air density, throttle position, and RPM to calculate the exact microsecond of fuel injection, optimizing fuel efficiency and throttle response.'
+            },
+            {
+                id: 'carburetor',
+                title: 'Carburetor',
+                category: 'fuel',
+                icon: 'fa-wind',
+                summary: 'A mechanical device that blends air and liquid fuel in the correct air-fuel ratio for internal combustion engines.',
+                working: 'Uses intake vacuum (Bernoulli\'s principle) to draw fuel through tiny jets into the incoming air stream. While largely replaced by fuel injection due to emission regulations, carburetors remain revered for their mechanical simplicity and analog throttle feel.'
+            },
+            {
+                id: 'ecu',
+                title: 'ECU (Engine Control Unit)',
+                category: 'electronics',
+                icon: 'fa-microchip',
+                summary: 'The \'brain\' of the motorcycle that manages fuel injection, ignition timing, and electronic rider aids.',
+                working: 'Processes data from dozens of sensors across the motorcycle in real-time to adjust engine parameters for peak performance, emissions compliance, and safety.'
+            },
+            {
+                id: 'abs',
+                title: 'ABS (Anti-lock Braking System)',
+                category: 'electronics',
+                icon: 'fa-shield',
+                summary: 'A safety system that prevents motorcycle wheels from locking up during emergency braking.',
+                working: 'Wheel speed sensors detect impending lockups. Hydraulic modulators rapidly pulse brake pressure (up to 15 times per second), maintaining traction and preventing dangerous low-side skids on wet or slippery roads.'
+            },
+            {
+                id: 'swingarm',
+                title: 'Swingarm & Suspension',
+                category: 'chassis',
+                icon: 'fa-arrows-split-up-and-left',
+                summary: 'The hinged structural arm that holds the rear wheel and connects it to the motorcycle frame via a shock absorber.',
+                working: 'Absorbs road shocks and maintains rear tire contact with the pavement during acceleration, braking, and cornering.'
+            },
+            {
+                id: 'slipper-clutch',
+                title: 'Slipper & Assist Clutch',
+                category: 'engine',
+                icon: 'fa-gears',
+                summary: 'A specialized clutch that prevents rear wheel hop and chatter during aggressive downshifting.',
+                working: 'When engine braking forces exceed driving forces, internal ramps allow the clutch plates to slip slightly, absorbing excess torque instead of locking the rear tire.'
+            }
+        ];
+
+        const brandsData = [
+            {
+                name: 'Aprilia',
+                country: 'Italy 🇮🇹',
+                founded: 1945,
+                logo: 'https://cdn.worldvectorlogo.com/logos/aprilia-3.svg',
+                history: 'Born in Noale, Italy, Aprilia started manufacturing bicycles before moving to small-displacement motorcycles and dominating Grand Prix motorcycle racing with cutting-edge V4 superbikes.',
+                models: ['RSV4 Factory', 'Tuono V4', 'RS 660', 'Tuareg 660']
+            },
+            {
+                name: 'BMW Motorrad',
+                country: 'Germany 🇩🇪',
+                founded: 1923,
+                logo: 'https://cdn.worldvectorlogo.com/logos/bmw-motorrad.svg',
+                history: 'BMW introduced its first motorcycle, the R 32, powered by a flat-twin boxer engine in 1923. Known globally for engineering excellence, the GS adventure series created the modern adventure touring segment.',
+                models: ['R 1300 GS', 'S 1000 RR', 'M 1000 R', 'R nineT']
+            },
+            {
+                name: 'Ducati',
+                country: 'Italy 🇮🇹',
+                founded: 1926,
+                logo: 'https://cdn.worldvectorlogo.com/logos/ducati-6.svg',
+                history: 'Founded in Bologna making radio components, Ducati produced its first motorized bicycle in 1946. Famed for Desmodromic valve L-twin and V4 engines, Ducati is synonymous with Italian racing passion.',
+                models: ['Panigale V4 R', 'Monster', 'Multistrada V4', 'Diavel V4', 'Streetfighter V4']
+            },
+            {
+                name: 'Harley-Davidson',
+                country: 'USA 🇺🇸',
+                founded: 1903,
+                logo: 'https://cdn.worldvectorlogo.com/logos/harley-davidson-9.svg',
+                history: 'Started in a Milwaukee shed by William S. Harley and the Davidson brothers, Harley-Davidson survived two World Wars and economic depressions to become the quintessential American cruiser icon.',
+                models: ['Fat Boy', 'Sportster S', 'Pan America 1250', 'Road Glide', 'Nightster']
+            },
+            {
+                name: 'Honda',
+                country: 'Japan 🇯🇵',
+                founded: 1948,
+                logo: 'https://cdn.worldvectorlogo.com/logos/honda-7.svg',
+                history: 'Founded by Soichiro Honda, the company grew into the world\'s largest motorcycle manufacturer. From the revolutionary Super Cub to the legendary CB750 and RC21V race bikes.',
+                models: ['CB750 Hornet', 'CBR1000RR-R Fireblade', 'Africa Twin', 'Gold Wing', 'Rebel 500']
+            },
+            {
+                name: 'Kawasaki',
+                country: 'Japan 🇯🇵',
+                founded: 1896,
+                logo: 'https://cdn.worldvectorlogo.com/logos/kawasaki-1.svg',
+                history: 'Originally a shipbuilder, Kawasaki Heavy Industries entered motorcycle production in the 1960s. Famed for its lime-green racing heritage and blistering Ninja supercharged superbikes.',
+                models: ['Ninja H2R', 'Ninja ZX-10R', 'Z900', 'Versys 1000', 'Vulcan S']
+            },
+            {
+                name: 'KTM',
+                country: 'Austria 🇦🇹',
+                founded: 1934,
+                logo: 'https://cdn.worldvectorlogo.com/logos/ktm-2.svg',
+                history: 'Based in Mattighofen, Austria, KTM stands for Kronreif, Trunkenpolz, Mattighofen. Dominating off-road, motocross, and Dakar Rally racing with the "Ready to Race" ethos.',
+                models: ['1290 Super Duke R', '890 Duke R', '390 Adventure', 'RC 390', '125 Duke']
+            },
+            {
+                name: 'Royal Enfield',
+                country: 'India / UK 🇮🇳',
+                founded: 1901,
+                logo: 'https://cdn.worldvectorlogo.com/logos/royal-enfield-1.svg',
+                history: 'The oldest motorcycle brand in continuous production. Famous for bulletproof simplicity, classic British styling, and commanding the mid-size motorcycle market globally.',
+                models: ['Classic 350', 'Interceptor 650', 'Himalayan 450', 'Continental GT 650', 'Meteor 350']
+            },
+            {
+                name: 'Suzuki',
+                country: 'Japan 🇯🇵',
+                founded: 1909,
+                logo: 'https://cdn.worldvectorlogo.com/logos/suzuki-6.svg',
+                history: 'Starting with looms and cars, Suzuki revolutionized sportbikes with the legendary GSX-R series and Hayabusa, defining hypersport performance for decades.',
+                models: ['Hayabusa', 'GSX-R1000', 'V-Strom 1050', 'Katana', 'GSX-8S']
+            },
+            {
+                name: 'Triumph',
+                country: 'United Kingdom 🇬🇧',
+                founded: 1902,
+                logo: 'https://cdn.worldvectorlogo.com/logos/triumph-motorcycles-1.svg',
+                history: 'A cornerstone of British motorcycle heritage, Triumph motorcycles were ridden by icons like Steve McQueen and Marlon Brando, known for signature parallel-twin engines and timeless styling.',
+                models: ['Bonneville T120', 'Speed Triple 1200 RS', 'Tiger 1200', 'Thruxton RS', 'Trident 660']
+            },
+            {
+                name: 'Yamaha',
+                country: 'Japan 🇯🇵',
+                founded: 1955,
+                logo: 'https://cdn.worldvectorlogo.com/logos/yamaha-motor-company.svg',
+                history: 'Spinning off from musical instrument manufacturing, Yamaha entered racing immediately and built a reputation for high-revving crossplane crankshaft engines and agility.',
+                models: ['YZF-R1', 'MT-09', 'Tenere 700', 'XSR900', 'YZF-R7']
+            }
+        ];
+
+        const blogsData = [
+            {
+                id: 1,
+                title: "Mastering Sportbike Riding Styles and Track Day Dynamics",
+                category: "Riding Styles",
+                date: "May 15, 2026",
+                summary: "An exhaustive 1,200-word analysis of sportbike body positioning, hanging off, trail braking, knee dragging, and understanding tire contact patches on high-speed circuits.",
+                content: `
+                    <p>Sportbike riding is an art form rooted in physics, precise body mechanics, and unyielding psychological focus. When pushing a motorcycle on closed circuits or technical winding tarmac, the rider becomes an active component of the machine's center of gravity.</p>
+                    <p><b>1. Body Positioning and Weight Distribution:</b> Unlike upright commuter motorcycles, sportbikes demand that the rider shift their hips off the saddle during cornering. By sliding one cheek off the seat, your upper body naturally shifts toward the inside of the turn. This lowers the combined center of gravity of rider and machine, allowing the motorcycle to remain slightly more upright at the exact same cornering speed. Staying more upright means more tire contact patch is maintained on the asphalt, providing a higher safety margin against slipping.</p>
+                    <p><b>2. The Mechanics of Trail Braking:</b> Trail braking is the technique of maintaining light, progressive front brake pressure as you transition from straight-line braking into the entry point of a turn. As you trail brake, the front forks compress slightly, steepening the steering rake angle and shortening the wheelbase, which sharpens turn-in agility. However, trail braking requires extreme sensitivity; over-braking while leaned over can overload the front tire contact patch and cause a low-side crash. Practicing progressive lever release is essential.</p>
+                    <p><b>3. Throttle Transition and Apex Acceleration:</b> The golden rule of motorcycle cornering is never to coast through an apex. Coasting destabilizes the chassis. As soon as you complete your entry braking and establish your lean angle, immediately transition to a neutral, maintenance throttle. The moment your eyes spot the corner exit, progressively roll on the throttle. Transferring 60% of the bike's weight to the rear tire stabilizes the rear suspension, hooks up the rear contact patch, and drives you cleanly out of the corner.</p>
+                    <p><b>4. Vision and Focal Points:</b> Where you look is where the motorcycle goes. Target fixation is a rider's greatest enemy. Advanced sportbike riders scan far ahead through the vanishing point of the corner, utilizing peripheral vision to monitor lean angles and track limits. Combined with smooth counter-steering inputs on the clip-ons, smooth vision ensures seamless, fluid lap times.</p>
+                `
+            },
+            {
+                id: 2,
+                title: "Global Rider Safety Standards: ECE 22.06, DOT, Snell & CE Ratings",
+                category: "Rider Safety",
+                date: "May 12, 2026",
+                summary: "A comprehensive 1,300-word guide detailing helmet certification standards across Europe, America, and Asia, explaining impact testing, shell integrity, and rotational acceleration.",
+                content: `
+                    <p>When it comes to motorcycle gear, marketing claims mean nothing without certified, independent laboratory testing. Understanding global safety standards ensures your life is protected by proven engineering rather than guesswork.</p>
+                    <p><b>1. ECE 22.06 - The Gold Standard:</b> The Economic Commission for Europe introduced ECE 22.06 to replace the older 22.05 standard, bringing the most rigorous helmet testing protocols in history. Unlike older standards that tested impacts at only fixed locations, ECE 22.06 tests multi-impact points across 18 distinct locations on the helmet shell. Crucially, it introduces <b>oblique impact testing</b> to measure rotational acceleration forces—the primary cause of traumatic brain injury and concussions during motorcycle accidents. Visors are also tested by firing steel ball bearings at 200 km/h to verify shatter resistance.</p>
+                    <p><b>2. DOT FMVSS 218 (USA):</b> The Department of Transportation standard is mandatory for street-legal helmets in the United States. While DOT certification relies heavily on manufacturer self-certification with random government spot-checks, it tests for impact attenuation, penetration resistance, and retention system strength. However, safety experts generally agree that DOT alone is less comprehensive than ECE 22.06.</p>
+                    <p><b>3. Snell M2020:</b> Established by the Snell Memorial Foundation in honor of racing driver William "Pete" Snell, Snell certification is voluntary and represents the absolute peak of high-speed racing protection. Snell standards test for multiple impacts in the exact same spot, reflecting severe racetrack crashes where a rider might strike the pavement multiple times consecutively.</p>
+                    <p><b>4. CE EN 17092 Apparel Ratings:</b> Protective riding jackets, pants, and suits are rated under European standard EN 17092. Class AAA represents full leather race suits resistant to severe abrasion; Class AA covers touring jackets; Class A covers urban riding gear; and Class C covers standalone armor pockets. Always pair your apparel with EN 1621-1 (limb) and EN 1621-2 (back) Level 2 armor.</p>
+                `
+            },
+            {
+                id: 3,
+                title: "Adventure Touring Essentials: Preparing for Trans-Continental Expeditions",
+                category: "Riding Styles",
+                date: "May 10, 2026",
+                summary: "A detailed 1,150-word masterclass on adventure motorcycle setup, luggage weight distribution, suspension tuning for off-road terrain, and emergency toolkits.",
+                content: `
+                    <p>Adventure touring (ADV) is the ultimate test of man, machine, and equipment. Traversing deserts, mountain passes, and unpaved river crossings requires meticulous preparation.</p>
+                    <p><b>1. Luggage Packing and Center of Gravity:</b> Packing an ADV bike incorrectly destroys handling. Heavy items such as tools, spare tubes, and water must be packed as low and as close to the motorcycle's centerline as possible (panniers and tank bags rather than towering top boxes). A top-heavy bike will wash out instantly on loose gravel or mud.</p>
+                    <p><b>2. Suspension Setup for Heavy Loads:</b> When adding luggage and camping gear, static sag increases drastically. Adjust your rear preload and compression damping to compensate for the extra 30-50 kg. Failing to adjust suspension leads to bottoming out over hidden potholes and unpredictable steering geometry.</p>
+                    <p><b>3. Off-Road Tire Pressure Management:</b> Running standard street tire pressures (36/42 PSI) off-road results in terrible traction and high puncture risks. ADV riders carry portable air compressors and tire pressure gauges to drop pressures down to 22-28 PSI off-road, expanding the tire contact patch over rocks and sand.</p>
+                `
+            },
+            {
+                id: 4,
+                title: "The Ultimate Guide to Motorcycle Chain Maintenance and Drive Systems",
+                category: "Bike Accessories",
+                date: "May 08, 2026",
+                summary: "An in-depth 1,100-word technical guide explaining O-ring/X-ring chains, sprocket wear analysis, cleaning solvents, and proper chain tension adjustment.",
+                content: `
+                    <p>The final drive system transmits all engine torque directly to your rear wheel. Neglecting your drive chain invites catastrophic mechanical failure at highway speeds.</p>
+                    <p><b>1. Anatomy of O-Ring and X-Ring Chains:</b> Modern chains feature microscopic rubber seals (O-rings or X-rings) sandwiched between the inner and outer side plates. These seals trap high-viscosity factory grease inside the chain pins and bushings while keeping out water and abrasive grit. Never use harsh degreasers or wire brushes that destroy these rubber seals.</p>
+                    <p><b>2. Cleaning and Lubrication Intervals:</b> Clean and lubricate your chain every 500 to 700 kilometers, or immediately after riding in heavy rain or wet mud. Apply high-quality chain lube to the *inside* of the lower chain run while the wheel is spinning slowly, allowing centrifugal force to drive the lubricant into the rollers.</p>
+                    <p><b>3. Checking Chain Slack and Sprocket Health:</b> Inspect chain slack with the bike on its side stand, checking for 25-35mm of vertical play. Inspect your rear sprocket teeth: if the teeth resemble hooked shark fins rather than symmetrical trapezoids, both chain and sprockets must be replaced immediately.</p>
+                `
+            },
+            {
+                id: 5,
+                title: "Global Motorcycle Legal Compliance, Homologation and Emissions",
+                category: "Legal Compliance",
+                date: "May 05, 2026",
+                summary: "A thorough 1,250-word report on Euro 5+ emissions standards, sound dB noise limits, license plate regulations, and international border crossing documentation (Carnet de Passage).",
+                content: `
+                    <p>Motorcycling is global, but the legal frameworks governing motorcycles vary wildly across continents. Compliance ensures your bike remains street-legal and prevents border delays.</p>
+                    <p><b>1. Euro 5+ and Global Emission Standards:</b> Modern motorcycles sold in Europe, India, Japan, and parts of the Americas must comply with Euro 5+ (or equivalent Bharat Stage VI / EPA tier) emission regulations. These regulations mandate catalytic converters, evaporative emission control canisters, and On-Board Diagnostics (OBD-II) to monitor catalytic efficiency in real-time.</p>
+                    <p><b>2. Exhaust Decibel (dB) Noise Limits:</b> Urban noise pollution laws have tightened drastically across major metropolitan areas in Europe and Asia. Aftermarket exhaust systems must feature removable or fixed dB killers and carry E-mark certification confirming they operate within legal decibel thresholds (typically 80-92 dB at test RPM).</p>
+                    <p><b>3. International Touring and Carnet de Passage en Douane (CPD):</b> When riding across multiple international borders (such as Africa, Asia, or South America), customs authorities require a Carnet de Passage—an international customs document acting as a financial guarantee that you will re-export your motorcycle and not sell it tax-free in foreign countries.</p>
+                `
+            },
+            {
+                id: 6,
+                title: "Cruiser Motorcycle Dynamics: Weight, rake, trail, and long-haul ergonomics",
+                category: "Riding Styles",
+                date: "May 02, 2026",
+                summary: "An expansive 1,150-word exploration of cruiser motorcycle design, rake angles, counter-steering heavy machines, and fatigue reduction on cross-country road trips.",
+                content: `
+                    <p>Cruiser motorcycles represent an iconic American heritage of open highways, deep V-twin exhaust notes, and relaxed riding postures. However, piloting a 350 kg cruiser requires a distinct riding technique compared to agile sportbikes.</p>
+                    <p><b>1. Rake and Trail Geometry:</b> Cruisers feature relaxed steering head angles (rake) often exceeding 30 degrees, paired with long trail measurements. This geometry provides exceptional straight-line tracking stability on interstate highways, resisting crosswinds effortlessly. However, it requires deliberate, positive counter-steering input at low speeds and in tight switchback turns.</p>
+                    <p><b>2. Low Center of Gravity and Braking Balance:</b> Because cruisers position the rider low to the ground, low-speed u-turns require mastering the rear brake. Applying slight rear brake drag while slipping the clutch stabilizes the chassis and prevents low-speed tipping. In panic stops, remember that 70% of stopping power on a cruiser comes from the heavy rear tire due to the stretched wheelbase.</p>
+                    <p><b>3. Ergonomics and Fatigue Management:</b> Forward foot controls and pulled-back handlebars reduce knee bend but transfer upper body wind blast directly into the rider's chest. Investing in a quick-detachable touring windscreen and lower back support makes 800-kilometer daily touring days comfortable and sustainable.</p>
+                `
+            },
+            {
+                id: 7,
+                title: "Choosing the Right Motorcycle Helmet: Full-Face vs. Modular vs. Open-Face",
+                category: "Rider Safety",
+                date: "April 28, 2026",
+                summary: "A detailed 1,100-word buyer's guide comparing helmet shell types, EPS liner densities, chin bar structural integrity, and ventilation aerodynamics.",
+                content: `
+                    <p>Your helmet is the single most vital piece of riding equipment you will ever purchase. Understanding the structural differences between helmet styles dictates your level of protection.</p>
+                    <p><b>1. Full-Face Helmets (Maximum Protection):</b> Full-face helmets offer uncompromised safety because the chin bar is an integral part of the outer composite or polycarbonate shell. Statistically, 35% of all motorcycle helmet impacts occur in the chin area. Full-face helmets eliminate weak points and provide superior aerodynamics and sound isolation.</p>
+                    <p><b>2. Modular / Flip-Up Helmets (Versatility):</b> Modular helmets allow the chin bar to flip upward, offering convenience for fuel stops, communication, and wearing glasses. Modern modular helmets certified under ECE 22.06 P/J dual homologation ensure the chin bar locks securely and resists unlatching during impact.</p>
+                    <p><b>3. Open-Face (3/4) Helmets:</b> While offering expansive peripheral vision and airflow, open-face helmets leave the jaw, teeth, and lower facial structure completely unprotected against asphalt abrasion and direct impacts.</p>
+                `
+            },
+            {
+                id: 8,
+                title: "High-Performance Brake Systems: Discs, Calipers, Sintered Pads, and ABS",
+                category: "Bike Accessories",
+                date: "April 25, 2026",
+                summary: "An exhaustive 1,200-word engineering breakdown of radial vs. axial brake calipers, floating rotors, sintered brake compounds, and cornering ABS.",
+                content: `
+                    <p>Stopping power is far more important than raw horsepower. Understanding motorcycle braking components allows you to optimize braking performance and safety.</p>
+                    <p><b>1. Radial vs. Axial Calipers:</b> High-performance motorcycles utilize radial-mounted monoblock brake calipers. Bolted parallel to the fork leg rather than perpendicular (axial), radial calipers eliminate flex under extreme braking loads, delivering superior lever feel and initial bite.</p>
+                    <p><b>2. Sintered Brake Pads vs. Organic:</b> Sintered metal brake pads are fused under extreme heat and pressure, offering immense friction coefficients across wet and dry conditions and resisting brake fade on downhill mountain descents. Organic pads offer softer initial bite and less rotor wear but fade faster under racetrack use.</p>
+                    <p><b>3. Cornering ABS and Inertial Measurement Units (IMU):</b> Modern IMUs track lean angles, pitch, and yaw in 6 axes. When you brake hard mid-corner, cornering ABS calculates lean angle limits and modulates hydraulic pressure to prevent the front tire from tucking under.</p>
+                `
+            },
+            {
+                id: 9,
+                title: "Commuter and Scooter Dynamics: Urban Agility and Fuel Economy Mastery",
+                category: "Riding Styles",
+                date: "April 22, 2026",
+                summary: "A practical 1,050-word guide on urban motorcycle commuting, CVT transmissions, defensive lane positioning, and rainy-day city hazards.",
+                    content: `
+                    <p>Urban commuting on two wheels transforms frustrating gridlock into efficient mobility. However, city streets present unique hazards requiring specialized riding strategies.</p>
+                    <p><b>1. CVT Transmissions and Twist-and-Go Scooters:</b> Scooters utilize Continuous Variable Transmissions (CVT) paired with centrifugal clutches. By eliminating manual gear shifting, urban commuters can focus entirely on traffic scanning and defensive braking.</p>
+                    <p><b>2. Defensive Lane Positioning and Painted Lines:</b> City streets accumulate oil residue, wet leaves, and slippery painted crosswalk lines. Avoid riding directly in the center of a traffic lane where oil drips accumulate from cars. Position yourself in the left or right tire track for maximum traction.</p>
+                    <p><b>3. High-Visibility Gear and Lighting:</b> Urban motorists often suffer from inattention. Wearing high-visibility neon vests, utilizing auxiliary LED fog lights, and wearing modular reflective jackets ensures you remain visible in blind spots.</p>
+                `
+            },
+            {
+                id: 10,
+                title: "Motorcycle Luggage Systems: Hard Panniers vs. Soft Saddlebags vs. Tail Packs",
+                category: "Bike Accessories",
+                date: "April 18, 2026",
+                summary: "An in-depth 1,100-word review of aluminum hard boxes, waterproof roll-top soft bags, rack mounting systems, and secure tie-down protocols.",
+                content: `
+                    <p>Carrying gear on a motorcycle requires balancing storage capacity against aerodynamic drag, weight distribution, and off-road crash durability.</p>
+                    <p><b>1. Aluminum Hard Panniers:</b> Hard aluminum boxes offer unrivaled security, waterproof protection, and act as camping tables or crash barriers when dropping an ADV bike off-road. However, rigid corners can trap a rider's leg during a spill.</p>
+                    <p><b>2. Waterproof Soft Luggage:</b> Constructed from heavy-duty TPU and welded seams, soft saddlebags conform tightly to the motorcycle subframe, eliminating protruding metal edges that cause injury during technical trail riding.</p>
+                    <p><b>3. Secure Tie-Down Techniques:</b> Always utilize heavy-duty cam straps or ROK straps rather than elastic bungee cords, which stretch and snap under vibration at highway speeds.</p>
+                `
+            },
+            {
+                id: 11,
+                title: "Motorcycle Lighting Technologies: Halogen vs. HID vs. Adaptive Matrix LED",
+                category: "Bike Accessories",
+                date: "April 15, 2026",
+                summary: "A comprehensive 1,150-word guide on nighttime visibility, lumens, color temperature, auxiliary spotlight placement, and cornering adaptive headlights.",
+                content: `
+                    <p>Seeing and being seen after dark is critical for motorcycle safety. Modern lighting technology has evolved far beyond dim halogen incandescent bulbs.</p>
+                    <p><b>1. LED Headlights and Lumens:</b> Light Emitting Diodes (LEDs) provide crisp, daylight-balanced 6000K illumination while consuming minimal electrical current from the motorcycle stator. They illuminate road hazards and wildlife eyes far earlier than yellow halogen bulbs.</p>
+                    <p><b>2. Cornering Adaptive Headlights:</b> Premium motorcycles feature IMU-linked LED modules inside the headlight housing that illuminate into the direction of the turn as you lean over, eliminating blind spots in dark mountain switchbacks.</p>
+                    <p><b>3. Auxiliary Spotlights and Fog Lights:</b> Mounting auxiliary LED pods on crash bars creates a wider triangular light footprint, signaling your width to oncoming distracted motorists.</p>
+                `
+            },
+            {
+                id: 12,
+                title: "Understanding Motorcycle Insurance, Licensing, and International Permits",
+                category: "Legal Compliance",
+                date: "April 12, 2026",
+                summary: "An expansive 1,200-word report on comprehensive motorcycle insurance policies, IDP (International Driving Permit) regulations, and track day liability waivers.",
+                content: `
+                    <p>Navigating the legalities of motorcycle ownership, licensing, and insurance protects your financial assets and ensures compliance worldwide.</p>
+                    <p><b>1. Comprehensive vs. Third-Party Insurance:</b> Third-party liability covers damage you cause to others, while comprehensive insurance covers theft, fire, vandalism, and collision damage to your own motorcycle. Ensure your policy covers gear replacement and roadside towing.</p>
+                    <p><b>2. International Driving Permit (IDP):</b> When riding abroad, many foreign police agencies and rental agencies require an IDP issued by your home country's automobile association, translated into multiple languages.</p>
+                    <p><b>3. Track Day Liability Waivers:</b> Standard street motorcycle insurance policies explicitly exclude coverage for accidents occurring on closed racing circuits. Check for specialized track day insurance providers before attending track events.</p>
+                `
+            },
+            {
+                id: 13,
+                title: "Motorcycle Winter Storage and Long-Term Preservation",
+                category: "Bike Accessories",
+                date: "April 08, 2026",
+                summary: "A thorough 1,100-word tutorial on fuel stabilizers, battery tenders, tire preservation stands, and engine oil fogging for seasonal storage.",
+                content: `
+                    <p>When freezing winter temperatures force you off the road, proper motorcycle storage prevents fuel varnishing, battery sulfation, and tire flat-spotting.</p>
+                    <p><b>1. Fuel Stabilization and Tank Filling:</b> Modern ethanol-blended gasoline absorbs moisture and gums up fuel injectors within 60 days. Fill your fuel tank to the brim and add fuel stabilizer, running the engine for 5 minutes so treated fuel reaches the injectors.</p>
+                    <p><b>2. Smart Battery Tenders:</b> Disconnect your motorcycle battery or attach a microprocessor-controlled trickle charger (battery tender) to prevent deep discharge and sulfation.</p>
+                    <p><b>3. Avoiding Tire Flat Spots:</b> Use front and rear paddock stands to lift the tires completely off cold concrete floors during extended storage.</p>
+                `
+            },
+            {
+                id: 14,
+                title: "Riding in Extreme Weather: Rain, Heat, Snow, and High Winds",
+                category: "Riding Styles",
+                date: "April 04, 2026",
+                summary: "An intensive 1,250-word tactical guide on hydroplaning prevention, dehydration management, wind gust mitigation, and cold-weather hypothermia defense.",
+                content: `
+                    <p>Mother Nature tests every rider. Developing climate-specific riding strategies ensures safety when weather turns hostile.</p>
+                    <p><b>1. Rain and Hydroplaning Survival:</b> The first 15 minutes of light rain are the most treacherous because accumulated road oils float to the surface. Increase your following distance threefold and avoid abrupt steering or braking inputs.</p>
+                    <p><b>2. Heat Exhaustion and Dehydration:</b> Riding in 40°C summer heat causes rapid dehydration, reducing cognitive reaction times. Wear ventilated mesh gear and drink water at every fuel stop.</p>
+                    <p><b>3. Crosswind Mitigation:</b> High wind gusts on bridges require loosening your grip on the handlebars, shifting your weight into the wind, and leaning the motorcycle slightly into the gust.</p>
+                `
+            },
+            {
+                id: 15,
+                title: "Motorcycle Exhaust Systems: Full Systems vs. Slip-Ons and Backpressure",
+                category: "Bike Accessories",
+                date: "April 01, 2026",
+                summary: "An in-depth 1,150-word engineering breakdown of titanium headers, carbon fiber mufflers, ECU remotes, and exhaust scavenging physics.",
+                content: `
+                    <p>Upgrading your motorcycle exhaust is one of the most popular modifications, but doing it correctly requires understanding engine breathing dynamics.</p>
+                    <p><b>1. Slip-On Mufflers vs. Full Systems:</b> Slip-on mufflers replace only the rear silencer, offering aesthetic improvements and deeper exhaust notes. Full systems replace header pipes and catalytic converters, shedding significant weight and unlocking horsepower gains.</p>
+                    <p><b>2. ECU Remapping and Air-Fuel Ratios:</b> Removing catalytic converters alters exhaust backpressure and leans out the air-fuel ratio. Running a full system without an ECU remap causes dangerous engine lean conditions and overheating.</p>
+                    <p><b>3. Titanium and Carbon Fiber Construction:</b> Premium aftermarket exhausts utilize aerospace-grade titanium and carbon fiber to reduce unsprung weight and resist high thermal exhaust temperatures.</p>
+                `
+            }
+        ];
+
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-section').forEach(sec => sec.classList.add('hidden'));
+            document.getElementById('tab-' + tabId).classList.remove('hidden');
+
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('text-dmcRed');
+                btn.classList.add('text-zinc-400');
+                if(btn.dataset.tab === tabId) {
+                    btn.classList.add('text-dmcRed');
+                    btn.classList.remove('text-zinc-400');
+                }
+            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function switchTool(toolKey) {
+            document.querySelectorAll('.tool-panel').forEach(p => p.classList.add('hidden'));
+            document.getElementById('tool' + toolKey.charAt(0).toUpperCase() + toolKey.slice(1)).classList.remove('hidden');
+
+            ['Fuel', 'Tire', 'Chain'].forEach(t => {
+                const btn = document.getElementById('btnTool' + t);
+                btn.className = 'py-2.5 rounded-xl text-xs font-bold text-zinc-400 hover:text-white transition-all';
+                if(t.toLowerCase() === toolKey) {
+                    btn.className = 'py-2.5 rounded-xl text-xs font-bold bg-dmcRed text-white transition-all shadow';
+                }
+            });
+        }
+
+        function calcFuel() {
+            const dist = parseFloat(document.getElementById('fuelDist').value) || 0;
+            const mileage = parseFloat(document.getElementById('fuelMileage').value) || 1;
+            const price = parseFloat(document.getElementById('fuelPrice').value) || 0;
+
+            const liters = dist / mileage;
+            const cost = liters * price;
+
+            document.getElementById('fuelResultText').innerText = liters.toFixed(1) + ' Liters • $' + cost.toFixed(2);
+            document.getElementById('fuelResult').classList.remove('hidden');
+        }
+
+        function calcTire() {
+            const cat = document.getElementById('tireCategory').value;
+            const load = document.getElementById('tireLoad').value;
+
+            let front = 36, rear = 42;
+            if(cat === 'sport') { front = 34; rear = 38; }
+            if(cat === 'adventure') { front = 36; rear = 42; }
+            if(cat === 'cruiser') { front = 38; rear = 40; }
+            if(cat === 'commuter') { front = 29; rear = 32; }
+
+            if(load === 'pillion') { rear += 2; }
+
+            document.getElementById('tireResultText').innerText = `Front: ${front} PSI | Rear: ${rear} PSI`;
+            document.getElementById('tireResult').classList.remove('hidden');
+        }
+
+        function calcChain() {
+            const last = parseFloat(document.getElementById('chainLastOdo').value) || 0;
+            const curr = parseFloat(document.getElementById('chainCurrOdo').value) || 0;
+            const diff = curr - last;
+
+            document.getElementById('chainResultText').innerText = `${diff} km driven since last service`;
+            const advice = document.getElementById('chainAdvice');
+            const resBox = document.getElementById('chainResult');
+            resBox.classList.remove('hidden');
+
+            if(diff > 700) {
+                advice.innerText = '⚠️ Overdue! Clean and lube your drive chain immediately to prevent premature sprocket wear.';
+                advice.className = 'text-[11px] text-dmcRed font-bold pt-1';
+            } else {
+                advice.innerText = '✅ Chain condition normal. Next service recommended in approx. ' + (700 - diff) + ' km.';
+                advice.className = 'text-[11px] text-emerald-400 font-semibold pt-1';
+            }
+        }
+
+        function renderMechanics(filter, query) {
+            filter = filter || 'all';
+            query = query || '';
+            const container = document.getElementById('mechContainer');
+            container.innerHTML = '';
+
+            const filtered = mechanicsData.filter(m => {
+                const matchCat = (filter === 'all' || m.category === filter);
+                const matchQuery = m.title.toLowerCase().includes(query.toLowerCase()) || m.summary.toLowerCase().includes(query.toLowerCase());
+                return matchCat && matchQuery;
+            });
+
+            if(filtered.length === 0) {
+                container.innerHTML = '<div class="text-center py-10 text-zinc-500 text-sm">No mechanics or parts found.</div>';
+                return;
+            }
+
+            filtered.forEach(m => {
+                const card = document.createElement('div');
+                card.className = 'glass-panel p-5 rounded-3xl space-y-3 hover:border-dmcRed/40 transition-all';
+                card.innerHTML = `
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-xl bg-dmcRed/10 text-dmcRed flex items-center justify-center font-bold text-lg">
+                            <i class="fa-solid ${m.icon}"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-white text-base">${m.title}</h3>
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-dmcOrange px-2 py-0.5 rounded-full bg-dmcOrange/10 border border-dmcOrange/20">${m.category}</span>
+                        </div>
+                    </div>
+                    <p class="text-xs text-zinc-300 leading-relaxed font-medium">${m.summary}</p>
+                    <div class="p-3 rounded-2xl bg-dmcCard border border-dmcBorder text-xs text-zinc-400 space-y-1">
+                        <span class="font-bold text-zinc-200 block text-[11px] uppercase tracking-wider text-dmcRed">How it Works:</span>
+                        <p class="leading-relaxed">${m.working}</p>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function filterMechCat(cat, evt) {
+            document.querySelectorAll('.mech-cat-btn').forEach(b => {
+                b.className = 'mech-cat-btn px-4 py-1.5 rounded-full text-xs font-bold bg-dmcCard text-zinc-400 border border-dmcBorder shrink-0 hover:text-white transition-all';
+            });
+            if(evt && evt.target) {
+                evt.target.className = 'mech-cat-btn px-4 py-1.5 rounded-full text-xs font-bold bg-dmcRed text-white shrink-0 transition-all';
+            }
+            const query = document.getElementById('mechSearch').value;
+            renderMechanics(cat, query);
+        }
+
+        function filterMechanics() {
+            const query = document.getElementById('mechSearch').value;
+            renderMechanics('all', query);
+        }
+
+        let activeAlpha = 'All';
+
+        function renderBrands(letter, query) {
+            letter = letter || 'All';
+            query = query || '';
+            const container = document.getElementById('brandsContainer');
+            container.innerHTML = '';
+
+            const filtered = brandsData.filter(b => {
+                const matchLetter = (letter === 'All' || b.name.toUpperCase().startsWith(letter));
+                const matchQuery = b.name.toLowerCase().includes(query.toLowerCase()) || b.country.toLowerCase().includes(query.toLowerCase());
+                return matchLetter && matchQuery;
+            });
+
+            if(filtered.length === 0) {
+                container.innerHTML = '<div class="text-center py-10 text-zinc-500 text-sm">No motorcycle brands found.</div>';
+                return;
+            }
+
+            filtered.forEach(b => {
+                const modelsHtml = b.models.map(m => `<span class="px-2.5 py-1 rounded-lg bg-dmcCard text-[11px] font-semibold text-zinc-300 border border-dmcBorder">${m}</span>`).join('');
+                const card = document.createElement('div');
+                card.className = 'glass-panel p-5 rounded-3xl space-y-3 hover:border-dmcRed/40 transition-all';
+                card.innerHTML = `
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-14 h-14 rounded-2xl bg-white/5 border border-dmcBorder p-2.5 flex items-center justify-center shrink-0">
+                                <img src="${b.logo}" alt="${b.name}" class="w-full h-full object-contain filter invert" onerror="this.onerror=null; this.src='IMG_3791.jpg';">
+                            </div>
+                            <div>
+                                <h3 class="font-black text-white text-lg">${b.name}</h3>
+                                <div class="flex items-center space-x-2 text-xs text-zinc-400">
+                                    <span>${b.country}</span>
+                                    <span>•</span>
+                                    <span>Est. ${b.founded}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-xs text-zinc-300 leading-relaxed">${b.history}</p>
+                    <div class="space-y-1.5 pt-1">
+                        <span class="text-[10px] font-bold text-dmcOrange uppercase tracking-wider block">Iconic Models:</span>
+                        <div class="flex flex-wrap gap-1.5">${modelsHtml}</div>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function renderAlphabetFilter() {
+            const alphaContainer = document.getElementById('alphaFilter');
+            alphaContainer.innerHTML = '';
+            const letters = ['All', 'A', 'B', 'D', 'H', 'K', 'R', 'S', 'T', 'Y'];
+
+            letters.forEach(l => {
+                const btn = document.createElement('button');
+                btn.className = `px-3 py-1.5 rounded-full shrink-0 transition-all ${l === activeAlpha ? 'bg-dmcRed text-white font-bold' : 'bg-dmcCard text-zinc-400 border border-dmcBorder hover:text-white'}`;
+                btn.innerText = l;
+                btn.onclick = () => {
+                    activeAlpha = l;
+                    renderAlphabetFilter();
+                    renderBrands(l, document.getElementById('brandSearch').value);
+                };
+                alphaContainer.appendChild(btn);
+            });
+        }
+
+        function filterBrands() {
+            const query = document.getElementById('brandSearch').value;
+            renderBrands(activeAlpha, query);
+        }
+
+        function renderBlogs() {
+            const container = document.getElementById('blogsContainer');
+            container.innerHTML = '';
+
+            blogsData.forEach(blog => {
+                const card = document.createElement('div');
+                card.className = 'glass-panel p-5 rounded-3xl space-y-3 hover:border-dmcRed/40 transition-all cursor-pointer';
+                card.onclick = () => openBlogModal(blog);
+                card.innerHTML = `
+                    <div class="flex items-center justify-between text-xs text-zinc-400">
+                        <span class="text-dmcRed font-bold uppercase tracking-wider">${blog.category}</span>
+                        <span>${blog.date}</span>
+                    </div>
+                    <h3 class="text-base font-bold text-white">${blog.title}</h3>
+                    <p class="text-xs text-zinc-300 leading-relaxed">${blog.summary}</p>
+                    <div class="flex items-center justify-between pt-2">
+                        <div class="flex items-center space-x-2">
+                            <span class="px-2.5 py-1 rounded-lg bg-dmcCard text-[11px] font-semibold text-zinc-300 border border-dmcBorder">#DMCExpert</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-dmcCard text-[11px] font-semibold text-zinc-300 border border-dmcBorder">#GlobalRiders</span>
+                        </div>
+                        <span class="text-xs font-bold text-dmcRed flex items-center space-x-1">
+                            <span>Read Full Guide</span>
+                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </span>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function openBlogModal(blog) {
+            document.getElementById('modalCategory').innerText = blog.category;
+            document.getElementById('modalDate').innerText = blog.date;
+            document.getElementById('modalTitle').innerText = blog.title;
+            document.getElementById('modalContent').innerHTML = blog.content;
+            document.getElementById('blogModal').classList.remove('hidden');
+        }
+
+        function closeBlogModal() {
+            document.getElementById('blogModal').classList.add('hidden');
+        }
+
+        function openFeedbackModal() {
+            document.getElementById('feedbackModal').classList.remove('hidden');
+        }
+
+        function closeFeedbackModal() {
+            document.getElementById('feedbackModal').classList.add('hidden');
+        }
+
+        function sendFeedback() {
+            const email = document.getElementById('feedbackEmail').value;
+            const msg = document.getElementById('feedbackMsg').value;
+            if(!msg) {
+                alert('Please enter your feedback or message.');
+                return;
+            }
+            window.location.href = `mailto:douromoto@gmail.com?subject=DMC Rider Feedback from ${email || 'Anonymous'}&body=${encodeURIComponent(msg)}`;
+            closeFeedbackModal();
+        }
+
+        window.onload = function() {
+            renderMechanics('all', '');
+            renderAlphabetFilter();
+            renderBrands('All', '');
+            renderBlogs();
+        };
+    </script>
+</body>
+</html>
