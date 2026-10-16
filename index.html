@@ -75,19 +75,45 @@
     <main class="flex-1 max-w-2xl w-full mx-auto px-4 py-5 pb-28">
 
         <section id="tab-explore" class="space-y-6 tab-section">
-            <!-- Hero Banner with Interactive Engine Piston Graphic -->
-            <div class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-zinc-900 via-zinc-900 to-zinc-950 border border-dmcBorder p-6 app-shadow">
-                <div class="absolute -right-10 -bottom-10 opacity-30 w-56 h-56 pointer-events-none select-none engine-glow">
-                    <img src="IMG_3791.jpg" alt="DMC Piston Wings" class="w-full h-full object-contain rounded-3xl" onerror="this.onerror=null; this.src='https://placehold.co/300x300/16161a/ff9500?text=DMC+Piston';">
+            
+            <!-- Cinematic Video Hero Banner -->
+            <div class="relative rounded-3xl overflow-hidden bg-zinc-950 border border-dmcBorder app-shadow">
+                <div class="relative w-full aspect-video sm:aspect-[16/9] bg-black">
+                    <video id="heroVideo" autoplay muted loop playsinline class="w-full h-full object-cover">
+                        <source src="https://googleusercontent.com/generated_video_content/10117758722491244424" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0c] via-transparent to-black/40 pointer-events-none"></div>
+                    
+                    <!-- Video Controls Overlay -->
+                    <div class="absolute bottom-3 right-3 z-20 flex items-center space-x-2 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/15">
+                        <button onclick="togglePlayVideo()" id="videoPlayBtn" class="text-white hover:text-dmcOrange text-xs font-bold transition-colors flex items-center space-x-1">
+                            <i class="fa-solid fa-pause" id="videoPlayIcon"></i>
+                            <span class="text-[10px] hidden sm:inline">Pause</span>
+                        </button>
+                        <span class="text-white/30">|</span>
+                        <button onclick="toggleMuteVideo()" id="videoMuteBtn" class="text-white hover:text-dmcOrange text-xs font-bold transition-colors flex items-center space-x-1">
+                            <i class="fa-solid fa-volume-xmark" id="videoMuteIcon"></i>
+                            <span class="text-[10px] hidden sm:inline">Sound</span>
+                        </button>
+                    </div>
+
+                    <div class="absolute top-3 left-3 z-20 flex items-center space-x-2">
+                        <span class="px-3 py-1 rounded-full text-[10px] font-bold bg-dmcRed/80 text-white backdrop-blur-md border border-white/20 uppercase tracking-widest flex items-center space-x-1">
+                            <i class="fa-solid fa-circle-play text-[8px] animate-pulse"></i>
+                            <span>DMC Cinematic</span>
+                        </span>
+                    </div>
                 </div>
-                <div class="relative z-10 space-y-4">
+
+                <div class="p-6 space-y-4">
                     <div class="flex items-center space-x-2">
                         <span class="px-3 py-1 rounded-full text-xs font-bold bg-dmcRed/20 text-dmcRed border border-dmcRed/30 flex items-center space-x-1">
                             <i class="fa-solid fa-fire text-dmcOrange"></i>
                             <span>RIDER ELITE HUB</span>
                         </span>
                         <span class="px-3 py-1 rounded-full text-xs font-bold bg-dmcOrange/20 text-dmcOrange border border-dmcOrange/30">
-                            <i class="fa-solid fa-bolt mr-1"></i> V4 & Piston Tech
+                            <i class="fa-solid fa-bolt mr-1"></i> Piston & Wings Tech
                         </span>
                     </div>
 
@@ -131,7 +157,7 @@
             <!-- Quick Action Grid with Real Bike Imagery -->
             <div class="grid grid-cols-2 gap-3">
                 <div onclick="switchTab('tools')" class="glass-panel p-4 rounded-3xl hover:border-dmcRed/50 transition-all cursor-pointer group relative overflow-hidden">
-                    <div class="absolute -right-4 -bottom-4 opacity-20 w-24 h-24">
+                    <div class="absolute -right-4 -bottom-4 opacity-25 w-28 h-28">
                         <img src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=300&auto=format&fit=crop&q=80" alt="Bike" class="w-full h-full object-cover rounded-full">
                     </div>
                     <div class="w-10 h-10 rounded-xl bg-dmcRed/20 text-dmcRed flex items-center justify-center text-lg mb-3 group-hover:scale-110 transition-transform">
@@ -141,7 +167,7 @@
                     <p class="text-xs text-zinc-400 mt-1">Colorful trip fuel, PSI advisor, chain health.</p>
                 </div>
                 <div onclick="switchTab('mechanics')" class="glass-panel p-4 rounded-3xl hover:border-dmcRed/50 transition-all cursor-pointer group relative overflow-hidden">
-                    <div class="absolute -right-4 -bottom-4 opacity-20 w-24 h-24">
+                    <div class="absolute -right-4 -bottom-4 opacity-25 w-28 h-28">
                         <img src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?w=300&auto=format&fit=crop&q=80" alt="Engine" class="w-full h-full object-cover rounded-full">
                     </div>
                     <div class="w-10 h-10 rounded-xl bg-dmcOrange/20 text-dmcOrange flex items-center justify-center text-lg mb-3 group-hover:scale-110 transition-transform">
@@ -151,7 +177,7 @@
                     <p class="text-xs text-zinc-400 mt-1">Torque, injectors, carburetors & anatomy.</p>
                 </div>
                 <div onclick="switchTab('brands')" class="glass-panel p-4 rounded-3xl hover:border-dmcRed/50 transition-all cursor-pointer group relative overflow-hidden">
-                    <div class="absolute -right-4 -bottom-4 opacity-20 w-24 h-24">
+                    <div class="absolute -right-4 -bottom-4 opacity-25 w-28 h-28">
                         <img src="https://images.unsplash.com/photo-1609630875172-2ec552cc945e?w=300&auto=format&fit=crop&q=80" alt="Brand" class="w-full h-full object-cover rounded-full">
                     </div>
                     <div class="w-10 h-10 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center text-lg mb-3 group-hover:scale-110 transition-transform">
@@ -161,7 +187,7 @@
                     <p class="text-xs text-zinc-400 mt-1">A-Z logos, history & iconic models.</p>
                 </div>
                 <div onclick="switchTab('gear')" class="glass-panel p-4 rounded-3xl hover:border-dmcRed/50 transition-all cursor-pointer group relative overflow-hidden">
-                    <div class="absolute -right-4 -bottom-4 opacity-20 w-24 h-24">
+                    <div class="absolute -right-4 -bottom-4 opacity-25 w-28 h-28">
                         <img src="https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?w=300&auto=format&fit=crop&q=80" alt="Helmet" class="w-full h-full object-cover rounded-full">
                     </div>
                     <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-lg mb-3 group-hover:scale-110 transition-transform">
@@ -174,7 +200,7 @@
 
             <!-- Featured Story with Real Motorcycle Imagery -->
             <div class="glass-panel rounded-3xl overflow-hidden border border-dmcBorder">
-                <div class="h-40 w-full relative">
+                <div class="h-44 w-full relative">
                     <img src="https://images.unsplash.com/photo-1558980664-3a031cf67ea8?w=800&auto=format&fit=crop&q=80" alt="Sportbike cornering" class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-gradient-to-t from-[#16161a] via-transparent to-transparent"></div>
                     <span class="absolute top-3 left-3 px-3 py-1 rounded-full text-[10px] font-bold bg-dmcRed text-white uppercase tracking-widest shadow">Featured Story</span>
@@ -931,6 +957,29 @@
                     btn.className = 'py-2.5 rounded-xl text-xs font-bold bg-dmcRed text-white transition-all shadow';
                 }
             });
+        }
+
+        function togglePlayVideo() {
+            const video = document.getElementById('heroVideo');
+            const icon = document.getElementById('videoPlayIcon');
+            if(video.paused) {
+                video.play();
+                icon.className = 'fa-solid fa-pause';
+            } else {
+                video.pause();
+                icon.className = 'fa-solid fa-play';
+            }
+        }
+
+        function toggleMuteVideo() {
+            const video = document.getElementById('heroVideo');
+            const icon = document.getElementById('videoMuteIcon');
+            video.muted = !video.muted;
+            if(video.muted) {
+                icon.className = 'fa-solid fa-volume-xmark';
+            } else {
+                icon.className = 'fa-solid fa-volume-high';
+            }
         }
 
         function triggerEngineSim(type) {
