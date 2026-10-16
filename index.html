@@ -84,12 +84,22 @@
                 <div class="relative w-full aspect-video sm:aspect-[16/9] bg-black flex items-center justify-center">
                     <video id="heroVideo" autoplay muted loop playsinline preload="auto" class="w-full h-full object-cover">
                         <source src="hero-video.mp4" type="video/mp4">
+                        <source src="https://googleusercontent.com/generated_video_content/10117758722491244424" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0c] via-transparent to-black/40 pointer-events-none"></div>
+                    <!-- Fallback Background Poster in case video fails to load -->
+                    <div id="videoFallbackPoster" class="absolute inset-0 bg-gradient-to-tr from-zinc-950 via-zinc-900 to-black flex flex-col items-center justify-center p-6 text-center z-10 hidden">
+                        <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-dmcRed to-dmcOrange flex items-center justify-center text-white text-2xl app-shadow mb-3 engine-glow">
+                            <i class="fa-solid fa-gears animate-spin" style="animation-duration: 8s;"></i>
+                        </div>
+                        <h3 class="text-white font-black text-base">Douro Moto Co. Cinematic Engine</h3>
+                        <p class="text-xs text-zinc-400 max-w-xs mt-1">Piston & Wings technology hub for global motorcycle riders.</p>
+                    </div>
+
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0c] via-transparent to-black/40 pointer-events-none z-20"></div>
                     
                     <!-- Video Controls Overlay -->
-                    <div class="absolute bottom-3 right-3 z-20 flex items-center space-x-2 bg-black/70 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/15">
+                    <div class="absolute bottom-3 right-3 z-30 flex items-center space-x-2 bg-black/70 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/15">
                         <button onclick="togglePlayVideo()" id="videoPlayBtn" class="text-white hover:text-dmcOrange text-xs font-bold transition-colors flex items-center space-x-1">
                             <i class="fa-solid fa-pause" id="videoPlayIcon"></i>
                             <span class="text-[10px] hidden sm:inline">Pause</span>
@@ -101,7 +111,7 @@
                         </button>
                     </div>
 
-                    <div class="absolute top-3 left-3 z-20 flex items-center space-x-2">
+                    <div class="absolute top-3 left-3 z-30 flex items-center space-x-2">
                         <span class="px-3 py-1 rounded-full text-[10px] font-bold bg-dmcRed/80 text-white backdrop-blur-md border border-white/20 uppercase tracking-widest flex items-center space-x-1">
                             <i class="fa-solid fa-circle-play text-[8px] animate-pulse"></i>
                             <span>DMC Cinematic</span>
@@ -125,7 +135,7 @@
                         Explore core motorcycle mechanics, interactive animated engine breakdowns, 15+ comprehensive 1000+ word rider guides, and global safety standards curated by Douro Moto Co.
                     </p>
 
-                    <!-- Interactive Animated Engine Blueprint Preview Card with Real Image -->
+                    <!-- Interactive Animated Engine Blueprint Preview Card -->
                     <div class="p-4 rounded-2xl bg-black/60 border border-dmcBorder relative overflow-hidden group cursor-pointer" onclick="switchTab('mechanics')">
                         <div class="absolute inset-0 bg-gradient-to-r from-dmcOrange/10 to-dmcRed/10 opacity-50 group-hover:opacity-100 transition-opacity"></div>
                         <div class="absolute right-0 top-0 w-32 h-full opacity-30">
@@ -1275,10 +1285,19 @@
             renderBrands('All', '');
             renderBlogs();
             
-            // Ensure video attempts to play on load
+            // Video Fallback Handling
             const v = document.getElementById('heroVideo');
+            const poster = document.getElementById('videoFallbackPoster');
             if(v) {
-                v.play().catch(e => console.log('Autoplay restricted by browser:', e));
+                v.play().catch(e => {
+                    console.log('Autoplay restricted or video failed:', e);
+                    if(poster) poster.classList.remove('hidden');
+                });
+                v.onerror = function() {
+                    console.log('Error loading hero-video.mp4. Showing fallback poster.');
+                    if(poster) poster.classList.remove('hidden');
+                    v.style.display = 'none';
+                };
             }
         };
     </script>
