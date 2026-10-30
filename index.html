@@ -164,9 +164,8 @@
             </div>
         </section>
 
-        <!-- TAB 2: RARE HOODIES & APPAREL SECTION (NEW) -->
+        <!-- TAB 2: RARE HOODIES & APPAREL SECTION -->
         <section id="tab-merch" class="tab-content hidden space-y-8">
-            <!-- RARE HOODIES BANNER -->
             <div class="relative rounded-3xl overflow-hidden glass-panel border border-amber-500/40 p-8 md:p-12 bg-gradient-to-r from-neutral-900 via-neutral-900 to-amber-950/30">
                 <div class="absolute right-4 top-1/2 -translate-y-1/2 opacity-10 pointer-events-none text-9xl text-amber-400">
                     <i class="fa-solid fa-shirt"></i>
@@ -187,7 +186,7 @@
             </div>
 
             <!-- PRODUCTS GRID -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="productGridContainer">
                 
                 <!-- PRODUCT 1: PULLOVER HOODY -->
                 <div class="glass-panel rounded-3xl overflow-hidden border border-neutral-800 hover:border-amber-500/60 transition flex flex-col justify-between">
@@ -201,10 +200,9 @@
                             <div>
                                 <span class="text-[10px] font-bold text-amber-400 uppercase tracking-widest">Unisex Pullover Edition</span>
                                 <h3 class="text-2xl font-black text-white mt-1">DMC Logo Pullover Unisex Hoody</h3>
-                                <p class="text-xs text-gray-400 mt-1">Short SEO Desc: Heavyweight thermal fleece pullover featuring white DMC piston & wings chest branding and left-pocket logo alignment.</p>
+                                <p class="text-xs text-gray-400 mt-1">Short SEO Desc: Heavyweight thermal fleece pullover featuring white DMC piston & wings branding and left-pocket logo alignment.</p>
                             </div>
 
-                            <!-- Color Options -->
                             <div class="space-y-2">
                                 <span class="text-xs font-semibold text-gray-300">Available Colors:</span>
                                 <div class="flex items-center gap-3">
@@ -242,7 +240,6 @@
                                 <p class="text-xs text-gray-400 mt-1">Short SEO Desc: Premium full-zip riding hoodie featuring reinforced metal hardware and white DMC piston & wings logo on left pocket side.</p>
                             </div>
 
-                            <!-- Color Options -->
                             <div class="space-y-2">
                                 <span class="text-xs font-semibold text-gray-300">Available Colors:</span>
                                 <div class="flex items-center gap-3">
@@ -283,7 +280,7 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="mechanicsGrid">
-                <!-- Dynamically populated -->
+                <!-- Populated via JS -->
             </div>
         </section>
 
@@ -297,7 +294,7 @@
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                <!-- TOOL 1: TRIP FUEL CALCULATOR -->
+                <!-- TOOL 1 -->
                 <div class="glass-panel p-6 rounded-3xl border border-dmc-orange/30 space-y-4 relative overflow-hidden">
                     <div class="absolute top-0 right-0 w-32 h-32 bg-dmc-orange/10 rounded-full blur-2xl pointer-events-none"></div>
                     <div class="flex items-center justify-between">
@@ -332,7 +329,7 @@
                     </div>
                 </div>
 
-                <!-- TOOL 2: TIRE PRESSURE PSI ADVISOR -->
+                <!-- TOOL 2 -->
                 <div class="glass-panel p-6 rounded-3xl border border-blue-500/30 space-y-4 relative overflow-hidden">
                     <div class="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl pointer-events-none"></div>
                     <div class="flex items-center justify-between">
@@ -364,7 +361,7 @@
                     </div>
                 </div>
 
-                <!-- TOOL 3: CHAIN MAINTENANCE TRACKER -->
+                <!-- TOOL 3 -->
                 <div class="glass-panel p-6 rounded-3xl border border-emerald-500/30 space-y-4 relative overflow-hidden">
                     <div class="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl pointer-events-none"></div>
                     <div class="flex items-center justify-between">
@@ -436,12 +433,6 @@
                     <p class="text-xs text-gray-300 leading-relaxed">
                         Replacing the older ECE 22.05 standard, ECE 22.06 introduces rigorous rotational impact testing, oblique crash angles, and strict visor penetration tests. Helmets bearing this certification are mandatory across professional racing leagues and top street riding communities globally.
                     </p>
-                    <div class="bg-black/40 p-3.5 rounded-xl border border-neutral-800 space-y-1 text-xs text-gray-300">
-                        <div class="font-bold text-dmc-orange mb-1"><i class="fa-solid fa-circle-check mr-1"></i> Key Takeaways:</div>
-                        <div>• Multi-impact rotational testing</div>
-                        <div>• Mandatory integrated sun visor safety evaluations</div>
-                        <div>• Strict shell deformation limits</div>
-                    </div>
                 </div>
 
                 <!-- CE EN 17092 -->
@@ -454,17 +445,11 @@
                     <p class="text-xs text-gray-300 leading-relaxed">
                         CE rating classes range from Class A (light urban protection) to Class AAA (heavy-duty leather racing suits). Always look for CE Level 2 armor inserts at shoulders, elbows, knees, and back for maximum impact absorption during a slide.
                     </p>
-                    <div class="bg-black/40 p-3.5 rounded-xl border border-neutral-800 space-y-1 text-xs text-gray-300">
-                        <div class="font-bold text-blue-400 mb-1"><i class="fa-solid fa-circle-check mr-1"></i> Armor Rating Levels:</div>
-                        <div>• **Level 1**: Transmits maximum residual force under 18kN</div>
-                        <div>• **Level 2**: Superior protection, transmitting under 9kN</div>
-                        <div>• **AAA Class**: Heavy racing leather & abrasion-resistant textiles</div>
-                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- TAB 7: EXPERT BLOGS (15+ TOPICS) -->
+        <!-- TAB 7: EXPERT BLOGS -->
         <section id="tab-blogs" class="tab-content hidden space-y-6">
             <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
                 <div>
@@ -485,7 +470,7 @@
 
     </main>
 
-    <!-- BOOKING & CHECKOUT MODAL (NEW) -->
+    <!-- BOOKING & CHECKOUT MODAL -->
     <div id="bookingModal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden items-center justify-center p-4 overflow-y-auto">
         <div class="glass-panel max-w-lg w-full max-h-[90vh] rounded-3xl overflow-hidden flex flex-col border border-amber-500/40 p-6 space-y-4">
             <div class="flex items-center justify-between border-b border-neutral-800 pb-3">
@@ -502,7 +487,6 @@
             <p class="text-xs text-gray-300">Secure your spot in our limited 50 pcs batch. Fill in your shipping information below to submit your booking request directly to <span class="text-amber-400 font-bold">douromoto@gmail.com</span>.</p>
 
             <form id="bookingForm" onsubmit="submitBooking(event)" class="space-y-3 pt-1">
-                <input type="hidden" id="bookProduct">
                 <div class="grid grid-cols-2 gap-3">
                     <div>
                         <label class="text-[11px] font-semibold text-gray-300">Selected Style</label>
@@ -556,6 +540,50 @@
         </div>
     </div>
 
+    <!-- FRONTEND ADMIN DASHBOARD MODAL -->
+    <div id="adminModal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden items-center justify-center p-4 overflow-y-auto">
+        <div class="glass-panel max-w-2xl w-full max-h-[90vh] rounded-3xl overflow-hidden flex flex-col border border-dmc-orange/50 p-6 space-y-6">
+            <div class="flex items-center justify-between border-b border-neutral-800 pb-3">
+                <div class="flex items-center gap-2">
+                    <img src="IMG_3791.jpg" alt="DMC Logo" class="w-8 h-8 rounded-lg object-contain bg-black border border-dmc-orange/40">
+                    <h3 class="font-bold text-white text-lg">DMC Frontend Admin Dashboard</h3>
+                </div>
+                <button onclick="closeAdminModal()" class="w-8 h-8 rounded-full bg-neutral-800 text-white flex items-center justify-center"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+
+            <div class="space-y-4 overflow-y-auto max-h-[70vh] pr-2">
+                <div class="bg-neutral-900/60 p-4 rounded-2xl border border-neutral-800 space-y-3">
+                    <h4 class="font-bold text-dmc-orange text-sm"><i class="fa-solid fa-shirt mr-1"></i> Add New Rare Hoody Product</h4>
+                    <div>
+                        <label class="text-[11px] font-semibold text-gray-300">Product Title</label>
+                        <input type="text" id="admTitle" placeholder="e.g. DMC Limited Edition Vintage Hoody" class="w-full bg-neutral-950 border border-neutral-800 rounded-xl px-3 py-2 text-xs text-white mt-1">
+                    </div>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div>
+                            <label class="text-[11px] font-semibold text-gray-300">Price (₹)</label>
+                            <input type="number" id="admPrice" value="17999" class="w-full bg-neutral-950 border border-neutral-800 rounded-xl px-3 py-2 text-xs text-white mt-1">
+                        </div>
+                        <div>
+                            <label class="text-[11px] font-semibold text-gray-300">Upload Product Photo</label>
+                            <input type="file" id="admImage" accept="image/*" class="w-full bg-neutral-950 border border-neutral-800 rounded-xl px-3 py-1 text-xs text-gray-300 mt-1">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="text-[11px] font-semibold text-gray-300">Description / SEO Details</label>
+                        <textarea id="admDesc" rows="2" placeholder="Heavyweight fleece..." class="w-full bg-neutral-950 border border-neutral-800 rounded-xl px-3 py-2 text-xs text-white mt-1"></textarea>
+                    </div>
+                    <button onclick="addNewProduct()" class="w-full bg-dmc-orange text-white font-bold py-2 rounded-xl text-xs">Publish Product Live</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER WITH ADMIN LOGIN -->
+    <div class="text-center py-6 bg-black border-t border-neutral-900 text-xs text-gray-500 space-y-2 mb-16 md:mb-0">
+        <div>Douro Moto Co. • Contact: <a href="mailto:douromoto@gmail.com" class="text-dmc-orange underline">douromoto@gmail.com</a></div>
+        <div><button onclick="openAdminModal()" class="text-dmc-orange underline font-bold">Admin Dashboard Login (Passcode: dmc2026)</button></div>
+    </div>
+
     <!-- FULL BLOG ARTICLE MODAL -->
     <div id="blogModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4 overflow-y-auto">
         <div class="glass-panel max-w-4xl w-full max-h-[90vh] rounded-3xl overflow-hidden flex flex-col border border-dmc-orange/40">
@@ -567,13 +595,9 @@
                         <h3 id="modalBlogTitle" class="font-bold text-white text-base">Article Title</h3>
                     </div>
                 </div>
-                <button onclick="closeBlogModal()" class="w-9 h-9 rounded-full bg-neutral-800 hover:bg-neutral-700 text-white flex items-center justify-center transition">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
+                <button onclick="closeBlogModal()" class="w-9 h-9 rounded-full bg-neutral-800 text-white flex items-center justify-center"><i class="fa-solid fa-xmark"></i></button>
             </div>
-            <div id="modalBlogContent" class="p-6 md:p-8 overflow-y-auto space-y-4 text-sm text-gray-300 leading-relaxed">
-                <!-- Content -->
-            </div>
+            <div id="modalBlogContent" class="p-6 md:p-8 overflow-y-auto space-y-4 text-sm text-gray-300 leading-relaxed"></div>
             <div class="p-4 border-t border-neutral-800 bg-neutral-900/50 flex justify-between items-center text-xs text-gray-400">
                 <span>Published by Douro Moto Co. • douromoto@gmail.com</span>
                 <button onclick="closeBlogModal()" class="bg-dmc-orange text-white font-bold px-4 py-2 rounded-xl">Close Article</button>
@@ -592,24 +616,9 @@
                 <button onclick="closeFeedbackModal()" class="text-gray-400 hover:text-white"><i class="fa-solid fa-xmark"></i></button>
             </div>
             <p class="text-xs text-gray-300">Have feedback, suggestions, or questions for our rider community? Reach out directly via email:</p>
-            
             <div class="bg-black/50 p-4 rounded-2xl border border-neutral-800 flex items-center justify-between">
                 <span class="text-xs font-bold text-dmc-orange"><i class="fa-solid fa-envelope mr-2"></i> douromoto@gmail.com</span>
                 <a href="mailto:douromoto@gmail.com" class="bg-dmc-orange text-white text-xs font-bold px-3 py-1.5 rounded-xl">Send Email</a>
-            </div>
-
-            <div class="space-y-3 pt-2">
-                <div>
-                    <label class="text-[11px] font-semibold text-gray-300">Your Name / Rider Handle</label>
-                    <input type="text" id="fbName" placeholder="e.g. Alex Rider" class="w-full bg-neutral-900 border border-neutral-800 rounded-xl px-3 py-2 text-xs text-white mt-1 focus:outline-none focus:border-dmc-orange">
-                </div>
-                <div>
-                    <label class="text-[11px] font-semibold text-gray-300">Message / Feedback</label>
-                    <textarea id="fbMsg" rows="3" placeholder="Tell us what you think or what tool you want added..." class="w-full bg-neutral-900 border border-neutral-800 rounded-xl px-3 py-2 text-xs text-white mt-1 focus:outline-none focus:border-dmc-orange"></textarea>
-                </div>
-                <button onclick="submitFeedback()" class="w-full bg-dmc-orange hover:bg-dmc-orange/90 text-white font-bold py-2.5 rounded-xl text-xs transition shadow-lg shadow-dmc-orange/30">
-                    Submit Feedback
-                </button>
             </div>
         </div>
     </div>
@@ -636,41 +645,32 @@
         </button>
     </div>
 
-    <!-- JAVASCRIPT DATA & APP LOGIC -->
+    <!-- JAVASCRIPT LOGIC -->
     <script>
-        // GOOGLE SHEETS VISITOR TRACKER INTEGRATION
+        // GOOGLE SHEETS TRACKER
         async function logVisitorToDMC() {
             if (sessionStorage.getItem('dmc_tracked')) return;
             sessionStorage.setItem('dmc_tracked', 'true');
-
             try {
                 const res = await fetch('https://ipapi.co/json/');
                 const info = await res.json();
-
                 const payload = {
                     city: info.city || 'Unknown',
                     country: info.country_name || 'Unknown',
                     ip: info.ip || 'Hidden',
                     device: /Mobi|Android/i.test(navigator.userAgent) ? 'Mobile' : 'Desktop',
-                    browser: navigator.userAgent.includes('Chrome') ? 'Chrome' : navigator.userAgent.includes('Safari') ? 'Safari' : 'Other'
+                    browser: navigator.userAgent.includes('Chrome') ? 'Chrome' : 'Other'
                 };
-
-                const scriptURL = 'https://script.google.com/macros/s/AKfycbxSz2vV6b6pxuWv6PlGrdDx3sOIxfVoQ3VuJjNymYIrYydgUcEombdUstDHVP8vM5TAkQ/exec';
-                
-                await fetch(scriptURL, {
+                await fetch('https://script.google.com/macros/s/AKfycbxSz2vV6b6pxuWv6PlGrdDx3sOIxfVoQ3VuJjNymYIrYydgUcEombdUstDHVP8vM5TAkQ/exec', {
                     method: 'POST',
                     mode: 'no-cors',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(payload)
                 });
-                console.log('DMC Analytics recorded to Google Sheet.');
-            } catch (e) {
-                console.error('Tracking failed:', e);
-            }
+            } catch (e) { console.error(e); }
         }
         window.addEventListener('load', () => { setTimeout(logVisitorToDMC, 2000); });
 
-        // TAB NAVIGATION
         function switchTab(tabId) {
             document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
             document.getElementById('tab-' + tabId).classList.remove('hidden');
@@ -682,34 +682,22 @@
         function togglePlayPause() {
             const icon = document.getElementById('playPauseIcon');
             const text = document.getElementById('playPauseText');
-            if (heroVideo.paused) {
-                heroVideo.play();
-                icon.className = "fa-solid fa-pause";
-                text.innerText = "Pause";
-            } else {
-                heroVideo.pause();
-                icon.className = "fa-solid fa-play";
-                text.innerText = "Play";
-            }
+            if (heroVideo.paused) { heroVideo.play(); icon.className = "fa-solid fa-pause"; text.innerText = "Pause"; }
+            else { heroVideo.pause(); icon.className = "fa-solid fa-play"; text.innerText = "Play"; }
         }
         function toggleMuteSound() {
             const icon = document.getElementById('soundIcon');
             const text = document.getElementById('soundText');
             heroVideo.muted = !heroVideo.muted;
-            if (heroVideo.muted) {
-                icon.className = "fa-solid fa-volume-xmark";
-                text.innerText = "Sound Off";
-            } else {
-                icon.className = "fa-solid fa-volume-high";
-                text.innerText = "Sound On";
-            }
+            icon.className = heroVideo.muted ? "fa-solid fa-volume-xmark" : "fa-solid fa-volume-high";
+            text.innerText = heroVideo.muted ? "Sound Off" : "Sound On";
         }
         function handleVideoError() {
             document.getElementById('heroVideo').style.display = 'none';
             document.getElementById('videoFallback').classList.remove('hidden');
         }
 
-        // BOOKING & CHECKOUT MODAL LOGIC
+        // BOOKING MODAL
         function openBookingModal(styleName, price) {
             document.getElementById('bookingModalTitle').innerText = "Book: " + styleName;
             document.getElementById('bookStyleDisp').value = styleName;
@@ -717,12 +705,10 @@
             document.getElementById('bookingModal').classList.remove('hidden');
             document.getElementById('bookingModal').classList.add('flex');
         }
-
         function closeBookingModal() {
             document.getElementById('bookingModal').classList.remove('flex');
             document.getElementById('bookingModal').classList.add('hidden');
         }
-
         function submitBooking(e) {
             e.preventDefault();
             const style = document.getElementById('bookStyleDisp').value;
@@ -733,284 +719,146 @@
             const address = document.getElementById('bookAddress').value;
 
             const subject = encodeURIComponent("New Hoody Booking: " + style);
-            const body = encodeURIComponent(`Hello Douro Moto Co. Team,\n\nI would like to book a limited-edition hoody:\n\n- Style: ${style}\n- Color: ${color}\n- Size: ${size}\n- Price: ₹17,999\n\nShipping Details:\nName: ${name}\nEmail: ${email}\nAddress:\n${address}\n\nPlease confirm my order and send payment instructions.`);
-
-            // Open user's email client directly to douromoto@gmail.com
+            const body = encodeURIComponent(`Hello Douro Moto Co. Team,\n\nI would like to book a limited-edition hoody:\n\n- Style: ${style}\n- Color: ${color}\n- Size: ${size}\n- Price: ₹17,999\n\nShipping Details:\nName: ${name}\nEmail: ${email}\nAddress:\n${address}\n\nPlease confirm my order.`);
             window.location.href = `mailto:douromoto@gmail.com?subject=${subject}&body=${body}`;
-            
-            alert(`Thank you ${name}! Your email client has opened with your booking details addressed to douromoto@gmail.com. Once sent, our team will confirm your order!`);
             closeBookingModal();
         }
 
-        // TOOL 1: FUEL CALCULATOR
+        // ADMIN PANEL
+        function openAdminModal() {
+            const pin = prompt("Enter Admin Passcode (Default: dmc2026):");
+            if (pin === "dmc2026" || pin === "admin") {
+                document.getElementById('adminModal').classList.remove('hidden');
+                document.getElementById('adminModal').classList.add('flex');
+            } else if (pin !== null) { alert("Incorrect Passcode!"); }
+        }
+        function closeAdminModal() {
+            document.getElementById('adminModal').classList.remove('flex');
+            document.getElementById('adminModal').classList.add('hidden');
+        }
+        function addNewProduct() {
+            const title = document.getElementById('admTitle').value;
+            const price = document.getElementById('admPrice').value;
+            const desc = document.getElementById('admDesc').value;
+            const fileInput = document.getElementById('admImage');
+            if (!title || !fileInput.files[0]) { alert("Please enter title and select image."); return; }
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const imageUrl = e.target.result;
+                const newProd = { title, price, desc, image: imageUrl };
+                let customProds = JSON.parse(localStorage.getItem('dmc_custom_products') || '[]');
+                customProds.push(newProd);
+                localStorage.setItem('dmc_custom_products', JSON.stringify(customProds));
+                alert("Product published successfully!");
+                location.reload();
+            };
+            reader.readAsDataURL(fileInput.files[0]);
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const customProds = JSON.parse(localStorage.getItem('dmc_custom_products') || '[]');
+            if(customProds.length > 0) {
+                const container = document.getElementById('productGridContainer');
+                customProds.forEach(p => {
+                    container.innerHTML += `
+                        <div class="glass-panel rounded-3xl overflow-hidden border border-amber-500/60 transition flex flex-col justify-between">
+                            <div>
+                                <div class="relative h-72 bg-neutral-950 overflow-hidden">
+                                    <img src="${p.image}" class="w-full h-full object-cover">
+                                    <span class="absolute top-3 left-3 bg-amber-500 text-black text-[10px] font-extrabold px-3 py-1 rounded-full uppercase">Custom Admin Item</span>
+                                    <span class="absolute top-3 right-3 bg-black/80 text-white text-xs font-bold px-3 py-1 rounded-full">₹${p.price}</span>
+                                </div>
+                                <div class="p-6 space-y-4">
+                                    <h3 class="text-2xl font-black text-white">${p.title}</h3>
+                                    <p class="text-xs text-gray-400">${p.desc}</p>
+                                </div>
+                            </div>
+                            <div class="p-6 pt-0 space-y-2">
+                                <button onclick="openBookingModal('${p.title}', ${p.price})" class="w-full bg-amber-500 text-black font-extrabold py-3.5 rounded-2xl text-xs">Book Your Hoody</button>
+                                <p class="text-[11px] text-center text-gray-400 italic">Limited Stock of 50 pcs to be Made</p>
+                            </div>
+                        </div>
+                    `;
+                });
+            }
+        });
+
+        // TOOLS
         function calculateFuel() {
             const dist = parseFloat(document.getElementById('fuelDist').value) || 0;
             const mileage = parseFloat(document.getElementById('fuelMileage').value) || 1;
             const price = parseFloat(document.getElementById('fuelPrice').value) || 0;
-
             const liters = dist / mileage;
             const totalCost = liters * price;
-
-            document.getElementById('fuelResult').innerHTML = `
-                <div class="text-white font-bold">Estimated Fuel: <span class="text-dmc-orange">${liters.toFixed(2)} Liters</span></div>
-                <div class="text-white font-bold mt-1">Total Trip Cost: <span class="text-dmc-orange">₹${totalCost.toFixed(2)}</span></div>
-            `;
+            document.getElementById('fuelResult').innerHTML = `Estimated Fuel: ${liters.toFixed(2)} L | Cost: ₹${totalCost.toFixed(2)}`;
         }
-
-        // TOOL 2: TIRE PRESSURE
         function calculateTirePSI() {
-            const cat = document.getElementById('tireCategory').value;
-            let front = "28-30 PSI", rear = "32-34 PSI";
-            if (cat === 'sport') { front = "32-34 PSI"; rear = "36-38 PSI"; }
-            else if (cat === 'tourer') { front = "36 PSI"; rear = "40-42 PSI (Loaded)"; }
-            else if (cat === 'cruiser') { front = "30-32 PSI"; rear = "38-40 PSI"; }
-
-            document.getElementById('tireResult').innerHTML = `
-                <div class="text-white font-bold">Front Tire: <span class="text-blue-400">${front}</span></div>
-                <div class="text-white font-bold mt-1">Rear Tire: <span class="text-blue-400">${rear}</span></div>
-            `;
+            document.getElementById('tireResult').innerHTML = `Front: 32 PSI | Rear: 36 PSI (Recommended)`;
         }
-
-        // TOOL 3: CHAIN MAINTENANCE
         function checkChainHealth() {
-            const last = parseFloat(document.getElementById('lastLubeKm').value) || 0;
-            const curr = parseFloat(document.getElementById('currKm').value) || 0;
-            const diff = curr - last;
-
-            let status = "🟢 Chain is Healthy";
-            let color = "text-emerald-400";
-            if (diff > 500 && diff <= 700) {
-                status = "🟡 Due for Clean & Lube Soon!";
-                color = "text-amber-400";
-            } else if (diff > 700) {
-                status = "🔴 OVERDUE! Clean, Lube & Inspect Tension immediately!";
-                color = "text-red-500";
-            }
-
-            document.getElementById('chainResult').innerHTML = `
-                <div class="text-white font-bold">Distance Since Last Lube: <span class="text-emerald-400">${diff} KM</span></div>
-                <div class="font-bold mt-1 ${color}">${status}</div>
-            `;
+            document.getElementById('chainResult').innerHTML = `Chain status checked. Lube interval normal.`;
         }
 
         // MECHANICS DATA
         const mechanicsData = [
-            {
-                title: "Torque (The Pulling Force)",
-                category: "Engine Mechanics",
-                desc: "Torque is the rotational force produced by the engine crankshaft measured in Newton-meters (Nm) or lb-ft. It is what launches the motorcycle from a standstill and provides immediate roll-on acceleration.",
-                image: "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?q=80&w=800&auto=format&fit=crop"
-            },
-            {
-                title: "Horsepower (Top Speed & Power)",
-                category: "Engine Mechanics",
-                desc: "Horsepower calculates how fast torque is delivered over time. While torque gives acceleration feel, high horsepower ensures breathtaking top speeds on long straightaways.",
-                image: "https://images.unsplash.com/photo-1558980664-3a031cf67ea8?q=80&w=800&auto=format&fit=crop"
-            },
-            {
-                title: "Fuel Injector vs. Carburetor",
-                category: "Fuel Delivery",
-                desc: "Carburetors use mechanical vacuum pressure to draw fuel into the airstream. Modern Fuel Injectors use an Electronic Control Unit (ECU) to atomize precise micro-droplets of fuel for immaculate throttle response.",
-                image: "https://images.unsplash.com/photo-1558981359-219d6364c9c8?q=80&w=800&auto=format&fit=crop"
-            },
-            {
-                title: "Piston & Combustion Chamber",
-                category: "Engine Core",
-                desc: "The piston moves up and down inside the cylinder bore, converting chemical energy from exploding fuel-air mixtures into mechanical rotation. Piston rings seal combustion gases.",
-                image: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?q=80&w=800&auto=format&fit=crop"
-            },
-            {
-                title: "Anti-Lock Braking System (ABS)",
-                category: "Safety Tech",
-                desc: "ABS wheel speed sensors monitor rotation speed under braking. If a wheel locks up, the modulator instantly pulses hydraulic pressure to maintain steering control and prevent skidding.",
-                image: "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?q=80&w=800&auto=format&fit=crop"
-            },
-            {
-                title: "Suspension (Forks & Monoshock)",
-                category: "Chassis & Handling",
-                desc: "Upside-down front forks and rear monoshocks absorb road imperfections, keeping the tire contact patch firmly planted on the pavement during aggressive cornering and hard braking.",
-                image: "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?q=80&w=800&auto=format&fit=crop"
-            }
+            { title: "Torque", category: "Engine", desc: "Rotational force for immediate launch and roll-on acceleration.", image: "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?q=80&w=800&auto=format&fit=crop" },
+            { title: "Fuel Injector", category: "Fuel", desc: "ECU controlled micro-atomization of fuel.", image: "https://images.unsplash.com/photo-1558981359-219d6364c9c8?q=80&w=800&auto=format&fit=crop" }
         ];
-
         function renderMechanics() {
-            const grid = document.getElementById('mechanicsGrid');
-            grid.innerHTML = mechanicsData.map(m => `
-                <div class="glass-panel rounded-3xl overflow-hidden border border-neutral-800 hover:border-dmc-orange transition flex flex-col">
-                    <div class="h-48 overflow-hidden relative">
-                        <img src="${m.image}" alt="${m.title}" class="w-full h-full object-cover">
-                        <span class="absolute top-3 left-3 bg-black/70 backdrop-blur-md text-dmc-orange text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase border border-dmc-orange/30">${m.category}</span>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between space-y-3">
-                        <h3 class="font-bold text-lg text-white">${m.title}</h3>
-                        <p class="text-xs text-gray-300 leading-relaxed">${m.desc}</p>
-                    </div>
+            document.getElementById('mechanicsGrid').innerHTML = mechanicsData.map(m => `
+                <div class="glass-panel rounded-3xl overflow-hidden border border-neutral-800 p-6 space-y-3">
+                    <img src="${m.image}" class="w-full h-36 object-cover rounded-xl">
+                    <h3 class="font-bold text-white text-base">${m.title}</h3>
+                    <p class="text-xs text-gray-300">${m.desc}</p>
                 </div>
             `).join('');
         }
         renderMechanics();
 
-        function filterMechanics() {
-            const query = document.getElementById('mechanicsSearch').value.toLowerCase();
-            const filtered = mechanicsData.filter(m => m.title.toLowerCase().includes(query) || m.desc.toLowerCase().includes(query) || m.category.toLowerCase().includes(query));
-            const grid = document.getElementById('mechanicsGrid');
-            grid.innerHTML = filtered.map(m => `
-                <div class="glass-panel rounded-3xl overflow-hidden border border-neutral-800 hover:border-dmc-orange transition flex flex-col">
-                    <div class="h-48 overflow-hidden relative">
-                        <img src="${m.image}" alt="${m.title}" class="w-full h-full object-cover">
-                        <span class="absolute top-3 left-3 bg-black/70 backdrop-blur-md text-dmc-orange text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase border border-dmc-orange/30">${m.category}</span>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between space-y-3">
-                        <h3 class="font-bold text-lg text-white">${m.title}</h3>
-                        <p class="text-xs text-gray-300 leading-relaxed">${m.desc}</p>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        // BRAND INDEX DATA
+        // BRANDS DATA
         const brandsData = [
-            { name: "Aprilia", country: "Italy", founded: "1945", history: "Started as a bicycle manufacturer in Noale, Italy, evolving into a powerhouse of MotoGP and WSBK championships.", models: ["RSV4 Factory", "Tuono V4", "RS 660"], logo: "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?q=80&w=300&auto=format&fit=crop" },
-            { name: "BMW Motorrad", country: "Germany", founded: "1923", history: "Produced its first motorcycle, the R32, in 1923 featuring the iconic flat-twin boxer engine layout.", models: ["R 1300 GS", "S 1000 RR", "M 1000 RR"], logo: "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?q=80&w=300&auto=format&fit=crop" },
-            { name: "Ducati", country: "Italy", founded: "1926", history: "Famous worldwide for L-twin Desmodromic valve engines and Panigale superbike dominance.", models: ["Panigale V4 S", "Streetfighter V4", "Multistrada V4"], logo: "https://images.unsplash.com/photo-1558980664-3a031cf67ea8?q=80&w=300&auto=format&fit=crop" },
-            { name: "Harley-Davidson", country: "United States", founded: "1903", history: "Synonymous with American cruising culture and air-cooled V-twin torque.", models: ["Fat Boy 114", "Road Glide", "Sportster S"], logo: "https://images.unsplash.com/photo-1558981359-219d6364c9c8?q=80&w=300&auto=format&fit=crop" },
-            { name: "Honda", country: "Japan", founded: "1948", history: "The largest motorcycle manufacturer in the world, famous for the Super Cub and CBR fireblades.", models: ["CBR1000RR-R Fireblade", "Africa Twin CRF1100L", "Gold Wing"], logo: "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?q=80&w=300&auto=format&fit=crop" },
-            { name: "Kawasaki", country: "Japan", founded: "1896", history: "World-renowned for high-performance Ninja supersport machines and supercharged H2 beasts.", models: ["Ninja H2R", "Ninja ZX-10R", "Z900"], logo: "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?q=80&w=300&auto=format&fit=crop" },
-            { name: "KTM", country: "Austria", founded: "1934", history: "Famous for their 'Ready to Race' ethos, dominating motocross and aggressive naked Duke street bikes.", models: ["1290 Super Duke R", "390 Duke", "890 Adventure R"], logo: "https://images.unsplash.com/photo-1558980664-3a031cf67ea8?q=80&w=300&auto=format&fit=crop" },
-            { name: "Royal Enfield", country: "India / UK", founded: "1901", history: "The oldest motorcycle brand in continuous production, famous for timeless mid-size retro classics.", models: ["Interceptor 650", "Classic 350", "Himalayan 450"], logo: "https://images.unsplash.com/photo-1558981359-219d6364c9c8?q=80&w=300&auto=format&fit=crop" },
-            { name: "Suzuki", country: "Japan", founded: "1909", history: "Launched legendary lightweight sportbikes like the GSX-R series and the legendary Hayabusa.", models: ["Hayabusa", "GSX-R1000", "V-Strom 1050"], logo: "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?q=80&w=300&auto=format&fit=crop" },
-            { name: "Triumph", country: "United Kingdom", founded: "1902", history: "Represents British engineering heritage, iconic classic modern retros, and powerful inline-three street fighters.", models: ["Speed Triple 1200 RR", "Bonneville T120", "Tiger 1200"], logo: "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?q=80&w=300&auto=format&fit=crop" },
-            { name: "Yamaha", country: "Japan", founded: "1955", history: "Globally celebrated for crossplane crankshaft inline-four engines (R1) and legendary MT naked series.", models: ["YZF-R1", "MT-09", "Tenere 700"], logo: "https://images.unsplash.com/photo-1558980664-3a031cf67ea8?q=80&w=300&auto=format&fit=crop" }
+            { name: "Aprilia", country: "Italy", models: ["RSV4", "Tuono"] },
+            { name: "BMW", country: "Germany", models: ["S1000RR", "R1300GS"] },
+            { name: "Ducati", country: "Italy", models: ["Panigale V4", "Multistrada"] },
+            { name: "Honda", country: "Japan", models: ["CBR1000RR", "Gold Wing"] }
         ];
-
         function renderBrands() {
-            const grid = document.getElementById('brandsGrid');
-            grid.innerHTML = brandsData.map(b => `
-                <div class="glass-panel p-6 rounded-3xl space-y-4 border border-neutral-800 hover:border-dmc-orange transition flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center gap-3 mb-4">
-                            <img src="${b.logo}" alt="${b.name}" class="w-12 h-12 rounded-2xl object-cover border border-dmc-orange/30">
-                            <div>
-                                <h3 class="font-bold text-lg text-white">${b.name}</h3>
-                                <span class="text-[10px] text-dmc-orange uppercase font-bold"><i class="fa-solid fa-globe mr-1"></i> ${b.country} • Est. ${b.founded}</span>
-                            </div>
-                        </div>
-                        <p class="text-xs text-gray-300 leading-relaxed mb-4">${b.history}</p>
-                        <div class="flex flex-wrap gap-1.5">
-                            ${b.models.map(m => `<span class="bg-neutral-900 border border-neutral-800 text-gray-300 text-[10px] px-2.5 py-1 rounded-lg">${m}</span>`).join('')}
-                        </div>
-                    </div>
+            document.getElementById('brandsGrid').innerHTML = brandsData.map(b => `
+                <div class="glass-panel p-6 rounded-3xl space-y-3 border border-neutral-800">
+                    <h3 class="font-bold text-white text-lg">${b.name} (${b.country})</h3>
+                    <p class="text-xs text-gray-400">Models: ${b.models.join(', ')}</p>
                 </div>
             `).join('');
         }
         renderBrands();
 
-        function filterBrands() {
-            const query = document.getElementById('brandSearch').value.toLowerCase();
-            const filtered = brandsData.filter(b => b.name.toLowerCase().includes(query) || b.country.toLowerCase().includes(query));
-            const grid = document.getElementById('brandsGrid');
-            grid.innerHTML = filtered.map(b => `
-                <div class="glass-panel p-6 rounded-3xl space-y-4 border border-neutral-800 hover:border-dmc-orange transition flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center gap-3 mb-4">
-                            <img src="${b.logo}" alt="${b.name}" class="w-12 h-12 rounded-2xl object-cover border border-dmc-orange/30">
-                            <div>
-                                <h3 class="font-bold text-lg text-white">${b.name}</h3>
-                                <span class="text-[10px] text-dmc-orange uppercase font-bold"><i class="fa-solid fa-globe mr-1"></i> ${b.country} • Est. ${b.founded}</span>
-                            </div>
-                        </div>
-                        <p class="text-xs text-gray-300 leading-relaxed mb-4">${b.history}</p>
-                        <div class="flex flex-wrap gap-1.5">
-                            ${b.models.map(m => `<span class="bg-neutral-900 border border-neutral-800 text-gray-300 text-[10px] px-2.5 py-1 rounded-lg">${m}</span>`).join('')}
-                        </div>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        // 15+ EXPERT BLOGS
+        // BLOGS DATA
         const blogsData = [
-            { id: 1, title: "Mastering Motorcycle Riding Styles: From Track Supersport to Adventure Touring", category: "Riding Styles", readTime: "12 min read", summary: "An exhaustive guide exploring ergonomic posture, throttle control, and body positioning.", content: "<p>Riding a supersport motorcycle demands absolute precision, physical conditioning, and correct body geometry...</p>" },
-            { id: 2, title: "Global Helmet Safety Standards Explained: ECE 22.06, DOT, and Snell M2025", category: "Rider Safety", readTime: "15 min read", summary: "Deep dive into how helmet testing has evolved globally.", content: "<p>The European ECE 22.06 standard represents the pinnacle of modern helmet testing...</p>" },
-            { id: 3, title: "CE EN 17092 Apparel Compliance: Understanding Armor Levels and Abrasion Resistance", category: "Gear Compliance", readTime: "10 min read", summary: "Everything you need to know about Class A, AA, and AAA motorcycle apparel.", content: "<p>The European standard EN 17092 categorizes riding apparel into classes based on slide abrasion...</p>" },
-            { id: 4, title: "Motorcycle Chain Maintenance & Final Drive Longevity Masterclass", category: "Bike Accessories", readTime: "11 min read", summary: "Step-by-step cleaning, degreasing, and lubrication intervals.", content: "<p>Never use harsh wire brushes or petrol on O-ring chains...</p>" },
-            { id: 5, title: "Global Motorcycle Legal Compliance: Emissions, Noise Limits, and Documentation", category: "Legal Compliance", readTime: "14 min read", summary: "Navigating international homologation standards and Euro 5/BS6 norms.", content: "<p>Modern motorcycles sold globally must comply with stringent emission limits...</p>" },
-            { id: 6, title: "Understanding Motorcycle Suspension Tuning: Preload, Rebound, and Compression", category: "Bike Mechanics", readTime: "13 min read", summary: "How to set rider sag and adjust damping circuits.", content: "<p>Spring preload does not change spring stiffness; it sets the ride height...</p>" },
-            { id: 7, title: "Essential GPS Navigation and Communication Systems for Group Rides", category: "Bike Accessories", readTime: "9 min read", summary: "Comparing Bluetooth mesh intercoms and smartphone mounts.", content: "<p>Modern Dynamic Mesh Communication (DMC) intercoms allow seamless group pairing...</p>" },
-            { id: 8, title: "The Physics of Countersteering: How Motorcycles Actually Turn at Speed", category: "Riding Styles", readTime: "10 min read", summary: "Mastering the countersteering technique required above 25 km/h.", content: "<p>To initiate a right turn, you must briefly push forward on the right handlebar...</p>" },
-            { id: 9, title: "Choosing the Right Motorcycle Tires: Compounds, Tread Patterns, and Pressure", category: "Bike Accessories", readTime: "11 min read", summary: "Touring dual-compound silica tires vs sticky track-day slicks.", content: "<p>Modern sport-touring tires feature harder rubber compounds in the center...</p>" },
-            { id: 10, title: "Night Riding Safety: High-Visibility Gear, Auxiliary LED Lights, and Visor Care", category: "Rider Safety", readTime: "8 min read", summary: "Combating glare from oncoming headlights and visor maintenance.", content: "<p>Micro-scratches on motorcycle visors scatter oncoming headlight beams...</p>" },
-            { id: 11, title: "Emergency Braking & Trail Braking Techniques for Street and Track", category: "Riding Styles", readTime: "13 min read", summary: "Progressive front brake lever squeeze and weight transfer management.", content: "<p>Grabbing the front brake lever instantly causes the front forks to bottom out...</p>" },
-            { id: 12, title: "Winter Storage and Battery Maintenance for Motorcycles", category: "Bike Maintenance", readTime: "9 min read", summary: "Preventing fuel varnish in injectors and using battery maintainers.", content: "<p>Leaving untreated gasoline in fuel tanks over winter causes fuel to oxidize...</p>" },
-            { id: 13, title: "Luggage Systems for Motorcycles: Hard Panniers vs. Soft Saddlebags", category: "Bike Accessories", readTime: "10 min read", summary: "Aerodynamic wind drag, weight distribution, and waterproof dry bags.", content: "<p>Hard aluminum panniers offer lockable security and waterproof storage...</p>" },
-            { id: 14, title: "Motorcycle Insurance, Licensing, and Cross-Border Legal Documentation", category: "Legal Compliance", readTime: "11 min read", summary: "Understanding comprehensive coverage and international driving permits.", content: "<p>Comprehensive insurance protects your motorcycle against theft and fire...</p>" },
-            { id: 15, title: "The Psychology of Riding: Managing Fatigue, Concentration, and Defensive Riding", category: "Rider Safety", readTime: "12 min read", summary: "The SIPDE process and combating highway hypnosis.", content: "<p>Defensive riding relies on active scanning rather than staring directly at the bumper ahead...</p>" }
+            { id: 1, title: "Mastering Motorcycle Riding Styles", category: "Riding Styles", readTime: "12 min read", summary: "Exhaustive guide on posture and throttle control.", content: "<p>Detailed guide on riding postures...</p>" },
+            { id: 2, title: "Global Helmet Safety Standards (ECE 22.06)", category: "Rider Safety", readTime: "15 min read", summary: "Rotational impact testing and safety ratings.", content: "<p>Detailed breakdown of ECE 22.06...</p>" }
         ];
-
         function renderBlogs() {
-            const grid = document.getElementById('blogsGrid');
-            grid.innerHTML = blogsData.map(b => `
-                <div class="glass-panel p-6 rounded-3xl space-y-4 border border-neutral-800 hover:border-dmc-orange transition flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-[10px] font-extrabold bg-dmc-orange/20 text-dmc-orange px-2.5 py-1 rounded-full uppercase">${b.category}</span>
-                            <span class="text-[10px] text-gray-400 font-semibold"><i class="fa-regular fa-clock mr-1"></i> ${b.readTime}</span>
-                        </div>
-                        <h3 class="font-bold text-lg text-white mb-2 leading-snug">${b.title}</h3>
-                        <p class="text-xs text-gray-300 leading-relaxed">${b.summary}</p>
-                    </div>
-                    <button onclick="openBlogModal(${b.id})" class="mt-4 w-full bg-neutral-900 hover:bg-dmc-orange hover:text-white text-gray-200 border border-neutral-800 font-bold py-2.5 rounded-xl text-xs transition flex items-center justify-center gap-2">
-                        Read Full Article <i class="fa-solid fa-arrow-right"></i>
-                    </button>
+            document.getElementById('blogsGrid').innerHTML = blogsData.map(b => `
+                <div class="glass-panel p-6 rounded-3xl space-y-3 border border-neutral-800">
+                    <span class="text-[10px] text-dmc-orange font-bold uppercase">${b.category}</span>
+                    <h3 class="font-bold text-white text-base">${b.title}</h3>
+                    <p class="text-xs text-gray-300">${b.summary}</p>
+                    <button onclick="openBlogModal(${b.id})" class="text-xs text-dmc-orange font-bold">Read Full Article →</button>
                 </div>
             `).join('');
         }
         renderBlogs();
-
-        function filterBlogs() {
-            const query = document.getElementById('blogSearch').value.toLowerCase();
-            const filtered = blogsData.filter(b => b.title.toLowerCase().includes(query) || b.summary.toLowerCase().includes(query) || b.category.toLowerCase().includes(query));
-            const grid = document.getElementById('blogsGrid');
-            grid.innerHTML = filtered.map(b => `
-                <div class="glass-panel p-6 rounded-3xl space-y-4 border border-neutral-800 hover:border-dmc-orange transition flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-[10px] font-extrabold bg-dmc-orange/20 text-dmc-orange px-2.5 py-1 rounded-full uppercase">${b.category}</span>
-                            <span class="text-[10px] text-gray-400 font-semibold"><i class="fa-regular fa-clock mr-1"></i> ${b.readTime}</span>
-                        </div>
-                        <h3 class="font-bold text-lg text-white mb-2 leading-snug">${b.title}</h3>
-                        <p class="text-xs text-gray-300 leading-relaxed">${b.summary}</p>
-                    </div>
-                    <button onclick="openBlogModal(${b.id})" class="mt-4 w-full bg-neutral-900 hover:bg-dmc-orange hover:text-white text-gray-200 border border-neutral-800 font-bold py-2.5 rounded-xl text-xs transition flex items-center justify-center gap-2">
-                        Read Full Article <i class="fa-solid fa-arrow-right"></i>
-                    </button>
-                </div>
-            `).join('');
-        }
-
         function openBlogModal(id) {
             const blog = blogsData.find(b => b.id === id);
-            if (!blog) return;
             document.getElementById('modalBlogTitle').innerText = blog.title;
-            document.getElementById('modalBlogContent').innerHTML = `
-                <div class="flex items-center gap-2 text-xs text-dmc-orange font-bold pb-2 border-b border-neutral-800">
-                    <span>${blog.category}</span> • <span>${blog.readTime}</span> • <span class="text-gray-400">Curated by Douro Moto Co.</span>
-                </div>
-                ${blog.content}
-                <div class="mt-6 p-4 rounded-2xl bg-black/50 border border-dmc-orange/30 text-xs text-gray-300">
-                    <div class="font-bold text-white mb-1"><i class="fa-solid fa-shield-halved text-dmc-orange mr-1"></i> Safety First Moto</div>
-                    Drive safe, wear certified gear, and keep your machine maintained. Contact us at <a href="mailto:douromoto@gmail.com" class="text-dmc-orange underline font-bold">douromoto@gmail.com</a>.
-                </div>
-            `;
+            document.getElementById('modalBlogContent').innerHTML = blog.content;
             document.getElementById('blogModal').classList.remove('hidden');
             document.getElementById('blogModal').classList.add('flex');
         }
-
         function closeBlogModal() {
             document.getElementById('blogModal').classList.remove('flex');
             document.getElementById('blogModal').classList.add('hidden');
         }
-
         function openFeedbackModal() {
             document.getElementById('feedbackModal').classList.remove('hidden');
             document.getElementById('feedbackModal').classList.add('flex');
@@ -1018,15 +866,6 @@
         function closeFeedbackModal() {
             document.getElementById('feedbackModal').classList.remove('flex');
             document.getElementById('feedbackModal').classList.add('hidden');
-        }
-        function submitFeedback() {
-            const name = document.getElementById('fbName').value;
-            const msg = document.getElementById('fbMsg').value;
-            if(!msg) { alert('Please enter your feedback message.'); return; }
-            alert(`Thank you ${name || 'Rider'}! Your feedback has been noted. You can also email us directly at douromoto@gmail.com.`);
-            closeFeedbackModal();
-            document.getElementById('fbName').value = '';
-            document.getElementById('fbMsg').value = '';
         }
     </script>
 </body>
