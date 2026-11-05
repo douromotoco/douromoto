@@ -1,24 +1,38 @@
 [
   {
-    "id": "crash-guard-dominar",
+    "id": "heavy-duty-crash-guard-dominar-400",
     "title": "Heavy-Duty Crash Guard for Dominar 400",
     "slug": "heavy-duty-crash-guard-dominar-400",
+    "category": "crash-guards",
+    "categoryName": "Crash Guards",
     "description": "Custom engineered heavy-duty steel crash guards with slider pucks for highway touring and off-road protection.",
     "price": 4499,
     "currency": "INR",
     "availability": "InStock",
-    "image": "/images/crash-guard.jpg",
-    "category": "Protection"
+    "image": "/images/crash-guard.jpg"
   },
   {
-    "id": "fog-light-clamps",
+    "id": "stainless-steel-fog-light-clamps",
     "title": "Stainless Steel Handlebar Fog Light Clamps",
-    "slug": "stainless-steel-handlebar-fog-light-clamps",
+    "slug": "stainless-steel-fog-light-clamps",
+    "category": "lighting",
+    "categoryName": "Lighting & Mounts",
     "description": "Vibration-free auxiliary LED light mounts machined for standard motorcycle handlebars and crash bars.",
     "price": 899,
     "currency": "INR",
     "availability": "InStock",
-    "image": "/images/fog-clamp.jpg",
-    "category": "Lighting"
+    "image": "/images/fog-clamp.jpg"
+  },
+  {
+    "id": "dmc-logo-pullover-hoody",
+    "title": "DMC Logo Pullover Unisex Hoody",
+    "slug": "dmc-logo-pullover-hoody",
+    "category": "apparel",
+    "categoryName": "Rare Hoodies",
+    "description": "Heavyweight thermal fleece pullover featuring white DMC piston & wings chest branding and left-pocket logo alignment.",
+    "price": 17999,
+    "currency": "INR",
+    "availability": "InStock",
+    "image": "/images/hoodie-pullover.jpg"
   }
 ]
