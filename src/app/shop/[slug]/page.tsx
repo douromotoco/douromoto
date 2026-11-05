@@ -1,98 +1,97 @@
-import Link from 'next/link';
+import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import productsData from '@/data/products.json';
 import { Metadata } from 'next';
 
-export const metadata: Metadata = {
-  title: 'SHOP | DOURO MOTO CO.',
-  description: 'Browse our complete catalog of motorcycle crash guards, lighting mounts, and rare apparel.',
-};
-
 type Props = {
-  searchParams: Promise<{ category?: string }>;
+  params: Promise<{ slug: string }>;
 };
 
-export default async function ShopPage({ searchParams }: Props) {
-  const { category } = await searchParams;
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const product = productsData.find((p) => p.slug === slug);
 
-  const filteredProducts = category
-    ? productsData.filter((p) => p.category === category)
-    : productsData;
+  if (!product) return { title: 'Product Not Found - DOURO MOTO CO.' };
+
+  return {
+    title: `${product.title} | DOURO MOTO CO.`,
+    description: product.description,
+    alternates: {
+      canonical: `https://douromoto.com/shop/${product.slug}`,
+    },
+    openGraph: {
+      title: product.title,
+      description: product.description,
+      url: `https://douromoto.com/shop/${product.slug}`,
+      images: [{ url: product.image }],
+    },
+  };
+}
+
+export default async function ProductPage({ params }: Props) {
+  const { slug } = await params;
+  const product = productsData.find((p) => p.slug === slug);
+
+  if (!product) notFound();
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: product.title,
+    image: `https://douromoto.com${product.image}`,
+    description: product.description,
+    brand: {
+      '@type': 'Brand',
+      name: 'DOURO MOTO CO.',
+    },
+    offers: {
+      '@type': 'Offer',
+      priceCurrency: product.currency,
+      price: product.price,
+      availability: `https://schema.org/${product.availability}`,
+      url: `https://douromoto.com/shop/${product.slug}`,
+    },
+  };
 
   return (
-    <main className="max-w-7xl mx-auto px-4 py-10 space-y-8">
-      <div>
-        <h1 className="text-3xl font-black tracking-tight text-white">SHOP CATALOG</h1>
-        <p className="text-xs text-gray-400 mt-1">Select a category or browse all engineered accessories.</p>
-      </div>
+    <main className="max-w-5xl mx-auto px-4 py-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
 
-      {/* Category Filter Navigation */}
-      <div className="flex items-center gap-3 overflow-x-auto pb-2">
-        <Link
-          href="/shop"
-          className={`px-4 py-2 rounded-xl text-xs font-bold transition whitespace-nowrap ${
-            !category ? 'bg-orange-600 text-white' : 'bg-neutral-900 border border-neutral-800 text-gray-300 hover:text-white'
-          }`}
-        >
-          All Accessories
-        </Link>
-        <Link
-          href="/shop?category=crash-guards"
-          className={`px-4 py-2 rounded-xl text-xs font-bold transition whitespace-nowrap ${
-            category === 'crash-guards' ? 'bg-orange-600 text-white' : 'bg-neutral-900 border border-neutral-800 text-gray-300 hover:text-white'
-          }`}
-        >
-          Crash Guards
-        </Link>
-        <Link
-          href="/shop?category=lighting"
-          className={`px-4 py-2 rounded-xl text-xs font-bold transition whitespace-nowrap ${
-            category === 'lighting' ? 'bg-orange-600 text-white' : 'bg-neutral-900 border border-neutral-800 text-gray-300 hover:text-white'
-          }`}
-        >
-          Lighting & Mounts
-        </Link>
-        <Link
-          href="/shop?category=apparel"
-          className={`px-4 py-2 rounded-xl text-xs font-bold transition whitespace-nowrap ${
-            category === 'apparel' ? 'bg-orange-600 text-white' : 'bg-neutral-900 border border-neutral-800 text-gray-300 hover:text-white'
-          }`}
-        >
-          Rare Hoodies
-        </Link>
-      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div className="relative h-96 w-full rounded-3xl overflow-hidden bg-neutral-950 border border-neutral-800">
+          <Image
+            src={product.image}
+            alt={product.title}
+            fill
+            priority
+            className="object-cover"
+          />
+        </div>
+        <div className="space-y-6 flex flex-col justify-center">
+          <div>
+            <span className="text-xs font-bold text-orange-500 bg-orange-500/10 px-3 py-1 rounded-full uppercase border border-orange-500/20">
+              {product.categoryName}
+            </span>
+            <h1 className="text-3xl font-black text-white mt-3">{product.title}</h1>
+            <p className="text-2xl font-black text-orange-500 mt-2">₹{product.price.toLocaleString('en-IN')}</p>
+          </div>
+          <p className="text-sm text-gray-300 leading-relaxed">{product.description}</p>
 
-      {/* Products Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {filteredProducts.map((product) => (
-          <Link
-            key={product.id}
-            href={`/shop/${product.slug}`}
-            className="glass-panel rounded-3xl overflow-hidden border border-neutral-800 hover:border-orange-500 transition flex flex-col justify-between group bg-neutral-900/50"
-          >
-            <div>
-              <div className="relative h-64 w-full bg-neutral-950 overflow-hidden">
-                <Image
-                  src={product.image}
-                  alt={product.title}
-                  fill
-                  className="object-cover group-hover:scale-105 transition duration-500"
-                />
-                <span className="absolute top-3 left-3 bg-orange-600 text-white text-[10px] font-extrabold px-3 py-1 rounded-full uppercase">
-                  {product.categoryName}
-                </span>
-              </div>
-              <div className="p-6 space-y-2">
-                <h2 className="font-bold text-lg text-white group-hover:text-orange-500 transition">{product.title}</h2>
-                <p className="text-xs text-gray-400 line-clamp-2">{product.description}</p>
-              </div>
-            </div>
-            <div className="p-6 pt-0 flex items-center justify-between">
-              <span className="text-lg font-black text-white">₹{product.price.toLocaleString('en-IN')}</span>
-              <span className="text-xs font-bold text-orange-500">View Product →</span>
-            </div>
-          </Link>
-        ))}
+          <div className="pt-4">
+            <a
+              href={`https://wa.me/919999999999?text=I%20want%20to%20inquire%20about%20${encodeURIComponent(product.title)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 w-full bg-green-600 hover:bg-green-500 text-white font-extrabold px-8 py-4 rounded-2xl transition shadow-lg shadow-green-600/30"
+            >
+              Inquire on WhatsApp
+            </a>
+            <p className="text-[11px] text-center text-gray-500 mt-2">Official Contact: douromoto@gmail.com</p>
+          </div>
+        </div>
       </div>
     </main>
   );
