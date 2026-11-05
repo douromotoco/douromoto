@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import "./globals.css"; // Ensure you have your Tailwind/global styles imported
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "DOURO MOTO CO. | Motorcycle Gear & Accessories",
-  description: "Custom engineered heavy-duty crash guards, riding gear, and accessories.",
+  description: "Custom engineered motorcycle crash guards, riding gear, auxiliary mounts, and rare apparel.",
   verification: {
     google: "83dhm97mJj--8-5JfT99CffuuKFRFhHVEZTKnJun6UM",
   },
@@ -15,23 +15,24 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className="bg-white text-gray-900 antialiased">
-        {/* Optional Header / Navigation Bar */}
-        <header className="border-b border-gray-200 py-4 px-6 flex justify-between items-center max-w-6xl mx-auto">
-          <a href="/" className="font-bold text-xl tracking-wide">DOURO MOTO CO.</a>
-          <nav className="space-x-6">
-            <a href="/shop" className="hover:text-gray-600 font-medium">SHOP</a>
-            <a href="/wishlist" className="hover:text-gray-600 font-medium">WISHLIST</a>
-          </nav>
+    <html lang="en" className="dark">
+      <body className="bg-[#0a0a0a] text-[#f5f5f5] min-h-screen flex flex-col font-sans selection:bg-orange-600 selection:text-white">
+        <header className="sticky top-0 z-50 bg-neutral-900/80 backdrop-blur-md border-b border-neutral-800 px-4 py-3">
+          <div className="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="/" className="font-extrabold text-lg tracking-wider text-white flex items-center gap-2">
+              DOURO MOTO CO. <span className="text-orange-500 text-xs px-1.5 py-0.5 rounded bg-orange-500/10 border border-orange-500/30">DMC</span>
+            </a>
+            <nav className="flex items-center space-x-6 text-sm font-medium">
+              <a href="/" className="hover:text-orange-500 transition">Explore</a>
+              <a href="/shop" className="hover:text-orange-500 transition text-amber-400 font-bold">SHOP</a>
+            </nav>
+          </div>
         </header>
 
-        {/* Main Page Content */}
-        {children}
+        <main className="flex-1">{children}</main>
 
-        {/* Optional Footer */}
-        <footer className="border-t border-gray-200 py-6 text-center text-sm text-gray-500 mt-12">
-          © {new Date().getFullYear()} DOURO MOTO CO. All rights reserved. | Contact: douromoto@gmail.com
+        <footer className="border-t border-neutral-800 py-8 text-center text-xs text-gray-500 mt-12 bg-neutral-950">
+          © {new Date().getFullYear()} DOURO MOTO CO. • Contact: douromoto@gmail.com
         </footer>
       </body>
     </html>
