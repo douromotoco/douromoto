@@ -1,0 +1,24 @@
+[
+  {
+    "id": "crash-guard-dominar",
+    "title": "Heavy-Duty Crash Guard for Dominar 400",
+    "slug": "heavy-duty-crash-guard-dominar-400",
+    "description": "Custom engineered heavy-duty steel crash guards with slider pucks for highway touring and off-road protection.",
+    "price": 4499,
+    "currency": "INR",
+    "availability": "InStock",
+    "image": "/images/crash-guard.jpg",
+    "category": "Protection"
+  },
+  {
+    "id": "fog-light-clamps",
+    "title": "Stainless Steel Handlebar Fog Light Clamps",
+    "slug": "stainless-steel-handlebar-fog-light-clamps",
+    "description": "Vibration-free auxiliary LED light mounts machined for standard motorcycle handlebars and crash bars.",
+    "price": 899,
+    "currency": "INR",
+    "availability": "InStock",
+    "image": "/images/fog-clamp.jpg",
+    "category": "Lighting"
+  }
+]
