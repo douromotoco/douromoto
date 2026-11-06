@@ -140,7 +140,7 @@
         <div id="productGrid" class="grid grid-cols-2 gap-3">
           <div class="col-span-2 text-center py-16 text-neutral-500 text-xs flex items-center justify-center gap-2">
             <svg class="animate-spin h-4 w-4 text-brand" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path></svg>
-            <span>Syncing catalog from Supabase Database...</span>
+            <span>Syncing catalog from Google Sheet...</span>
           </div>
         </div>
       </div>
@@ -153,7 +153,7 @@
             onerror="this.parentElement.innerHTML='<span class=\'font-teko text-xl text-brand font-bold\'>DMC</span>'" />
         </div>
         <h2 class="font-teko text-2xl uppercase tracking-wider text-brand">Douro Moto Co. Community</h2>
-        <p class="text-xs text-neutral-400">Watch our latest gear reels, reviews & ride logs</p>
+        <p class="text-xs text-neutral-400">Watch our latest gear unboxings, reviews & ride logs</p>
         <a href="https://instagram.com/douromotoco" target="_blank" rel="noopener noreferrer" 
           class="inline-block mt-2 text-[11px] text-neutral-300 font-bold underline underline-offset-4">
           Open Instagram Feed
@@ -283,65 +283,15 @@
     </div>
   </nav>
 
-  <!-- Supabase Integration for Database Inventory -->
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script>
-    // Supabase Configuration (Replace with your project credentials when connected)
-    const SUPABASE_URL = 'YOUR_SUPABASE_URL';
-    const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';
-    
-    let supabaseClient = null;
-    try {
-      if (window.supabase && SUPABASE_URL !== 'YOUR_SUPABASE_URL') {
-        supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-      }
-    } catch (e) {
-      console.warn("Supabase init notice:", e);
-    }
-
+    const STORE_PHONE = "+919662489679";
     const WA_NUMBER = "919662489679";
+    
+    // REPLACE THIS URL with your newly published Douro Moto Co. Google Sheet CSV link
+    const SHEET_CSV_URL = "YOUR_GOOGLE_SHEET_CSV_PUBLISHED_URL_HERE";
 
-    // Fallback static products catalog representing Douro Moto Co. gear
-    let PRODUCTS = [
-      {
-        id: "DMC-01",
-        name: "DMC Apex Pro Touring Jacket",
-        category: "Jackets",
-        badge: "CE Level 2",
-        price: "₹14,999",
-        image: "./dmc%20black%20logo.jpg",
-        features: ["CE Level 2 Armor on Shoulders, Elbows & Back", "CORDURA 1000D outer shell", "Removable thermal & waterproof liners", "360-degree ventilation mesh"]
-      },
-      {
-        id: "DMC-02",
-        name: "DMC All-Terrain Adventure Boots",
-        category: "Boots",
-        badge: "Waterproof",
-        price: "₹11,499",
-        image: "./dmc%20black%20logo.jpg",
-        features: ["Reinforced shin and ankle protection", "Oil & slip resistant Vibram sole", "Dry-Tex waterproof breathable membrane", "Micro-metric buckle closure"]
-      },
-      {
-        id: "DMC-03",
-        name: "DMC Modular Carbon Helmet",
-        category: "Helmets",
-        badge: "ECE 22.06",
-        price: "₹8,999",
-        image: "./dmc%20black%20logo.jpg",
-        features: ["Dual homologation (P/J rated)", "Pinlock 120 Max Vision ready", "Drop-down internal sun visor", "Aerodynamic wind-tunnel tested shell"]
-      },
-      {
-        id: "DMC-04",
-        name: "DMC Titan Waterproof Saddlebags",
-        category: "Luggage",
-        badge: "Heavy Duty",
-        price: "₹9,500",
-        image: "./dmc%20black%20logo.jpg",
-        features: ["100% Waterproof roll-top construction", "50 Liters combined capacity", "Heat-resistant base panels", "Quick-release universal mounting straps"]
-      }
-    ];
-
-    let CATEGORIES = ["All", "Jackets", "Boots", "Helmets", "Luggage", "Gloves"];
+    let PRODUCTS = [];
+    let CATEGORIES = ["All"];
     let selectedCategory = "All";
     let searchQuery = "";
     let selectedProductSize = "L";
@@ -350,35 +300,95 @@
       if ("vibrate" in navigator) navigator.vibrate(10);
     }
 
-    // Fetch live products from Supabase database 'products' table
-    async function fetchLiveProducts() {
-      if (!supabaseClient) {
-        initCategoryTabs();
-        renderProducts();
-        return;
+    // Parse CSV handling quotes and delimiters accurately
+    function parseCSV(text) {
+      const lines = text.trim().split(/\r?\n/);
+      if (lines.length < 2) return [];
+      
+      const headers = lines[0].split(',').map(h => h.trim().toLowerCase());
+      const result = [];
+
+      for (let i = 1; i < lines.length; i++) {
+        let line = lines[i];
+        if (!line.trim()) continue;
+
+        let row = [];
+        let inQuotes = false;
+        let token = "";
+
+        for (let j = 0; j < line.length; j++) {
+          let char = line[j];
+          if (char === '"' || char === "'") {
+            inQuotes = !inQuotes;
+          } else if (char === ',' && !inQuotes) {
+            row.push(token.trim());
+            token = "";
+          } else {
+            token += char;
+          }
+        }
+        row.push(token.trim());
+
+        let obj = {};
+        headers.forEach((h, idx) => {
+          let val = row[idx] ? row[idx].replace(/^["']|["']$/g, '').trim() : "";
+          obj[h] = val;
+        });
+
+        if (obj.name && obj.name !== "") {
+          obj.features = obj.features ? obj.features.split('|').map(f => f.trim()).filter(Boolean) : [];
+          result.push(obj);
+        }
       }
+      return result;
+    }
+
+    // Fetch Google Sheet live data
+    async function fetchLiveProducts() {
       try {
-        const { data, error } = await supabaseClient.from('products').select('*');
-        if (error) throw error;
-        if (data && data.length > 0) {
-          PRODUCTS = data.map(p => ({
-            id: p.id || p.sku || 'DMC-' + Math.floor(Math.random()*1000),
-            name: p.name,
-            category: p.category || 'General',
-            badge: p.badge || '',
-            price: p.price || '',
-            image: p.image || './dmc%20black%20logo.jpg',
-            features: typeof p.features === 'string' ? p.features.split('|').map(f => f.trim()).filter(Boolean) : (p.features || [])
-          }));
+        if (SHEET_CSV_URL.includes("YOUR_GOOGLE_SHEET_CSV")) {
+          throw new Error("Placeholder URL");
+        }
+        const response = await fetch(SHEET_CSV_URL + '&_t=' + Date.now());
+        if (!response.ok) throw new Error("Could not load sheet");
+        const csvData = await response.text();
+        const parsed = parseCSV(csvData);
+        
+        if (parsed.length > 0) {
+          PRODUCTS = parsed;
           const uniqueCats = ["All", ...new Set(PRODUCTS.map(p => p.category).filter(Boolean))];
           CATEGORIES = uniqueCats;
+          
+          initCategoryTabs();
+          renderProducts();
+          return;
         }
       } catch (err) {
-        console.error("Supabase fetch error, using fallback catalog", err);
-      } finally {
-        initCategoryTabs();
-        renderProducts();
+        console.warn("Using fallback demo catalog until Google Sheet URL is configured.", err);
       }
+
+      // Fallback Demo Products if sheet URL isn't configured yet
+      PRODUCTS = [
+        {
+          id: "DMC-01",
+          name: "DMC Apex Pro Touring Jacket",
+          category: "Jackets",
+          badge: "CE Level 2",
+          image: "./dmc%20black%20logo.jpg",
+          features: ["CE Level 2 Armor on Shoulders, Elbows & Back", "CORDURA 1000D outer shell", "Removable thermal & waterproof liners"]
+        },
+        {
+          id: "DMC-02",
+          name: "DMC All-Terrain Adventure Boots",
+          category: "Boots",
+          badge: "Waterproof",
+          image: "./dmc%20black%20logo.jpg",
+          features: ["Reinforced shin and ankle protection", "Oil & slip resistant Vibram sole", "Dry-Tex waterproof breathable membrane"]
+        }
+      ];
+      CATEGORIES = ["All", "Jackets", "Boots"];
+      initCategoryTabs();
+      renderProducts();
     }
 
     function initCategoryTabs() {
@@ -437,10 +447,9 @@
             <div>
               <span class="text-[9px] uppercase tracking-wider font-semibold text-brand">${p.category}</span>
               <h3 class="text-xs font-bold text-white line-clamp-2 mt-0.5 leading-snug">${p.name}</h3>
-              ${p.price ? `<p class="text-xs font-extrabold text-neutral-200 mt-1">${p.price}</p>` : ''}
             </div>
             <div class="mt-3 flex items-center justify-between border-t border-cardBorder/60 pt-2">
-              <span class="text-[10px] text-neutral-400 font-medium">Inquire</span>
+              <span class="text-[10px] text-neutral-400 font-medium">Explore</span>
               <span class="text-[10px] bg-neutral-800 border border-cardBorder text-neutral-200 font-bold px-2 py-1 rounded-lg flex items-center gap-1 group-hover:bg-brand group-hover:border-brand transition-colors">
                 <span>View</span>
                 <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
@@ -485,7 +494,6 @@
           <div>
             <span class="text-[10px] uppercase font-bold text-brand tracking-widest">${product.category}</span>
             <h3 class="text-sm font-bold text-white leading-tight mt-0.5">${product.name}</h3>
-            ${product.price ? `<p class="text-xs font-bold text-brand mt-0.5">${product.price}</p>` : ''}
             <p class="text-[11px] text-neutral-400 mt-1">Ref: ${product.id}</p>
           </div>
         </div>
@@ -514,7 +522,7 @@
                 <span class="w-1.5 h-1.5 rounded-full bg-brand mt-1.5 flex-shrink-0"></span>
                 <span>${f}</span>
               </div>
-            `).join('') : '<p class="text-xs text-neutral-400">Engineered for heavy-duty motorcycle touring.</p>'}
+            `).join('') : '<p class="text-xs text-neutral-400">Tested motorcycle touring accessory.</p>'}
           </div>
         </div>
 
@@ -523,7 +531,7 @@
             class="bg-brand hover:bg-brandDark text-white py-3 rounded-xl font-bold text-xs flex items-center justify-center gap-1.5 tracking-wider uppercase active:scale-95 transition-all shadow-lg shadow-brand/20">
             <span>Inquire on WhatsApp</span>
           </a>
-          <a href="tel:+919662489679" 
+          <a href="tel:${STORE_PHONE}" 
             class="bg-neutral-800 hover:bg-neutral-700 border border-cardBorder text-white py-3 rounded-xl font-bold text-xs flex items-center justify-center gap-1.5 tracking-wider uppercase active:scale-95 transition-all">
             <span>Call Shop</span>
           </a>
