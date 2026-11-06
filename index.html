@@ -1,1033 +1,579 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en" class="h-full bg-[#0d0d0d]">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DOURO MOTO CO. - DMC | Pro Rider Community Hub & Rare Hoodies</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        dmc: {
-                            orange: '#ff4500',
-                            dark: '#0a0a0a',
-                            card: '#141414',
-                            border: '#262626'
-                        }
-                    }
-                }
-            }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>DOURO MOTO CO. | Riding Gears & Accessories</title>
+  <meta name="theme-color" content="#0d0d0d" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <link rel="icon" type="image/jpeg" href="./dmc%20black%20logo.jpg" />
+  <link rel="apple-touch-icon" href="./dmc%20black%20logo.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Teko:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: '#FF5400',
+            brandDark: '#CC4300',
+            darkSurface: '#121212',
+            cardBg: '#181818',
+            cardBorder: '#272727'
+          },
+          fontFamily: {
+            teko: ['Teko', 'sans-serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif']
+          }
         }
-    </script>
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0a0a0a; color: #f5f5f5; }
-        ::-webkit-scrollbar { width: 6px; height: 6px; }
-        ::-webkit-scrollbar-track { background: #0a0a0a; }
-        ::-webkit-scrollbar-thumb { background: #262626; border-radius: 3px; }
-        ::-webkit-scrollbar-thumb:hover { background: #ff4500; }
-        .glass-panel { background: rgba(20, 20, 20, 0.85); backdrop-filter: blur(12px); border: 1px solid rgba(255, 69, 0, 0.2); }
-        .glow-orange { box-shadow: 0 0 25px rgba(255, 69, 0, 0.35); }
-    </style>
+      }
+    }
+  </script>
+
+  <style>
+    * { -webkit-tap-highlight-color: transparent; }
+    body {
+      padding-top: env(safe-area-inset-top);
+      padding-bottom: calc(4.8rem + env(safe-area-inset-bottom));
+      user-select: none;
+    }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    
+    .sheet-modal {
+      transition: transform 0.28s cubic-bezier(0.32, 0.72, 0, 1), opacity 0.2s ease-in-out;
+    }
+    .sheet-modal.closed {
+      transform: translateY(100%);
+      opacity: 0;
+      pointer-events: none;
+    }
+  </style>
+
+  <script src="https://elfsightcdn.com/platform.js" async></script>
 </head>
-<body class="min-h-screen flex flex-col selection:bg-dmc-orange selection:text-white pb-20 md:pb-0">
+<body class="bg-[#0d0d0d] text-neutral-100 font-sans antialiased min-h-screen flex flex-col">
 
-    <!-- HEADER / NAVBAR -->
-    <header class="sticky top-0 z-50 glass-panel border-b border-dmc-border px-4 py-3">
-        <div class="max-w-7xl mx-auto flex items-center justify-between">
-            <div class="flex items-center space-x-3 cursor-pointer" onclick="switchTab('explore')">
-                <img src="IMG_3791.jpg" alt="DMC Logo" class="w-10 h-10 object-contain rounded-lg border border-dmc-orange/40 p-0.5 bg-black" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><rect width=\'100\' height=\'100\' fill=\'%23000\'/><text x=\'50\' y=\'65\' font-size=\'40\' font-weight=\'bold\' fill=\'%23ff4500\' text-anchor=\'middle\' font-family=\'sans-serif\'>DMC</text></svg>';">
-                <div>
-                    <h1 class="font-extrabold text-lg tracking-wider text-white flex items-center gap-1.5">
-                        DOURO MOTO CO. <span class="text-dmc-orange text-xs px-1.5 py-0.5 rounded bg-dmc-orange/10 border border-dmc-orange/30">DMC</span>
-                    </h1>
-                    <p class="text-[10px] text-gray-400 tracking-widest uppercase font-semibold">Pro Rider Community Hub</p>
-                </div>
-            </div>
+  <header class="sticky top-0 z-40 bg-[#0d0d0d]/90 backdrop-blur-md border-b border-cardBorder px-4 py-2.5 flex items-center justify-between">
+    <div class="flex items-center gap-2.5">
+      <div class="w-10 h-10 rounded-full border border-cardBorder bg-black overflow-hidden flex items-center justify-center">
+        <img src="./dmc%20black%20logo.jpg" alt="DMC Logo" class="w-full h-full object-contain" 
+          onerror="this.parentElement.innerHTML='<span class=\'font-teko text-xl text-brand font-bold\'>DMC</span>'" />
+      </div>
+      <div>
+        <h1 class="font-teko text-2xl leading-none tracking-wider uppercase text-white">Douro Moto Co.</h1>
+        <p class="text-[10px] text-brand tracking-widest uppercase font-bold">Riding Gears</p>
+      </div>
+    </div>
+    
+    <div class="flex items-center gap-2">
+      <button onclick="openChecklistModal()" class="w-8 h-8 rounded-full bg-cardBg border border-cardBorder flex items-center justify-center text-neutral-300 active:scale-95 transition-transform" title="Rider Checklist">
+        <svg class="w-4 h-4 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+      </button>
 
-            <!-- Desktop Nav -->
-            <nav class="hidden md:flex items-center space-x-6 text-sm font-medium">
-                <button onclick="switchTab('explore')" class="nav-link text-dmc-orange transition hover:text-dmc-orange"><i class="fa-solid fa-compass mr-1"></i> Explore</button>
-                <button onclick="switchTab('merch')" class="nav-link text-amber-400 transition hover:text-dmc-orange flex items-center gap-1"><i class="fa-solid fa-shirt"></i> Rare Hoodies</button>
-                <button onclick="switchTab('mechanics')" class="nav-link text-gray-300 transition hover:text-dmc-orange"><i class="fa-solid fa-gears mr-1"></i> Mechanics</button>
-                <button onclick="switchTab('tools')" class="nav-link text-gray-300 transition hover:text-dmc-orange"><i class="fa-solid fa-toolbox mr-1"></i> Tools</button>
-                <button onclick="switchTab('brands')" class="nav-link text-gray-300 transition hover:text-dmc-orange"><i class="fa-solid fa-motorcycle mr-1"></i> Brands</button>
-                <button onclick="switchTab('gear')" class="nav-link text-gray-300 transition hover:text-dmc-orange"><i class="fa-solid fa-shield-halved mr-1"></i> Safety</button>
-                <button onclick="switchTab('blogs')" class="nav-link text-gray-300 transition hover:text-dmc-orange"><i class="fa-solid fa-book-open mr-1"></i> Blogs</button>
-            </nav>
+      <a href="tel:+919662489679" class="w-8 h-8 rounded-full bg-cardBg border border-cardBorder flex items-center justify-center text-neutral-300 active:scale-95 transition-transform">
+        <svg class="w-4 h-4 fill-current text-brand" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+      </a>
 
-            <div class="flex items-center space-x-3">
-                <button onclick="openFeedbackModal()" class="bg-dmc-orange hover:bg-dmc-orange/90 text-white text-xs font-bold px-3.5 py-2 rounded-xl transition flex items-center gap-1.5 glow-orange">
-                    <i class="fa-solid fa-envelope"></i> Contact Us
-                </button>
-            </div>
-        </div>
-    </header>
+      <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" 
+        class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-cardBg border border-cardBorder text-xs font-semibold text-neutral-200 active:scale-95 transition-transform">
+        <svg class="w-3.5 h-3.5 fill-pink-500" viewBox="0 0 24 24">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+        </svg>
+        <span>Feed</span>
+      </a>
+    </div>
+  </header>
 
-    <!-- MAIN CONTENT CONTAINER -->
-    <main class="flex-1 max-w-7xl w-full mx-auto px-4 py-6">
+  <main class="flex-1 w-full max-w-lg mx-auto">
+    
+    <section id="shopView" class="space-y-4">
+      
+      <div class="px-4 pt-3">
+        <div class="relative w-full h-[380px] rounded-3xl overflow-hidden border border-cardBorder shadow-2xl bg-neutral-900">
+          <video 
+            id="heroBannerVideo" 
+            src="./hero-video.mp4" 
+            autoplay 
+            muted 
+            loop 
+            playsinline 
+            webkit-playsinline 
+            preload="auto"
+            poster="./dmc%20black%20logo.jpg" 
+            class="w-full h-full object-cover">
+          </video>
+          
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent pointer-events-none"></div>
 
-        <!-- TAB 1: EXPLORE / HOME -->
-        <section id="tab-explore" class="tab-content space-y-8">
-            <!-- CINEMATIC HERO VIDEO BANNER -->
-            <div class="relative rounded-3xl overflow-hidden glass-panel border border-dmc-orange/30 glow-orange">
-                <div class="relative aspect-video md:aspect-[21/9] w-full bg-black">
-                    <video id="heroVideo" autoplay muted loop playsinline class="w-full h-full object-cover opacity-90" onerror="handleVideoError()">
-                        <source src="hero-video.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <div id="videoFallback" class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent flex flex-col items-center justify-center p-6 text-center hidden">
-                        <div class="w-20 h-20 rounded-full bg-dmc-orange/20 border-2 border-dmc-orange flex items-center justify-center mb-4 text-dmc-orange text-3xl animate-pulse">
-                            <i class="fa-solid fa-engine"></i>
-                        </div>
-                        <h2 class="text-2xl font-black text-white">DMC PISTON & WINGS ENGINE LAB</h2>
-                        <p class="text-xs text-gray-300 mt-1 max-w-md">Interactive animated mechanics and real-time telemetry ready for deployment.</p>
-                    </div>
-
-                    <!-- Video Controls Bar -->
-                    <div class="absolute bottom-4 right-4 flex items-center space-x-2 bg-black/70 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10 z-20">
-                        <button onclick="togglePlayPause()" id="playPauseBtn" class="text-xs font-bold text-white px-2 py-1 hover:text-dmc-orange transition flex items-center gap-1">
-                            <i class="fa-solid fa-pause" id="playPauseIcon"></i> <span id="playPauseText">Pause</span>
-                        </button>
-                        <span class="text-gray-600">|</span>
-                        <button onclick="toggleMuteSound()" id="soundBtn" class="text-xs font-bold text-white px-2 py-1 hover:text-dmc-orange transition flex items-center gap-1">
-                            <i class="fa-solid fa-volume-xmark" id="soundIcon"></i> <span id="soundText">Sound Off</span>
-                        </button>
-                    </div>
-                    
-                    <div class="absolute top-4 left-4 bg-dmc-orange text-white text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-widest flex items-center gap-1 shadow-lg">
-                        <i class="fa-solid fa-bolt"></i> DMC Cinematic Engine
-                    </div>
-                </div>
-
-                <div class="p-6 md:p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-                    <div>
-                        <div class="flex items-center gap-2 mb-2">
-                            <span class="text-xs font-bold text-dmc-orange bg-dmc-orange/10 px-2.5 py-1 rounded-md border border-dmc-orange/20">RIDER ELITE HUB</span>
-                            <span class="text-xs font-bold text-amber-400 bg-amber-400/10 px-2.5 py-1 rounded-md border border-amber-400/20"><i class="fa-solid fa-fire mr-1"></i> Piston & Wings Tech</span>
-                        </div>
-                        <h2 class="text-3xl md:text-5xl font-black tracking-tight text-white">MASTER YOUR RIDE & MACHINE.</h2>
-                        <p class="text-sm md:text-base text-gray-300 mt-2 max-w-2xl">
-                            Explore core motorcycle mechanics, 15+ comprehensive 1000+ word rider guides, global safety certifications, brand directories, and rare rider apparel curated by Douro Moto Co.
-                        </p>
-                    </div>
-                    <div class="flex flex-wrap gap-3">
-                        <button onclick="switchTab('merch')" class="bg-amber-500 hover:bg-amber-400 text-black font-extrabold px-6 py-3.5 rounded-2xl transition flex items-center gap-2 shadow-lg shadow-amber-500/30">
-                            <i class="fa-solid fa-shirt"></i> Rare Hoodies (Limited)
-                        </button>
-                        <button onclick="switchTab('mechanics')" class="glass-panel hover:border-dmc-orange/60 text-white font-bold px-6 py-3.5 rounded-2xl transition">
-                            Mechanics 101 <i class="fa-solid fa-arrow-right"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- QUICK ACCESS CARDS GRID -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                <div onclick="switchTab('merch')" class="glass-panel p-6 rounded-3xl cursor-pointer hover:border-amber-500 transition group border-amber-500/40">
-                    <div class="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 text-xl mb-4 group-hover:scale-110 transition">
-                        <i class="fa-solid fa-shirt"></i>
-                    </div>
-                    <h3 class="font-bold text-lg text-white mb-1">Rare Hoodies</h3>
-                    <p class="text-xs text-gray-400">Exclusive Pullover & Zipper Hoodies in Black & Navy. Limited 50 pcs batch.</p>
-                </div>
-
-                <div onclick="switchTab('tools')" class="glass-panel p-6 rounded-3xl cursor-pointer hover:border-dmc-orange transition group">
-                    <div class="w-12 h-12 rounded-2xl bg-dmc-orange/10 border border-dmc-orange/30 flex items-center justify-center text-dmc-orange text-xl mb-4 group-hover:scale-110 transition">
-                        <i class="fa-solid fa-calculator"></i>
-                    </div>
-                    <h3 class="font-bold text-lg text-white mb-1">Rider Tools</h3>
-                    <p class="text-xs text-gray-400">Fuel cost calculator, tire pressure PSI advisor, and chain maintenance tracker.</p>
-                </div>
-
-                <div onclick="switchTab('mechanics')" class="glass-panel p-6 rounded-3xl cursor-pointer hover:border-dmc-orange transition group">
-                    <div class="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-500 text-xl mb-4 group-hover:scale-110 transition">
-                        <i class="fa-solid fa-gears"></i>
-                    </div>
-                    <h3 class="font-bold text-lg text-white mb-1">Parts & Engines</h3>
-                    <p class="text-xs text-gray-400">Torque, fuel injectors, carburetors, pistons, and complete motorcycle anatomy.</p>
-                </div>
-
-                <div onclick="switchTab('brands')" class="glass-panel p-6 rounded-3xl cursor-pointer hover:border-dmc-orange transition group">
-                    <div class="w-12 h-12 rounded-2xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-500 text-xl mb-4 group-hover:scale-110 transition">
-                        <i class="fa-solid fa-motorcycle"></i>
-                    </div>
-                    <h3 class="font-bold text-lg text-white mb-1">Brand Index</h3>
-                    <p class="text-xs text-gray-400">A-Z brand logos, history, milestones, and iconic motorcycle models.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- TAB 2: RARE HOODIES & APPAREL SECTION (NEW) -->
-        <section id="tab-merch" class="tab-content hidden space-y-8">
-            <!-- RARE HOODIES BANNER -->
-            <div class="relative rounded-3xl overflow-hidden glass-panel border border-amber-500/40 p-8 md:p-12 bg-gradient-to-r from-neutral-900 via-neutral-900 to-amber-950/30">
-                <div class="absolute right-4 top-1/2 -translate-y-1/2 opacity-10 pointer-events-none text-9xl text-amber-400">
-                    <i class="fa-solid fa-shirt"></i>
-                </div>
-                <div class="max-w-2xl space-y-4">
-                    <span class="text-xs font-extrabold bg-amber-400/20 text-amber-400 px-3 py-1 rounded-full uppercase tracking-widest border border-amber-400/30">
-                        <i class="fa-solid fa-star mr-1"></i> Exclusive Limited Collection
-                    </span>
-                    <h2 class="text-3xl md:text-5xl font-black text-white tracking-tight">Rare Hoodies with a Premium Touch</h2>
-                    <p class="text-sm md:text-base text-gray-300 leading-relaxed">
-                        Engineered for riders who demand style off the saddle. Crafted with heavy-gauge premium fleece, featuring the iconic white DMC piston & wings logo on the left pocket side.
-                    </p>
-                    <div class="flex items-center gap-4 pt-2 text-xs font-semibold text-amber-400">
-                        <div><i class="fa-solid fa-circle-check mr-1"></i> Premium Cotton Blend</div>
-                        <div><i class="fa-solid fa-circle-check mr-1"></i> Limited Edition Batch</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PRODUCTS GRID -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                
-                <!-- PRODUCT 1: PULLOVER HOODY -->
-                <div class="glass-panel rounded-3xl overflow-hidden border border-neutral-800 hover:border-amber-500/60 transition flex flex-col justify-between">
-                    <div>
-                        <div class="relative h-72 bg-neutral-950 overflow-hidden">
-                            <img src="image.png" alt="DMC Logo Pullover Unisex Hoody" class="w-full h-full object-cover hover:scale-105 transition duration-500">
-                            <span class="absolute top-3 left-3 bg-amber-500 text-black text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">Limited Batch</span>
-                            <span class="absolute top-3 right-3 bg-black/80 backdrop-blur-md text-white text-xs font-bold px-3 py-1 rounded-full border border-white/10">₹17,999</span>
-                        </div>
-                        <div class="p-6 space-y-4">
-                            <div>
-                                <span class="text-[10px] font-bold text-amber-400 uppercase tracking-widest">Unisex Pullover Edition</span>
-                                <h3 class="text-2xl font-black text-white mt-1">DMC Logo Pullover Unisex Hoody</h3>
-                                <p class="text-xs text-gray-400 mt-1">Short SEO Desc: Heavyweight thermal fleece pullover featuring white DMC piston & wings chest branding and left-pocket logo alignment.</p>
-                            </div>
-
-                            <!-- Color Options -->
-                            <div class="space-y-2">
-                                <span class="text-xs font-semibold text-gray-300">Available Colors:</span>
-                                <div class="flex items-center gap-3">
-                                    <label class="flex items-center gap-2 cursor-pointer bg-neutral-900 border border-neutral-800 px-3 py-1.5 rounded-xl text-xs text-white">
-                                        <input type="radio" name="pulloverColor" value="Black" checked class="accent-amber-500"> Black
-                                    </label>
-                                    <label class="flex items-center gap-2 cursor-pointer bg-neutral-900 border border-neutral-800 px-3 py-1.5 rounded-xl text-xs text-white">
-                                        <input type="radio" name="pulloverColor" value="Navy" class="accent-amber-500"> Navy
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="p-6 pt-0 space-y-2">
-                        <button onclick="openBookingModal('DMC Logo Pullover Unisex Hoody', 17999)" class="w-full bg-amber-500 hover:bg-amber-400 text-black font-extrabold py-3.5 rounded-2xl text-xs transition shadow-lg shadow-amber-500/20 flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-bookmark"></i> Book Your Hoody
-                        </button>
-                        <p class="text-[11px] text-center text-gray-400 italic">Limited Stock of 50 pcs to be Made</p>
-                    </div>
-                </div>
-
-                <!-- PRODUCT 2: ZIPPER HOODY -->
-                <div class="glass-panel rounded-3xl overflow-hidden border border-neutral-800 hover:border-amber-500/60 transition flex flex-col justify-between">
-                    <div>
-                        <div class="relative h-72 bg-neutral-950 overflow-hidden">
-                            <img src="image_2.png" alt="DMC Logo Zipper Unisex Hoody" class="w-full h-full object-cover hover:scale-105 transition duration-500">
-                            <span class="absolute top-3 left-3 bg-amber-500 text-black text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">Limited Batch</span>
-                            <span class="absolute top-3 right-3 bg-black/80 backdrop-blur-md text-white text-xs font-bold px-3 py-1 rounded-full border border-white/10">₹17,999</span>
-                        </div>
-                        <div class="p-6 space-y-4">
-                            <div>
-                                <span class="text-[10px] font-bold text-amber-400 uppercase tracking-widest">Unisex Zipper Edition</span>
-                                <h3 class="text-2xl font-black text-white mt-1">DMC Logo Zipper Unisex Hoody</h3>
-                                <p class="text-xs text-gray-400 mt-1">Short SEO Desc: Premium full-zip riding hoodie featuring reinforced metal hardware and white DMC piston & wings logo on left pocket side.</p>
-                            </div>
-
-                            <!-- Color Options -->
-                            <div class="space-y-2">
-                                <span class="text-xs font-semibold text-gray-300">Available Colors:</span>
-                                <div class="flex items-center gap-3">
-                                    <label class="flex items-center gap-2 cursor-pointer bg-neutral-900 border border-neutral-800 px-3 py-1.5 rounded-xl text-xs text-white">
-                                        <input type="radio" name="zipperColor" value="Black" checked class="accent-amber-500"> Black
-                                    </label>
-                                    <label class="flex items-center gap-2 cursor-pointer bg-neutral-900 border border-neutral-800 px-3 py-1.5 rounded-xl text-xs text-white">
-                                        <input type="radio" name="zipperColor" value="Navy" class="accent-amber-500"> Navy
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="p-6 pt-0 space-y-2">
-                        <button onclick="openBookingModal('DMC Logo Zipper Unisex Hoody', 17999)" class="w-full bg-amber-500 hover:bg-amber-400 text-black font-extrabold py-3.5 rounded-2xl text-xs transition shadow-lg shadow-amber-500/20 flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-bookmark"></i> Book Your Hoody
-                        </button>
-                        <p class="text-[11px] text-center text-gray-400 italic">Limited Stock of 50 pcs to be Made</p>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- TAB 3: MECHANICS & ANATOMY -->
-        <section id="tab-mechanics" class="tab-content hidden space-y-6">
-            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-                <div>
-                    <h2 class="text-2xl font-black text-white flex items-center gap-2">
-                        <i class="fa-solid fa-gears text-dmc-orange"></i> Motorcycle Mechanics & Anatomy
-                    </h2>
-                    <p class="text-xs text-gray-400">Understand what makes your machine tick — from torque curves to fuel injection.</p>
-                </div>
-                <div class="w-full md:w-72">
-                    <input type="text" id="mechanicsSearch" oninput="filterMechanics()" placeholder="Search parts, features..." class="w-full bg-neutral-900 border border-neutral-800 rounded-xl px-4 py-2 text-xs text-white focus:outline-none focus:border-dmc-orange">
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="mechanicsGrid">
-                <!-- Dynamically populated -->
-            </div>
-        </section>
-
-        <!-- TAB 4: RIDER TOOLS -->
-        <section id="tab-tools" class="tab-content hidden space-y-6">
+          <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end pointer-events-none">
             <div>
-                <h2 class="text-2xl font-black text-white flex items-center gap-2">
-                    <i class="fa-solid fa-toolbox text-dmc-orange"></i> Interactive Rider Tools
-                </h2>
-                <p class="text-xs text-gray-400">Practical, rider-friendly calculators and maintenance trackers with vibrant color elements.</p>
+              <span class="bg-brand text-white text-[9px] font-extrabold uppercase px-2.5 py-0.5 rounded-md tracking-wider shadow">Douro Moto Co.</span>
+              <h2 class="font-teko text-3xl uppercase tracking-wider text-white mt-1 leading-none drop-shadow">Engineered For The Ride</h2>
+              <p class="text-[11px] text-neutral-300 font-medium drop-shadow">Touring Armor • Technical Apparel • Accessories</p>
             </div>
+          </div>
+        </div>
+      </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                <!-- TOOL 1: TRIP FUEL CALCULATOR -->
-                <div class="glass-panel p-6 rounded-3xl border border-dmc-orange/30 space-y-4 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-dmc-orange/10 rounded-full blur-2xl pointer-events-none"></div>
-                    <div class="flex items-center justify-between">
-                        <div class="w-10 h-10 rounded-xl bg-dmc-orange/20 text-dmc-orange flex items-center justify-center font-bold">
-                            <i class="fa-solid fa-gas-pump"></i>
-                        </div>
-                        <span class="text-[10px] font-extrabold bg-dmc-orange/20 text-dmc-orange px-2.5 py-1 rounded-full uppercase">Fuel Calculator</span>
-                    </div>
-                    <h3 class="font-bold text-lg text-white">Trip Fuel & Cost Estimator</h3>
-                    <p class="text-xs text-gray-400">Calculate exact fuel consumption and trip expenses before hitting the highway.</p>
-                    
-                    <div class="space-y-3 pt-2">
-                        <div>
-                            <label class="text-[11px] font-semibold text-gray-300">Distance (km)</label>
-                            <input type="number" id="fuelDist" value="250" class="w-full bg-neutral-900 border border-neutral-800 rounded-xl px-3 py-2 text-xs text-white mt-1 focus:outline-none focus:border-dmc-orange">
-                        </div>
-                        <div>
-                            <label class="text-[11px] font-semibold text-gray-300">Bike Mileage (km/L)</label>
-                            <input type="number" id="fuelMileage" value="35" class="w-full bg-neutral-900 border border-neutral-800 rounded-xl px-3 py-2 text-xs text-white mt-1 focus:outline-none focus:border-dmc-orange">
-                        </div>
-                        <div>
-                            <label class="text-[11px] font-semibold text-gray-300">Fuel Price per Liter</label>
-                            <input type="number" id="fuelPrice" value="100" class="w-full bg-neutral-900 border border-neutral-800 rounded-xl px-3 py-2 text-xs text-white mt-1 focus:outline-none focus:border-dmc-orange">
-                        </div>
-                        <button onclick="calculateFuel()" class="w-full bg-dmc-orange hover:bg-dmc-orange/90 text-white font-bold py-2.5 rounded-xl text-xs transition shadow-lg shadow-dmc-orange/30">
-                            Calculate Trip Cost
-                        </button>
-                    </div>
+      <div class="px-4 space-y-2.5">
+        <div class="relative">
+          <input type="text" id="searchInput" oninput="handleSearch()" placeholder="Search jackets, boots, helmets, gear..." 
+            class="w-full bg-cardBg border border-cardBorder rounded-xl pl-10 pr-4 py-2 text-sm text-neutral-100 placeholder-neutral-500 focus:outline-none focus:border-brand transition-colors" />
+          <svg class="w-4 h-4 text-neutral-400 absolute left-3.5 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="8" stroke-width="2"></circle>
+            <path stroke-width="2" stroke-linecap="round" d="m21 21-4.35-4.35"></path>
+          </svg>
+        </div>
 
-                    <div id="fuelResult" class="bg-black/50 p-3.5 rounded-xl border border-neutral-800 text-xs text-center font-semibold text-dmc-orange">
-                        Enter distance & mileage above to calculate.
-                    </div>
-                </div>
+        <div class="flex gap-2 overflow-x-auto no-scrollbar py-1" id="categoryTabs">
+        </div>
+      </div>
 
-                <!-- TOOL 2: TIRE PRESSURE PSI ADVISOR -->
-                <div class="glass-panel p-6 rounded-3xl border border-blue-500/30 space-y-4 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl pointer-events-none"></div>
-                    <div class="flex items-center justify-between">
-                        <div class="w-10 h-10 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center font-bold">
-                            <i class="fa-solid fa-gauge-high"></i>
-                        </div>
-                        <span class="text-[10px] font-extrabold bg-blue-500/20 text-blue-400 px-2.5 py-1 rounded-full uppercase">Tire Advisor</span>
-                    </div>
-                    <h3 class="font-bold text-lg text-white">PSI Tire Pressure Quick Advisor</h3>
-                    <p class="text-xs text-gray-400">Get recommended cold tire pressures based on your motorcycle riding style.</p>
-                    
-                    <div class="space-y-3 pt-2">
-                        <div>
-                            <label class="text-[11px] font-semibold text-gray-300">Select Riding Style / Category</label>
-                            <select id="tireCategory" class="w-full bg-neutral-900 border border-neutral-800 rounded-xl px-3 py-2 text-xs text-white mt-1 focus:outline-none focus:border-blue-500">
-                                <option value="commuter">Commuter / Standard (150cc - 300cc)</option>
-                                <option value="sport">Sportbike / Track (Supersport)</option>
-                                <option value="tourer">Adventure / Heavy Tourer (Fully Loaded)</option>
-                                <option value="cruiser">Heavy Cruiser (V-Twin)</option>
-                            </select>
-                        </div>
-                        <button onclick="calculateTirePSI()" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-2.5 rounded-xl text-xs transition shadow-lg shadow-blue-500/30">
-                            Get Recommended PSI
-                        </button>
-                    </div>
+      <div class="px-4 pb-4">
+        <div id="productGrid" class="grid grid-cols-2 gap-3">
+          <div class="col-span-2 text-center py-16 text-neutral-500 text-xs flex items-center justify-center gap-2">
+            <svg class="animate-spin h-4 w-4 text-brand" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path></svg>
+            <span>Syncing catalog from Supabase Database...</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-                    <div id="tireResult" class="bg-black/50 p-3.5 rounded-xl border border-neutral-800 text-xs text-center font-semibold text-blue-400">
-                        Select category and click advisor.
-                    </div>
-                </div>
+    <section id="reelsView" class="p-4 hidden space-y-4">
+      <div class="bg-cardBg border border-cardBorder rounded-2xl p-4 text-center">
+        <div class="w-12 h-12 mx-auto rounded-full mb-2 border border-brand/50 overflow-hidden bg-black flex items-center justify-center">
+          <img src="./dmc%20black%20logo.jpg" alt="DMC" class="w-full h-full object-contain" 
+            onerror="this.parentElement.innerHTML='<span class=\'font-teko text-xl text-brand font-bold\'>DMC</span>'" />
+        </div>
+        <h2 class="font-teko text-2xl uppercase tracking-wider text-brand">Douro Moto Co. Community</h2>
+        <p class="text-xs text-neutral-400">Watch our latest gear reels, reviews & ride logs</p>
+        <a href="https://instagram.com/douromotoco" target="_blank" rel="noopener noreferrer" 
+          class="inline-block mt-2 text-[11px] text-neutral-300 font-bold underline underline-offset-4">
+          Open Instagram Feed
+        </a>
+      </div>
 
-                <!-- TOOL 3: CHAIN MAINTENANCE TRACKER -->
-                <div class="glass-panel p-6 rounded-3xl border border-emerald-500/30 space-y-4 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl pointer-events-none"></div>
-                    <div class="flex items-center justify-between">
-                        <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold">
-                            <i class="fa-solid fa-link"></i>
-                        </div>
-                        <span class="text-[10px] font-extrabold bg-emerald-500/20 text-emerald-400 px-2.5 py-1 rounded-full uppercase">Chain Health</span>
-                    </div>
-                    <h3 class="font-bold text-lg text-white">Drive Chain Lube Tracker</h3>
-                    <p class="text-xs text-gray-400">Track your last chain clean & lube interval to prevent premature sprocket wear.</p>
-                    
-                    <div class="space-y-3 pt-2">
-                        <div>
-                            <label class="text-[11px] font-semibold text-gray-300">Last Lube Odometer (KM)</label>
-                            <input type="number" id="lastLubeKm" placeholder="e.g. 12400" class="w-full bg-neutral-900 border border-neutral-800 rounded-xl px-3 py-2 text-xs text-white mt-1 focus:outline-none focus:border-emerald-500">
-                        </div>
-                        <div>
-                            <label class="text-[11px] font-semibold text-gray-300">Current Odometer (KM)</label>
-                            <input type="number" id="currKm" placeholder="e.g. 12950" class="w-full bg-neutral-900 border border-neutral-800 rounded-xl px-3 py-2 text-xs text-white mt-1 focus:outline-none focus:border-emerald-500">
-                        </div>
-                        <button onclick="checkChainHealth()" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-2.5 rounded-xl text-xs transition shadow-lg shadow-emerald-500/30">
-                            Check Chain Status
-                        </button>
-                    </div>
+      <div class="w-full min-h-[450px]">
+        <div class="elfsight-app-f7f7f3fb-fe77-4b29-a628-38c347803f9b" data-elfsight-app-lazy></div>
+      </div>
+    </section>
 
-                    <div id="chainResult" class="bg-black/50 p-3.5 rounded-xl border border-neutral-800 text-xs text-center font-semibold text-emerald-400">
-                        Enter odometer values to check status.
-                    </div>
-                </div>
-            </div>
-        </section>
+    <section id="infoView" class="p-4 hidden space-y-3">
+      <div class="bg-cardBg border border-cardBorder rounded-2xl p-5 space-y-4">
+        <div class="flex items-center gap-3">
+          <div class="w-14 h-14 rounded-full border border-cardBorder bg-black overflow-hidden flex items-center justify-center">
+            <img src="./dmc%20black%20logo.jpg" alt="Logo" class="w-full h-full object-contain" 
+              onerror="this.parentElement.innerHTML='<span class=\'font-teko text-2xl text-brand font-bold\'>DMC</span>'" />
+          </div>
+          <div>
+            <h2 class="font-teko text-3xl uppercase text-white leading-tight">Douro Moto Co.</h2>
+            <p class="text-brand text-xs font-semibold uppercase tracking-wider">Riding Gears & Apparel</p>
+          </div>
+        </div>
+        
+        <p class="text-neutral-300 text-xs leading-relaxed">
+          Premium motorcycle riding apparel, protective gear, modular luggage, and touring accessories. Engineered in Rajkot, Gujarat, INDIA for riders who demand uncompromising safety and real-road durability.
+        </p>
 
-        <!-- TAB 5: BRAND INDEX -->
-        <section id="tab-brands" class="tab-content hidden space-y-6">
-            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-                <div>
-                    <h2 class="text-2xl font-black text-white flex items-center gap-2">
-                        <i class="fa-solid fa-motorcycle text-dmc-orange"></i> Alphabetical Brand Index & History
-                    </h2>
-                    <p class="text-xs text-gray-400">Explore famous motorcycle brands, country of origin, history milestones, and iconic models.</p>
-                </div>
-                <div class="w-full md:w-72">
-                    <input type="text" id="brandSearch" oninput="filterBrands()" placeholder="Search brands..." class="w-full bg-neutral-900 border border-neutral-800 rounded-xl px-4 py-2 text-xs text-white focus:outline-none focus:border-dmc-orange">
-                </div>
-            </div>
+        <div class="divide-y divide-cardBorder text-xs pt-1">
+          <div class="py-3 flex justify-between items-center">
+            <span class="text-neutral-400">Call / WhatsApp</span>
+            <a href="tel:+919662489679" class="text-brand font-bold tracking-wide">+91 96624 89679</a>
+          </div>
+          <div class="py-3 flex justify-between items-center">
+            <span class="text-neutral-400">Email Enquiries</span>
+            <a href="mailto:douromoto@gmail.com" class="text-neutral-200 font-medium">douromoto@gmail.com</a>
+          </div>
+          <div class="py-3 flex justify-between items-center">
+            <span class="text-neutral-400">Location</span>
+            <span class="text-neutral-200 font-medium">Rajkot - Gujarat - INDIA</span>
+          </div>
+          <div class="py-3 flex justify-between items-center">
+            <span class="text-neutral-400">Delivery</span>
+            <span class="text-neutral-200 font-medium">Pan-India Express Dispatch</span>
+          </div>
+        </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="brandsGrid">
-                <!-- Populated via JS -->
-            </div>
-        </section>
+        <div class="grid grid-cols-2 gap-2 pt-2">
+          <a href="https://wa.me/919662489679?text=Hi%20Douro%20Moto%20Co.,%20I%20have%20an%20inquiry." target="_blank" 
+            class="bg-brand hover:bg-brandDark text-white py-2.5 rounded-xl text-center text-xs font-bold uppercase tracking-wider transition-colors flex items-center justify-center gap-1.5 shadow-lg shadow-brand/20">
+            <span>WhatsApp</span>
+          </a>
+          <a href="tel:+919662489679" 
+            class="bg-neutral-800 hover:bg-neutral-700 border border-cardBorder text-white py-2.5 rounded-xl text-center text-xs font-bold uppercase tracking-wider transition-colors flex items-center justify-center gap-1.5">
+            <span>Call Now</span>
+          </a>
+        </div>
+      </div>
+    </section>
 
-        <!-- TAB 6: GEAR & SAFETY -->
-        <section id="tab-gear" class="tab-content hidden space-y-6">
+  </main>
+
+  <div id="sheetBackdrop" onclick="closeProductModal()" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-200"></div>
+  <div id="detailSheet" class="sheet-modal fixed inset-x-0 bottom-0 max-w-lg mx-auto z-50 bg-[#141414] border-t border-cardBorder rounded-t-3xl p-5 shadow-2xl closed max-h-[85vh] overflow-y-auto no-scrollbar">
+    <div class="w-12 h-1.5 bg-neutral-700 rounded-full mx-auto mb-4 cursor-pointer" onclick="closeProductModal()"></div>
+    <div id="sheetContent" class="space-y-4"></div>
+  </div>
+
+  <div id="checklistBackdrop" onclick="closeChecklistModal()" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-200"></div>
+  <div id="checklistSheet" class="sheet-modal fixed inset-x-0 bottom-0 max-w-lg mx-auto z-50 bg-[#141414] border-t border-cardBorder rounded-t-3xl p-5 shadow-2xl closed max-h-[85vh] overflow-y-auto no-scrollbar">
+    <div class="w-12 h-1.5 bg-neutral-700 rounded-full mx-auto mb-4 cursor-pointer" onclick="closeChecklistModal()"></div>
+    <div class="space-y-4">
+      <div class="border-b border-cardBorder pb-3">
+        <h3 class="font-teko text-2xl uppercase tracking-wider text-white">Touring Ride Essential Checklist</h3>
+        <p class="text-xs text-neutral-400">Check off your mandatory gear and spares before your road trip</p>
+      </div>
+      <div class="space-y-2.5 text-xs text-neutral-300" id="checklistItems">
+        <label class="flex items-center gap-3 bg-darkSurface p-2.5 rounded-xl border border-cardBorder cursor-pointer">
+          <input type="checkbox" class="w-4 h-4 rounded accent-brand" />
+          <span>Full-Armor Riding Jacket & Pants</span>
+        </label>
+        <label class="flex items-center gap-3 bg-darkSurface p-2.5 rounded-xl border border-cardBorder cursor-pointer">
+          <input type="checkbox" class="w-4 h-4 rounded accent-brand" />
+          <span>ECE / DOT Certified Helmet + Clean Visor</span>
+        </label>
+        <label class="flex items-center gap-3 bg-darkSurface p-2.5 rounded-xl border border-cardBorder cursor-pointer">
+          <input type="checkbox" class="w-4 h-4 rounded accent-brand" />
+          <span>Abrasion-Resistant Gloves (Full Gauntlet or Short)</span>
+        </label>
+        <label class="flex items-center gap-3 bg-darkSurface p-2.5 rounded-xl border border-cardBorder cursor-pointer">
+          <input type="checkbox" class="w-4 h-4 rounded accent-brand" />
+          <span>Reinforced Ankle Riding Boots</span>
+        </label>
+        <label class="flex items-center gap-3 bg-darkSurface p-2.5 rounded-xl border border-cardBorder cursor-pointer">
+          <input type="checkbox" class="w-4 h-4 rounded accent-brand" />
+          <span>Waterproof Rain Liners or External Rain Suit</span>
+        </label>
+        <label class="flex items-center gap-3 bg-darkSurface p-2.5 rounded-xl border border-cardBorder cursor-pointer">
+          <input type="checkbox" class="w-4 h-4 rounded accent-brand" />
+          <span>Puncture Kit & Portable Tire Inflator</span>
+        </label>
+        <label class="flex items-center gap-3 bg-darkSurface p-2.5 rounded-xl border border-cardBorder cursor-pointer">
+          <input type="checkbox" class="w-4 h-4 rounded accent-brand" />
+          <span>Vibration-Dampened Mobile Mount & Bungees</span>
+        </label>
+      </div>
+      <button onclick="closeChecklistModal()" class="w-full bg-cardBg hover:bg-neutral-800 border border-cardBorder text-neutral-200 py-3 rounded-xl font-bold text-xs uppercase tracking-wider">
+        Close Checklist
+      </button>
+    </div>
+  </div>
+
+  <nav class="fixed bottom-0 inset-x-0 z-40 bg-[#0d0d0d]/95 backdrop-blur-md border-t border-cardBorder px-6 py-2 pb-[max(0.6rem,env(safe-area-inset-bottom))]">
+    <div class="max-w-md mx-auto flex justify-around items-center">
+      <button onclick="switchTab('shop')" id="nav-shop" class="flex flex-col items-center text-brand font-bold text-[11px] active:scale-95 transition-all">
+        <svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+        <span>Shop</span>
+      </button>
+      <button onclick="switchTab('reels')" id="nav-reels" class="flex flex-col items-center text-neutral-400 font-medium text-[11px] active:scale-95 transition-all">
+        <svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Reels</span>
+      </button>
+      <button onclick="switchTab('info')" id="nav-info" class="flex flex-col items-center text-neutral-400 font-medium text-[11px] active:scale-95 transition-all">
+        <svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-width="2"/><line x1="12" y1="16" x2="12" y2="12" stroke-width="2"/></svg>
+        <span>Store Info</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Supabase Integration for Database Inventory -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    // Supabase Configuration (Replace with your project credentials when connected)
+    const SUPABASE_URL = 'YOUR_SUPABASE_URL';
+    const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';
+    
+    let supabaseClient = null;
+    try {
+      if (window.supabase && SUPABASE_URL !== 'YOUR_SUPABASE_URL') {
+        supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+      }
+    } catch (e) {
+      console.warn("Supabase init notice:", e);
+    }
+
+    const WA_NUMBER = "919662489679";
+
+    // Fallback static products catalog representing Douro Moto Co. gear
+    let PRODUCTS = [
+      {
+        id: "DMC-01",
+        name: "DMC Apex Pro Touring Jacket",
+        category: "Jackets",
+        badge: "CE Level 2",
+        price: "₹14,999",
+        image: "./dmc%20black%20logo.jpg",
+        features: ["CE Level 2 Armor on Shoulders, Elbows & Back", "CORDURA 1000D outer shell", "Removable thermal & waterproof liners", "360-degree ventilation mesh"]
+      },
+      {
+        id: "DMC-02",
+        name: "DMC All-Terrain Adventure Boots",
+        category: "Boots",
+        badge: "Waterproof",
+        price: "₹11,499",
+        image: "./dmc%20black%20logo.jpg",
+        features: ["Reinforced shin and ankle protection", "Oil & slip resistant Vibram sole", "Dry-Tex waterproof breathable membrane", "Micro-metric buckle closure"]
+      },
+      {
+        id: "DMC-03",
+        name: "DMC Modular Carbon Helmet",
+        category: "Helmets",
+        badge: "ECE 22.06",
+        price: "₹8,999",
+        image: "./dmc%20black%20logo.jpg",
+        features: ["Dual homologation (P/J rated)", "Pinlock 120 Max Vision ready", "Drop-down internal sun visor", "Aerodynamic wind-tunnel tested shell"]
+      },
+      {
+        id: "DMC-04",
+        name: "DMC Titan Waterproof Saddlebags",
+        category: "Luggage",
+        badge: "Heavy Duty",
+        price: "₹9,500",
+        image: "./dmc%20black%20logo.jpg",
+        features: ["100% Waterproof roll-top construction", "50 Liters combined capacity", "Heat-resistant base panels", "Quick-release universal mounting straps"]
+      }
+    ];
+
+    let CATEGORIES = ["All", "Jackets", "Boots", "Helmets", "Luggage", "Gloves"];
+    let selectedCategory = "All";
+    let searchQuery = "";
+    let selectedProductSize = "L";
+
+    function triggerHaptic() {
+      if ("vibrate" in navigator) navigator.vibrate(10);
+    }
+
+    // Fetch live products from Supabase database 'products' table
+    async function fetchLiveProducts() {
+      if (!supabaseClient) {
+        initCategoryTabs();
+        renderProducts();
+        return;
+      }
+      try {
+        const { data, error } = await supabaseClient.from('products').select('*');
+        if (error) throw error;
+        if (data && data.length > 0) {
+          PRODUCTS = data.map(p => ({
+            id: p.id || p.sku || 'DMC-' + Math.floor(Math.random()*1000),
+            name: p.name,
+            category: p.category || 'General',
+            badge: p.badge || '',
+            price: p.price || '',
+            image: p.image || './dmc%20black%20logo.jpg',
+            features: typeof p.features === 'string' ? p.features.split('|').map(f => f.trim()).filter(Boolean) : (p.features || [])
+          }));
+          const uniqueCats = ["All", ...new Set(PRODUCTS.map(p => p.category).filter(Boolean))];
+          CATEGORIES = uniqueCats;
+        }
+      } catch (err) {
+        console.error("Supabase fetch error, using fallback catalog", err);
+      } finally {
+        initCategoryTabs();
+        renderProducts();
+      }
+    }
+
+    function initCategoryTabs() {
+      const tabs = document.getElementById("categoryTabs");
+      tabs.innerHTML = CATEGORIES.map(cat => {
+        const isActive = cat === selectedCategory;
+        return `
+          <button onclick="setCategory('${cat}')" 
+            class="px-4 py-1.5 rounded-full text-xs font-bold whitespace-nowrap active:scale-95 transition-all ${
+              isActive ? 'bg-brand text-white shadow-md shadow-brand/30' : 'bg-cardBg border border-cardBorder text-neutral-400'
+            }">
+            ${cat}
+          </button>
+        `;
+      }).join('');
+    }
+
+    function setCategory(category) {
+      triggerHaptic();
+      selectedCategory = category;
+      initCategoryTabs();
+      renderProducts();
+    }
+
+    function handleSearch() {
+      searchQuery = document.getElementById("searchInput").value.toLowerCase();
+      renderProducts();
+    }
+
+    function renderProducts() {
+      const grid = document.getElementById("productGrid");
+      const filtered = PRODUCTS.filter(p => {
+        const matchesCat = selectedCategory === "All" || p.category === selectedCategory;
+        const matchesQuery = (p.name && p.name.toLowerCase().includes(searchQuery)) || 
+                             (p.category && p.category.toLowerCase().includes(searchQuery));
+        return matchesCat && matchesQuery;
+      });
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `
+          <div class="col-span-2 text-center py-16 text-neutral-500 text-xs">
+            No gear found matching your search.
+          </div>
+        `;
+        return;
+      }
+
+      grid.innerHTML = filtered.map(p => `
+        <div onclick="openProductModal('${p.id}')" class="bg-cardBg border border-cardBorder rounded-2xl overflow-hidden flex flex-col justify-between active:scale-[0.98] transition-transform cursor-pointer shadow-lg group">
+          <div class="relative aspect-square w-full bg-neutral-900 overflow-hidden flex items-center justify-center">
+            <img src="${p.image}" alt="${p.name}" class="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform" 
+              onerror="this.src='./dmc%20black%20logo.jpg'; this.classList.add('p-6');" loading="lazy" />
+            ${p.badge ? `<span class="absolute top-2 left-2 bg-brand text-[9px] font-black uppercase tracking-wider text-white px-2 py-0.5 rounded shadow">${p.badge}</span>` : ''}
+          </div>
+          <div class="p-3 flex flex-col flex-1 justify-between">
             <div>
-                <h2 class="text-2xl font-black text-white flex items-center gap-2">
-                    <i class="fa-solid fa-shield-halved text-dmc-orange"></i> Riding Gear & Global Safety Standards
-                </h2>
-                <p class="text-xs text-gray-400">Safety first is the DMC moto. Know your certifications before buying helmets, jackets, and armor.</p>
+              <span class="text-[9px] uppercase tracking-wider font-semibold text-brand">${p.category}</span>
+              <h3 class="text-xs font-bold text-white line-clamp-2 mt-0.5 leading-snug">${p.name}</h3>
+              ${p.price ? `<p class="text-xs font-extrabold text-neutral-200 mt-1">${p.price}</p>` : ''}
             </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- ECE 22.06 -->
-                <div class="glass-panel p-6 rounded-3xl space-y-4 border border-dmc-orange/30">
-                    <div class="flex items-center justify-between">
-                        <span class="text-xs font-extrabold bg-dmc-orange/20 text-dmc-orange px-3 py-1 rounded-full uppercase">Helmet Standard</span>
-                        <span class="text-xs font-bold text-gray-400">Global Gold Standard</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-white">ECE 22.06 Certification</h3>
-                    <p class="text-xs text-gray-300 leading-relaxed">
-                        Replacing the older ECE 22.05 standard, ECE 22.06 introduces rigorous rotational impact testing, oblique crash angles, and strict visor penetration tests. Helmets bearing this certification are mandatory across professional racing leagues and top street riding communities globally.
-                    </p>
-                    <div class="bg-black/40 p-3.5 rounded-xl border border-neutral-800 space-y-1 text-xs text-gray-300">
-                        <div class="font-bold text-dmc-orange mb-1"><i class="fa-solid fa-circle-check mr-1"></i> Key Takeaways:</div>
-                        <div>• Multi-impact rotational testing</div>
-                        <div>• Mandatory integrated sun visor safety evaluations</div>
-                        <div>• Strict shell deformation limits</div>
-                    </div>
-                </div>
-
-                <!-- CE EN 17092 -->
-                <div class="glass-panel p-6 rounded-3xl space-y-4 border border-blue-500/30">
-                    <div class="flex items-center justify-between">
-                        <span class="text-xs font-extrabold bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full uppercase">Apparel Standard</span>
-                        <span class="text-xs font-bold text-gray-400">CE EN 17092</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-white">Protective Jacket & Pants Ratings</h3>
-                    <p class="text-xs text-gray-300 leading-relaxed">
-                        CE rating classes range from Class A (light urban protection) to Class AAA (heavy-duty leather racing suits). Always look for CE Level 2 armor inserts at shoulders, elbows, knees, and back for maximum impact absorption during a slide.
-                    </p>
-                    <div class="bg-black/40 p-3.5 rounded-xl border border-neutral-800 space-y-1 text-xs text-gray-300">
-                        <div class="font-bold text-blue-400 mb-1"><i class="fa-solid fa-circle-check mr-1"></i> Armor Rating Levels:</div>
-                        <div>• **Level 1**: Transmits maximum residual force under 18kN</div>
-                        <div>• **Level 2**: Superior protection, transmitting under 9kN</div>
-                        <div>• **AAA Class**: Heavy racing leather & abrasion-resistant textiles</div>
-                    </div>
-                </div>
+            <div class="mt-3 flex items-center justify-between border-t border-cardBorder/60 pt-2">
+              <span class="text-[10px] text-neutral-400 font-medium">Inquire</span>
+              <span class="text-[10px] bg-neutral-800 border border-cardBorder text-neutral-200 font-bold px-2 py-1 rounded-lg flex items-center gap-1 group-hover:bg-brand group-hover:border-brand transition-colors">
+                <span>View</span>
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+              </span>
             </div>
-        </section>
-
-        <!-- TAB 7: EXPERT BLOGS (15+ TOPICS) -->
-        <section id="tab-blogs" class="tab-content hidden space-y-6">
-            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-                <div>
-                    <h2 class="text-2xl font-black text-white flex items-center gap-2">
-                        <i class="fa-solid fa-book-open text-dmc-orange"></i> 15+ Expert Rider Articles & Guides
-                    </h2>
-                    <p class="text-xs text-gray-400">In-depth guides covering riding styles, global safety, bike accessories, and legal compliances.</p>
-                </div>
-                <div class="w-full md:w-72">
-                    <input type="text" id="blogSearch" oninput="filterBlogs()" placeholder="Search articles..." class="w-full bg-neutral-900 border border-neutral-800 rounded-xl px-4 py-2 text-xs text-white focus:outline-none focus:border-dmc-orange">
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="blogsGrid">
-                <!-- Populated via JS -->
-            </div>
-        </section>
-
-    </main>
-
-    <!-- BOOKING & CHECKOUT MODAL (NEW) -->
-    <div id="bookingModal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden items-center justify-center p-4 overflow-y-auto">
-        <div class="glass-panel max-w-lg w-full max-h-[90vh] rounded-3xl overflow-hidden flex flex-col border border-amber-500/40 p-6 space-y-4">
-            <div class="flex items-center justify-between border-b border-neutral-800 pb-3">
-                <div class="flex items-center gap-2">
-                    <img src="IMG_3791.jpg" alt="DMC Logo" class="w-8 h-8 rounded-lg object-contain bg-black border border-dmc-orange/40">
-                    <div>
-                        <span class="text-[10px] font-extrabold text-amber-400 uppercase tracking-widest">Limited Batch Booking</span>
-                        <h3 id="bookingModalTitle" class="font-bold text-white text-base">Book Hoody</h3>
-                    </div>
-                </div>
-                <button onclick="closeBookingModal()" class="w-8 h-8 rounded-full bg-neutral-800 hover:bg-neutral-700 text-white flex items-center justify-center transition"><i class="fa-solid fa-xmark"></i></button>
-            </div>
-
-            <p class="text-xs text-gray-300">Secure your spot in our limited 50 pcs batch. Fill in your shipping information below to submit your booking request directly to <span class="text-amber-400 font-bold">douromoto@gmail.com</span>.</p>
-
-            <form id="bookingForm" onsubmit="submitBooking(event)" class="space-y-3 pt-1">
-                <input type="hidden" id="bookProduct">
-                <div class="grid grid-cols-2 gap-3">
-                    <div>
-                        <label class="text-[11px] font-semibold text-gray-300">Selected Style</label>
-                        <input type="text" id="bookStyleDisp" readonly class="w-full bg-neutral-950 border border-neutral-800 rounded-xl px-3 py-2 text-xs text-amber-400 font-bold mt-1">
-                    </div>
-                    <div>
-                        <label class="text-[11px] font-semibold text-gray-300">Price</label>
-                        <input type="text" id="bookPriceDisp" readonly class="w-full bg-neutral-950 border border-neutral-800 rounded-xl px-3 py-2 text-xs text-white font-bold mt-1" value="₹17,999">
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-2 gap-3">
-                    <div>
-                        <label class="text-[11px] font-semibold text-gray-300">Color Choice</label>
-                        <select id="bookColor" class="w-full bg-neutral-900 border border-neutral-800 rounded-xl px-3 py-2 text-xs text-white mt-1 focus:outline-none focus:border-amber-500">
-                            <option value="Black">Black (White DMC Pocket Logo)</option>
-                            <option value="Navy">Navy (White DMC Pocket Logo)</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="text-[11px] font-semibold text-gray-300">Size</label>
-                        <select id="bookSize" class="w-full bg-neutral-900 border border-neutral-800 rounded-xl px-3 py-2 text-xs text-white mt-1 focus:outline-none focus:border-amber-500">
-                            <option value="S">Small (S)</option>
-                            <option value="M">Medium (M)</option>
-                            <option value="L">Large (L)</option>
-                            <option value="XL" selected>X-Large (XL)</option>
-                            <option value="XXL">XX-Large (XXL)</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div>
-                    <label class="text-[11px] font-semibold text-gray-300">Full Name</label>
-                    <input type="text" id="bookName" required placeholder="Alex Rider" class="w-full bg-neutral-900 border border-neutral-800 rounded-xl px-3 py-2 text-xs text-white mt-1 focus:outline-none focus:border-amber-500">
-                </div>
-
-                <div>
-                    <label class="text-[11px] font-semibold text-gray-300">Email Address</label>
-                    <input type="email" id="bookEmail" required placeholder="alex@rider.com" class="w-full bg-neutral-900 border border-neutral-800 rounded-xl px-3 py-2 text-xs text-white mt-1 focus:outline-none focus:border-amber-500">
-                </div>
-
-                <div>
-                    <label class="text-[11px] font-semibold text-gray-300">Shipping Address (Street, City, Pincode, Country)</label>
-                    <textarea id="bookAddress" rows="2" required placeholder="Enter complete shipping address..." class="w-full bg-neutral-900 border border-neutral-800 rounded-xl px-3 py-2 text-xs text-white mt-1 focus:outline-none focus:border-amber-500"></textarea>
-                </div>
-
-                <button type="submit" class="w-full bg-amber-500 hover:bg-amber-400 text-black font-extrabold py-3 rounded-xl text-xs transition shadow-lg shadow-amber-500/20 mt-2">
-                    Submit Booking via Email (douromoto@gmail.com)
-                </button>
-            </form>
+          </div>
         </div>
-    </div>
+      `).join('');
+    }
 
-    <!-- FULL BLOG ARTICLE MODAL -->
-    <div id="blogModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4 overflow-y-auto">
-        <div class="glass-panel max-w-4xl w-full max-h-[90vh] rounded-3xl overflow-hidden flex flex-col border border-dmc-orange/40">
-            <div class="p-6 border-b border-neutral-800 flex items-center justify-between bg-neutral-900/50">
-                <div class="flex items-center gap-3">
-                    <img src="IMG_3791.jpg" alt="DMC Logo" class="w-8 h-8 rounded-lg object-contain bg-black border border-dmc-orange/40">
-                    <div>
-                        <span class="text-[10px] font-extrabold text-dmc-orange uppercase tracking-widest">DMC Editorial</span>
-                        <h3 id="modalBlogTitle" class="font-bold text-white text-base">Article Title</h3>
-                    </div>
-                </div>
-                <button onclick="closeBlogModal()" class="w-9 h-9 rounded-full bg-neutral-800 hover:bg-neutral-700 text-white flex items-center justify-center transition">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-            </div>
-            <div id="modalBlogContent" class="p-6 md:p-8 overflow-y-auto space-y-4 text-sm text-gray-300 leading-relaxed">
-                <!-- Content -->
-            </div>
-            <div class="p-4 border-t border-neutral-800 bg-neutral-900/50 flex justify-between items-center text-xs text-gray-400">
-                <span>Published by Douro Moto Co. • douromoto@gmail.com</span>
-                <button onclick="closeBlogModal()" class="bg-dmc-orange text-white font-bold px-4 py-2 rounded-xl">Close Article</button>
-            </div>
+    function openProductModal(productId) {
+      triggerHaptic();
+      const product = PRODUCTS.find(p => p.id === productId);
+      if (!product) return;
+
+      selectedProductSize = "L";
+      renderModalContent(product);
+
+      document.getElementById("sheetBackdrop").classList.remove("pointer-events-none", "opacity-0");
+      document.getElementById("detailSheet").classList.remove("closed");
+    }
+
+    function selectSize(size, productId) {
+      selectedProductSize = size;
+      const product = PRODUCTS.find(p => p.id === productId);
+      if (product) renderModalContent(product);
+    }
+
+    function renderModalContent(product) {
+      const isSizedItem = ["Jackets", "Pants", "Boots", "Gloves", "Helmets"].includes(product.category);
+      const sizes = isSizedItem ? (product.category === "Boots" ? ["41", "42", "43", "44", "45"] : ["S", "M", "L", "XL", "2XL"]) : ["Universal Fit"];
+
+      const waMsg = encodeURIComponent(`Hi Douro Moto Co., I am inquiring about: ${product.name} (Ref: ${product.id}) in Size: ${selectedProductSize}. Please confirm stock availability.`);
+      const waLink = `https://wa.me/${WA_NUMBER}?text=${waMsg}`;
+
+      const content = document.getElementById("sheetContent");
+      content.innerHTML = `
+        <div class="flex gap-3 items-center">
+          <div class="w-20 h-20 bg-neutral-900 rounded-xl border border-cardBorder p-1 flex-shrink-0 flex items-center justify-center">
+            <img src="${product.image}" class="w-full h-full object-contain" onerror="this.src='./dmc%20black%20logo.jpg';" />
+          </div>
+          <div>
+            <span class="text-[10px] uppercase font-bold text-brand tracking-widest">${product.category}</span>
+            <h3 class="text-sm font-bold text-white leading-tight mt-0.5">${product.name}</h3>
+            ${product.price ? `<p class="text-xs font-bold text-brand mt-0.5">${product.price}</p>` : ''}
+            <p class="text-[11px] text-neutral-400 mt-1">Ref: ${product.id}</p>
+          </div>
         </div>
-    </div>
 
-    <!-- CONTACT & FEEDBACK MODAL -->
-    <div id="feedbackModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4">
-        <div class="glass-panel max-w-md w-full rounded-3xl overflow-hidden flex flex-col border border-dmc-orange/40 p-6 space-y-4">
-            <div class="flex items-center justify-between">
-                <div class="flex items-center gap-2">
-                    <img src="IMG_3791.jpg" alt="DMC Logo" class="w-8 h-8 rounded-lg object-contain bg-black border border-dmc-orange/40">
-                    <h3 class="font-bold text-lg text-white">Contact Douro Moto Co.</h3>
-                </div>
-                <button onclick="closeFeedbackModal()" class="text-gray-400 hover:text-white"><i class="fa-solid fa-xmark"></i></button>
+        ${isSizedItem ? `
+          <div class="space-y-1.5">
+            <div class="flex justify-between items-center text-xs">
+              <span class="text-neutral-400 font-medium">Select Sizing:</span>
+              <span class="text-brand font-bold">Selected: ${selectedProductSize}</span>
             </div>
-            <p class="text-xs text-gray-300">Have feedback, suggestions, or questions for our rider community? Reach out directly via email:</p>
-            
-            <div class="bg-black/50 p-4 rounded-2xl border border-neutral-800 flex items-center justify-between">
-                <span class="text-xs font-bold text-dmc-orange"><i class="fa-solid fa-envelope mr-2"></i> douromoto@gmail.com</span>
-                <a href="mailto:douromoto@gmail.com" class="bg-dmc-orange text-white text-xs font-bold px-3 py-1.5 rounded-xl">Send Email</a>
-            </div>
-
-            <div class="space-y-3 pt-2">
-                <div>
-                    <label class="text-[11px] font-semibold text-gray-300">Your Name / Rider Handle</label>
-                    <input type="text" id="fbName" placeholder="e.g. Alex Rider" class="w-full bg-neutral-900 border border-neutral-800 rounded-xl px-3 py-2 text-xs text-white mt-1 focus:outline-none focus:border-dmc-orange">
-                </div>
-                <div>
-                    <label class="text-[11px] font-semibold text-gray-300">Message / Feedback</label>
-                    <textarea id="fbMsg" rows="3" placeholder="Tell us what you think or what tool you want added..." class="w-full bg-neutral-900 border border-neutral-800 rounded-xl px-3 py-2 text-xs text-white mt-1 focus:outline-none focus:border-dmc-orange"></textarea>
-                </div>
-                <button onclick="submitFeedback()" class="w-full bg-dmc-orange hover:bg-dmc-orange/90 text-white font-bold py-2.5 rounded-xl text-xs transition shadow-lg shadow-dmc-orange/30">
-                    Submit Feedback
+            <div class="flex gap-2">
+              ${sizes.map(s => `
+                <button onclick="selectSize('${s}', '${product.id}')" class="flex-1 py-1.5 rounded-lg text-xs font-bold border transition-colors ${selectedProductSize === s ? 'bg-brand text-white border-brand' : 'bg-cardBg border-cardBorder text-neutral-300'}">
+                  ${s}
                 </button>
+              `).join('')}
             </div>
+          </div>
+        ` : ''}
+
+        <div class="bg-darkSurface border border-cardBorder rounded-xl p-3 space-y-2">
+          <p class="text-[10px] uppercase font-bold text-neutral-400 tracking-wider">Features & Specifications</p>
+          <div class="space-y-1.5">
+            ${product.features.length > 0 ? product.features.map(f => `
+              <div class="flex items-start gap-2 text-xs text-neutral-300">
+                <span class="w-1.5 h-1.5 rounded-full bg-brand mt-1.5 flex-shrink-0"></span>
+                <span>${f}</span>
+              </div>
+            `).join('') : '<p class="text-xs text-neutral-400">Engineered for heavy-duty motorcycle touring.</p>'}
+          </div>
         </div>
-    </div>
 
-    <!-- MOBILE BOTTOM NAVIGATION BAR -->
-    <div class="md:hidden fixed bottom-0 left-0 right-0 glass-panel border-t border-dmc-border px-2 py-2 flex items-center justify-around z-40 bg-black/90">
-        <button onclick="switchTab('explore')" class="mobile-nav-btn text-dmc-orange flex flex-col items-center gap-1 text-[9px] font-bold">
-            <i class="fa-solid fa-compass text-base"></i> Explore
-        </button>
-        <button onclick="switchTab('merch')" class="mobile-nav-btn text-gray-400 flex flex-col items-center gap-1 text-[9px] font-bold">
-            <i class="fa-solid fa-shirt text-base"></i> Hoodies
-        </button>
-        <button onclick="switchTab('mechanics')" class="mobile-nav-btn text-gray-400 flex flex-col items-center gap-1 text-[9px] font-bold">
-            <i class="fa-solid fa-gears text-base"></i> Parts
-        </button>
-        <button onclick="switchTab('tools')" class="mobile-nav-btn text-gray-400 flex flex-col items-center gap-1 text-[9px] font-bold">
-            <i class="fa-solid fa-toolbox text-base"></i> Tools
-        </button>
-        <button onclick="switchTab('brands')" class="mobile-nav-btn text-gray-400 flex flex-col items-center gap-1 text-[9px] font-bold">
-            <i class="fa-solid fa-motorcycle text-base"></i> Brands
-        </button>
-        <button onclick="switchTab('blogs')" class="mobile-nav-btn text-gray-400 flex flex-col items-center gap-1 text-[9px] font-bold">
-            <i class="fa-solid fa-book-open text-base"></i> Blogs
-        </button>
-    </div>
+        <div class="grid grid-cols-2 gap-2 pt-1">
+          <a href="${waLink}" target="_blank" rel="noopener noreferrer" 
+            class="bg-brand hover:bg-brandDark text-white py-3 rounded-xl font-bold text-xs flex items-center justify-center gap-1.5 tracking-wider uppercase active:scale-95 transition-all shadow-lg shadow-brand/20">
+            <span>Inquire on WhatsApp</span>
+          </a>
+          <a href="tel:+919662489679" 
+            class="bg-neutral-800 hover:bg-neutral-700 border border-cardBorder text-white py-3 rounded-xl font-bold text-xs flex items-center justify-center gap-1.5 tracking-wider uppercase active:scale-95 transition-all">
+            <span>Call Shop</span>
+          </a>
+        </div>
+      `;
+    }
 
-    <!-- JAVASCRIPT DATA & APP LOGIC -->
-    <script>
-        // GOOGLE SHEETS VISITOR TRACKER INTEGRATION
-        async function logVisitorToDMC() {
-            if (sessionStorage.getItem('dmc_tracked')) return;
-            sessionStorage.setItem('dmc_tracked', 'true');
+    function closeProductModal() {
+      document.getElementById("sheetBackdrop").classList.add("pointer-events-none", "opacity-0");
+      document.getElementById("detailSheet").classList.add("closed");
+    }
 
-            try {
-                const res = await fetch('https://ipapi.co/json/');
-                const info = await res.json();
+    function openChecklistModal() {
+      triggerHaptic();
+      document.getElementById("checklistBackdrop").classList.remove("pointer-events-none", "opacity-0");
+      document.getElementById("checklistSheet").classList.remove("closed");
+    }
 
-                const payload = {
-                    city: info.city || 'Unknown',
-                    country: info.country_name || 'Unknown',
-                    ip: info.ip || 'Hidden',
-                    device: /Mobi|Android/i.test(navigator.userAgent) ? 'Mobile' : 'Desktop',
-                    browser: navigator.userAgent.includes('Chrome') ? 'Chrome' : navigator.userAgent.includes('Safari') ? 'Safari' : 'Other'
-                };
+    function closeChecklistModal() {
+      document.getElementById("checklistBackdrop").classList.add("pointer-events-none", "opacity-0");
+      document.getElementById("checklistSheet").classList.add("closed");
+    }
 
-                const scriptURL = 'https://script.google.com/macros/s/AKfycbxSz2vV6b6pxuWv6PlGrdDx3sOIxfVoQ3VuJjNymYIrYydgUcEombdUstDHVP8vM5TAkQ/exec';
-                
-                await fetch(scriptURL, {
-                    method: 'POST',
-                    mode: 'no-cors',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-                console.log('DMC Analytics recorded to Google Sheet.');
-            } catch (e) {
-                console.error('Tracking failed:', e);
-            }
+    function switchTab(tabId) {
+      triggerHaptic();
+      ['shop', 'reels', 'info'].forEach(id => {
+        document.getElementById(id + 'View').classList.add('hidden');
+        const nav = document.getElementById('nav-' + id);
+        nav.classList.remove('text-brand', 'font-bold');
+        nav.classList.add('text-neutral-400', 'font-medium');
+      });
+
+      document.getElementById(tabId + 'View').classList.remove('hidden');
+      const activeNav = document.getElementById('nav-' + tabId);
+      activeNav.classList.remove('text-neutral-400', 'font-medium');
+      activeNav.classList.add('text-brand', 'font-bold');
+
+      const heroVid = document.getElementById("heroBannerVideo");
+      if (heroVid) {
+        if (tabId === 'shop') {
+          heroVid.play().catch(() => {});
+        } else {
+          heroVid.pause();
         }
-        window.addEventListener('load', () => { setTimeout(logVisitorToDMC, 2000); });
+      }
 
-        // TAB NAVIGATION
-        function switchTab(tabId) {
-            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
-            document.getElementById('tab-' + tabId).classList.remove('hidden');
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+      window.dispatchEvent(new Event('resize'));
+    }
 
-        // VIDEO CONTROLS
-        const heroVideo = document.getElementById('heroVideo');
-        function togglePlayPause() {
-            const icon = document.getElementById('playPauseIcon');
-            const text = document.getElementById('playPauseText');
-            if (heroVideo.paused) {
-                heroVideo.play();
-                icon.className = "fa-solid fa-pause";
-                text.innerText = "Pause";
-            } else {
-                heroVideo.pause();
-                icon.className = "fa-solid fa-play";
-                text.innerText = "Play";
-            }
-        }
-        function toggleMuteSound() {
-            const icon = document.getElementById('soundIcon');
-            const text = document.getElementById('soundText');
-            heroVideo.muted = !heroVideo.muted;
-            if (heroVideo.muted) {
-                icon.className = "fa-solid fa-volume-xmark";
-                text.innerText = "Sound Off";
-            } else {
-                icon.className = "fa-solid fa-volume-high";
-                text.innerText = "Sound On";
-            }
-        }
-        function handleVideoError() {
-            document.getElementById('heroVideo').style.display = 'none';
-            document.getElementById('videoFallback').classList.remove('hidden');
-        }
-
-        // BOOKING & CHECKOUT MODAL LOGIC
-        function openBookingModal(styleName, price) {
-            document.getElementById('bookingModalTitle').innerText = "Book: " + styleName;
-            document.getElementById('bookStyleDisp').value = styleName;
-            document.getElementById('bookPriceDisp').value = "₹" + price.toLocaleString();
-            document.getElementById('bookingModal').classList.remove('hidden');
-            document.getElementById('bookingModal').classList.add('flex');
-        }
-
-        function closeBookingModal() {
-            document.getElementById('bookingModal').classList.remove('flex');
-            document.getElementById('bookingModal').classList.add('hidden');
-        }
-
-        function submitBooking(e) {
-            e.preventDefault();
-            const style = document.getElementById('bookStyleDisp').value;
-            const color = document.getElementById('bookColor').value;
-            const size = document.getElementById('bookSize').value;
-            const name = document.getElementById('bookName').value;
-            const email = document.getElementById('bookEmail').value;
-            const address = document.getElementById('bookAddress').value;
-
-            const subject = encodeURIComponent("New Hoody Booking: " + style);
-            const body = encodeURIComponent(`Hello Douro Moto Co. Team,\n\nI would like to book a limited-edition hoody:\n\n- Style: ${style}\n- Color: ${color}\n- Size: ${size}\n- Price: ₹17,999\n\nShipping Details:\nName: ${name}\nEmail: ${email}\nAddress:\n${address}\n\nPlease confirm my order and send payment instructions.`);
-
-            // Open user's email client directly to douromoto@gmail.com
-            window.location.href = `mailto:douromoto@gmail.com?subject=${subject}&body=${body}`;
-            
-            alert(`Thank you ${name}! Your email client has opened with your booking details addressed to douromoto@gmail.com. Once sent, our team will confirm your order!`);
-            closeBookingModal();
-        }
-
-        // TOOL 1: FUEL CALCULATOR
-        function calculateFuel() {
-            const dist = parseFloat(document.getElementById('fuelDist').value) || 0;
-            const mileage = parseFloat(document.getElementById('fuelMileage').value) || 1;
-            const price = parseFloat(document.getElementById('fuelPrice').value) || 0;
-
-            const liters = dist / mileage;
-            const totalCost = liters * price;
-
-            document.getElementById('fuelResult').innerHTML = `
-                <div class="text-white font-bold">Estimated Fuel: <span class="text-dmc-orange">${liters.toFixed(2)} Liters</span></div>
-                <div class="text-white font-bold mt-1">Total Trip Cost: <span class="text-dmc-orange">₹${totalCost.toFixed(2)}</span></div>
-            `;
-        }
-
-        // TOOL 2: TIRE PRESSURE
-        function calculateTirePSI() {
-            const cat = document.getElementById('tireCategory').value;
-            let front = "28-30 PSI", rear = "32-34 PSI";
-            if (cat === 'sport') { front = "32-34 PSI"; rear = "36-38 PSI"; }
-            else if (cat === 'tourer') { front = "36 PSI"; rear = "40-42 PSI (Loaded)"; }
-            else if (cat === 'cruiser') { front = "30-32 PSI"; rear = "38-40 PSI"; }
-
-            document.getElementById('tireResult').innerHTML = `
-                <div class="text-white font-bold">Front Tire: <span class="text-blue-400">${front}</span></div>
-                <div class="text-white font-bold mt-1">Rear Tire: <span class="text-blue-400">${rear}</span></div>
-            `;
-        }
-
-        // TOOL 3: CHAIN MAINTENANCE
-        function checkChainHealth() {
-            const last = parseFloat(document.getElementById('lastLubeKm').value) || 0;
-            const curr = parseFloat(document.getElementById('currKm').value) || 0;
-            const diff = curr - last;
-
-            let status = "🟢 Chain is Healthy";
-            let color = "text-emerald-400";
-            if (diff > 500 && diff <= 700) {
-                status = "🟡 Due for Clean & Lube Soon!";
-                color = "text-amber-400";
-            } else if (diff > 700) {
-                status = "🔴 OVERDUE! Clean, Lube & Inspect Tension immediately!";
-                color = "text-red-500";
-            }
-
-            document.getElementById('chainResult').innerHTML = `
-                <div class="text-white font-bold">Distance Since Last Lube: <span class="text-emerald-400">${diff} KM</span></div>
-                <div class="font-bold mt-1 ${color}">${status}</div>
-            `;
-        }
-
-        // MECHANICS DATA
-        const mechanicsData = [
-            {
-                title: "Torque (The Pulling Force)",
-                category: "Engine Mechanics",
-                desc: "Torque is the rotational force produced by the engine crankshaft measured in Newton-meters (Nm) or lb-ft. It is what launches the motorcycle from a standstill and provides immediate roll-on acceleration.",
-                image: "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?q=80&w=800&auto=format&fit=crop"
-            },
-            {
-                title: "Horsepower (Top Speed & Power)",
-                category: "Engine Mechanics",
-                desc: "Horsepower calculates how fast torque is delivered over time. While torque gives acceleration feel, high horsepower ensures breathtaking top speeds on long straightaways.",
-                image: "https://images.unsplash.com/photo-1558980664-3a031cf67ea8?q=80&w=800&auto=format&fit=crop"
-            },
-            {
-                title: "Fuel Injector vs. Carburetor",
-                category: "Fuel Delivery",
-                desc: "Carburetors use mechanical vacuum pressure to draw fuel into the airstream. Modern Fuel Injectors use an Electronic Control Unit (ECU) to atomize precise micro-droplets of fuel for immaculate throttle response.",
-                image: "https://images.unsplash.com/photo-1558981359-219d6364c9c8?q=80&w=800&auto=format&fit=crop"
-            },
-            {
-                title: "Piston & Combustion Chamber",
-                category: "Engine Core",
-                desc: "The piston moves up and down inside the cylinder bore, converting chemical energy from exploding fuel-air mixtures into mechanical rotation. Piston rings seal combustion gases.",
-                image: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?q=80&w=800&auto=format&fit=crop"
-            },
-            {
-                title: "Anti-Lock Braking System (ABS)",
-                category: "Safety Tech",
-                desc: "ABS wheel speed sensors monitor rotation speed under braking. If a wheel locks up, the modulator instantly pulses hydraulic pressure to maintain steering control and prevent skidding.",
-                image: "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?q=80&w=800&auto=format&fit=crop"
-            },
-            {
-                title: "Suspension (Forks & Monoshock)",
-                category: "Chassis & Handling",
-                desc: "Upside-down front forks and rear monoshocks absorb road imperfections, keeping the tire contact patch firmly planted on the pavement during aggressive cornering and hard braking.",
-                image: "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?q=80&w=800&auto=format&fit=crop"
-            }
-        ];
-
-        function renderMechanics() {
-            const grid = document.getElementById('mechanicsGrid');
-            grid.innerHTML = mechanicsData.map(m => `
-                <div class="glass-panel rounded-3xl overflow-hidden border border-neutral-800 hover:border-dmc-orange transition flex flex-col">
-                    <div class="h-48 overflow-hidden relative">
-                        <img src="${m.image}" alt="${m.title}" class="w-full h-full object-cover">
-                        <span class="absolute top-3 left-3 bg-black/70 backdrop-blur-md text-dmc-orange text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase border border-dmc-orange/30">${m.category}</span>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between space-y-3">
-                        <h3 class="font-bold text-lg text-white">${m.title}</h3>
-                        <p class="text-xs text-gray-300 leading-relaxed">${m.desc}</p>
-                    </div>
-                </div>
-            `).join('');
-        }
-        renderMechanics();
-
-        function filterMechanics() {
-            const query = document.getElementById('mechanicsSearch').value.toLowerCase();
-            const filtered = mechanicsData.filter(m => m.title.toLowerCase().includes(query) || m.desc.toLowerCase().includes(query) || m.category.toLowerCase().includes(query));
-            const grid = document.getElementById('mechanicsGrid');
-            grid.innerHTML = filtered.map(m => `
-                <div class="glass-panel rounded-3xl overflow-hidden border border-neutral-800 hover:border-dmc-orange transition flex flex-col">
-                    <div class="h-48 overflow-hidden relative">
-                        <img src="${m.image}" alt="${m.title}" class="w-full h-full object-cover">
-                        <span class="absolute top-3 left-3 bg-black/70 backdrop-blur-md text-dmc-orange text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase border border-dmc-orange/30">${m.category}</span>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between space-y-3">
-                        <h3 class="font-bold text-lg text-white">${m.title}</h3>
-                        <p class="text-xs text-gray-300 leading-relaxed">${m.desc}</p>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        // BRAND INDEX DATA
-        const brandsData = [
-            { name: "Aprilia", country: "Italy", founded: "1945", history: "Started as a bicycle manufacturer in Noale, Italy, evolving into a powerhouse of MotoGP and WSBK championships.", models: ["RSV4 Factory", "Tuono V4", "RS 660"], logo: "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?q=80&w=300&auto=format&fit=crop" },
-            { name: "BMW Motorrad", country: "Germany", founded: "1923", history: "Produced its first motorcycle, the R32, in 1923 featuring the iconic flat-twin boxer engine layout.", models: ["R 1300 GS", "S 1000 RR", "M 1000 RR"], logo: "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?q=80&w=300&auto=format&fit=crop" },
-            { name: "Ducati", country: "Italy", founded: "1926", history: "Famous worldwide for L-twin Desmodromic valve engines and Panigale superbike dominance.", models: ["Panigale V4 S", "Streetfighter V4", "Multistrada V4"], logo: "https://images.unsplash.com/photo-1558980664-3a031cf67ea8?q=80&w=300&auto=format&fit=crop" },
-            { name: "Harley-Davidson", country: "United States", founded: "1903", history: "Synonymous with American cruising culture and air-cooled V-twin torque.", models: ["Fat Boy 114", "Road Glide", "Sportster S"], logo: "https://images.unsplash.com/photo-1558981359-219d6364c9c8?q=80&w=300&auto=format&fit=crop" },
-            { name: "Honda", country: "Japan", founded: "1948", history: "The largest motorcycle manufacturer in the world, famous for the Super Cub and CBR fireblades.", models: ["CBR1000RR-R Fireblade", "Africa Twin CRF1100L", "Gold Wing"], logo: "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?q=80&w=300&auto=format&fit=crop" },
-            { name: "Kawasaki", country: "Japan", founded: "1896", history: "World-renowned for high-performance Ninja supersport machines and supercharged H2 beasts.", models: ["Ninja H2R", "Ninja ZX-10R", "Z900"], logo: "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?q=80&w=300&auto=format&fit=crop" },
-            { name: "KTM", country: "Austria", founded: "1934", history: "Famous for their 'Ready to Race' ethos, dominating motocross and aggressive naked Duke street bikes.", models: ["1290 Super Duke R", "390 Duke", "890 Adventure R"], logo: "https://images.unsplash.com/photo-1558980664-3a031cf67ea8?q=80&w=300&auto=format&fit=crop" },
-            { name: "Royal Enfield", country: "India / UK", founded: "1901", history: "The oldest motorcycle brand in continuous production, famous for timeless mid-size retro classics.", models: ["Interceptor 650", "Classic 350", "Himalayan 450"], logo: "https://images.unsplash.com/photo-1558981359-219d6364c9c8?q=80&w=300&auto=format&fit=crop" },
-            { name: "Suzuki", country: "Japan", founded: "1909", history: "Launched legendary lightweight sportbikes like the GSX-R series and the legendary Hayabusa.", models: ["Hayabusa", "GSX-R1000", "V-Strom 1050"], logo: "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?q=80&w=300&auto=format&fit=crop" },
-            { name: "Triumph", country: "United Kingdom", founded: "1902", history: "Represents British engineering heritage, iconic classic modern retros, and powerful inline-three street fighters.", models: ["Speed Triple 1200 RR", "Bonneville T120", "Tiger 1200"], logo: "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?q=80&w=300&auto=format&fit=crop" },
-            { name: "Yamaha", country: "Japan", founded: "1955", history: "Globally celebrated for crossplane crankshaft inline-four engines (R1) and legendary MT naked series.", models: ["YZF-R1", "MT-09", "Tenere 700"], logo: "https://images.unsplash.com/photo-1558980664-3a031cf67ea8?q=80&w=300&auto=format&fit=crop" }
-        ];
-
-        function renderBrands() {
-            const grid = document.getElementById('brandsGrid');
-            grid.innerHTML = brandsData.map(b => `
-                <div class="glass-panel p-6 rounded-3xl space-y-4 border border-neutral-800 hover:border-dmc-orange transition flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center gap-3 mb-4">
-                            <img src="${b.logo}" alt="${b.name}" class="w-12 h-12 rounded-2xl object-cover border border-dmc-orange/30">
-                            <div>
-                                <h3 class="font-bold text-lg text-white">${b.name}</h3>
-                                <span class="text-[10px] text-dmc-orange uppercase font-bold"><i class="fa-solid fa-globe mr-1"></i> ${b.country} • Est. ${b.founded}</span>
-                            </div>
-                        </div>
-                        <p class="text-xs text-gray-300 leading-relaxed mb-4">${b.history}</p>
-                        <div class="flex flex-wrap gap-1.5">
-                            ${b.models.map(m => `<span class="bg-neutral-900 border border-neutral-800 text-gray-300 text-[10px] px-2.5 py-1 rounded-lg">${m}</span>`).join('')}
-                        </div>
-                    </div>
-                </div>
-            `).join('');
-        }
-        renderBrands();
-
-        function filterBrands() {
-            const query = document.getElementById('brandSearch').value.toLowerCase();
-            const filtered = brandsData.filter(b => b.name.toLowerCase().includes(query) || b.country.toLowerCase().includes(query));
-            const grid = document.getElementById('brandsGrid');
-            grid.innerHTML = filtered.map(b => `
-                <div class="glass-panel p-6 rounded-3xl space-y-4 border border-neutral-800 hover:border-dmc-orange transition flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center gap-3 mb-4">
-                            <img src="${b.logo}" alt="${b.name}" class="w-12 h-12 rounded-2xl object-cover border border-dmc-orange/30">
-                            <div>
-                                <h3 class="font-bold text-lg text-white">${b.name}</h3>
-                                <span class="text-[10px] text-dmc-orange uppercase font-bold"><i class="fa-solid fa-globe mr-1"></i> ${b.country} • Est. ${b.founded}</span>
-                            </div>
-                        </div>
-                        <p class="text-xs text-gray-300 leading-relaxed mb-4">${b.history}</p>
-                        <div class="flex flex-wrap gap-1.5">
-                            ${b.models.map(m => `<span class="bg-neutral-900 border border-neutral-800 text-gray-300 text-[10px] px-2.5 py-1 rounded-lg">${m}</span>`).join('')}
-                        </div>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        // 15+ EXPERT BLOGS
-        const blogsData = [
-            { id: 1, title: "Mastering Motorcycle Riding Styles: From Track Supersport to Adventure Touring", category: "Riding Styles", readTime: "12 min read", summary: "An exhaustive guide exploring ergonomic posture, throttle control, and body positioning.", content: "<p>Riding a supersport motorcycle demands absolute precision, physical conditioning, and correct body geometry...</p>" },
-            { id: 2, title: "Global Helmet Safety Standards Explained: ECE 22.06, DOT, and Snell M2025", category: "Rider Safety", readTime: "15 min read", summary: "Deep dive into how helmet testing has evolved globally.", content: "<p>The European ECE 22.06 standard represents the pinnacle of modern helmet testing...</p>" },
-            { id: 3, title: "CE EN 17092 Apparel Compliance: Understanding Armor Levels and Abrasion Resistance", category: "Gear Compliance", readTime: "10 min read", summary: "Everything you need to know about Class A, AA, and AAA motorcycle apparel.", content: "<p>The European standard EN 17092 categorizes riding apparel into classes based on slide abrasion...</p>" },
-            { id: 4, title: "Motorcycle Chain Maintenance & Final Drive Longevity Masterclass", category: "Bike Accessories", readTime: "11 min read", summary: "Step-by-step cleaning, degreasing, and lubrication intervals.", content: "<p>Never use harsh wire brushes or petrol on O-ring chains...</p>" },
-            { id: 5, title: "Global Motorcycle Legal Compliance: Emissions, Noise Limits, and Documentation", category: "Legal Compliance", readTime: "14 min read", summary: "Navigating international homologation standards and Euro 5/BS6 norms.", content: "<p>Modern motorcycles sold globally must comply with stringent emission limits...</p>" },
-            { id: 6, title: "Understanding Motorcycle Suspension Tuning: Preload, Rebound, and Compression", category: "Bike Mechanics", readTime: "13 min read", summary: "How to set rider sag and adjust damping circuits.", content: "<p>Spring preload does not change spring stiffness; it sets the ride height...</p>" },
-            { id: 7, title: "Essential GPS Navigation and Communication Systems for Group Rides", category: "Bike Accessories", readTime: "9 min read", summary: "Comparing Bluetooth mesh intercoms and smartphone mounts.", content: "<p>Modern Dynamic Mesh Communication (DMC) intercoms allow seamless group pairing...</p>" },
-            { id: 8, title: "The Physics of Countersteering: How Motorcycles Actually Turn at Speed", category: "Riding Styles", readTime: "10 min read", summary: "Mastering the countersteering technique required above 25 km/h.", content: "<p>To initiate a right turn, you must briefly push forward on the right handlebar...</p>" },
-            { id: 9, title: "Choosing the Right Motorcycle Tires: Compounds, Tread Patterns, and Pressure", category: "Bike Accessories", readTime: "11 min read", summary: "Touring dual-compound silica tires vs sticky track-day slicks.", content: "<p>Modern sport-touring tires feature harder rubber compounds in the center...</p>" },
-            { id: 10, title: "Night Riding Safety: High-Visibility Gear, Auxiliary LED Lights, and Visor Care", category: "Rider Safety", readTime: "8 min read", summary: "Combating glare from oncoming headlights and visor maintenance.", content: "<p>Micro-scratches on motorcycle visors scatter oncoming headlight beams...</p>" },
-            { id: 11, title: "Emergency Braking & Trail Braking Techniques for Street and Track", category: "Riding Styles", readTime: "13 min read", summary: "Progressive front brake lever squeeze and weight transfer management.", content: "<p>Grabbing the front brake lever instantly causes the front forks to bottom out...</p>" },
-            { id: 12, title: "Winter Storage and Battery Maintenance for Motorcycles", category: "Bike Maintenance", readTime: "9 min read", summary: "Preventing fuel varnish in injectors and using battery maintainers.", content: "<p>Leaving untreated gasoline in fuel tanks over winter causes fuel to oxidize...</p>" },
-            { id: 13, title: "Luggage Systems for Motorcycles: Hard Panniers vs. Soft Saddlebags", category: "Bike Accessories", readTime: "10 min read", summary: "Aerodynamic wind drag, weight distribution, and waterproof dry bags.", content: "<p>Hard aluminum panniers offer lockable security and waterproof storage...</p>" },
-            { id: 14, title: "Motorcycle Insurance, Licensing, and Cross-Border Legal Documentation", category: "Legal Compliance", readTime: "11 min read", summary: "Understanding comprehensive coverage and international driving permits.", content: "<p>Comprehensive insurance protects your motorcycle against theft and fire...</p>" },
-            { id: 15, title: "The Psychology of Riding: Managing Fatigue, Concentration, and Defensive Riding", category: "Rider Safety", readTime: "12 min read", summary: "The SIPDE process and combating highway hypnosis.", content: "<p>Defensive riding relies on active scanning rather than staring directly at the bumper ahead...</p>" }
-        ];
-
-        function renderBlogs() {
-            const grid = document.getElementById('blogsGrid');
-            grid.innerHTML = blogsData.map(b => `
-                <div class="glass-panel p-6 rounded-3xl space-y-4 border border-neutral-800 hover:border-dmc-orange transition flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-[10px] font-extrabold bg-dmc-orange/20 text-dmc-orange px-2.5 py-1 rounded-full uppercase">${b.category}</span>
-                            <span class="text-[10px] text-gray-400 font-semibold"><i class="fa-regular fa-clock mr-1"></i> ${b.readTime}</span>
-                        </div>
-                        <h3 class="font-bold text-lg text-white mb-2 leading-snug">${b.title}</h3>
-                        <p class="text-xs text-gray-300 leading-relaxed">${b.summary}</p>
-                    </div>
-                    <button onclick="openBlogModal(${b.id})" class="mt-4 w-full bg-neutral-900 hover:bg-dmc-orange hover:text-white text-gray-200 border border-neutral-800 font-bold py-2.5 rounded-xl text-xs transition flex items-center justify-center gap-2">
-                        Read Full Article <i class="fa-solid fa-arrow-right"></i>
-                    </button>
-                </div>
-            `).join('');
-        }
-        renderBlogs();
-
-        function filterBlogs() {
-            const query = document.getElementById('blogSearch').value.toLowerCase();
-            const filtered = blogsData.filter(b => b.title.toLowerCase().includes(query) || b.summary.toLowerCase().includes(query) || b.category.toLowerCase().includes(query));
-            const grid = document.getElementById('blogsGrid');
-            grid.innerHTML = filtered.map(b => `
-                <div class="glass-panel p-6 rounded-3xl space-y-4 border border-neutral-800 hover:border-dmc-orange transition flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-[10px] font-extrabold bg-dmc-orange/20 text-dmc-orange px-2.5 py-1 rounded-full uppercase">${b.category}</span>
-                            <span class="text-[10px] text-gray-400 font-semibold"><i class="fa-regular fa-clock mr-1"></i> ${b.readTime}</span>
-                        </div>
-                        <h3 class="font-bold text-lg text-white mb-2 leading-snug">${b.title}</h3>
-                        <p class="text-xs text-gray-300 leading-relaxed">${b.summary}</p>
-                    </div>
-                    <button onclick="openBlogModal(${b.id})" class="mt-4 w-full bg-neutral-900 hover:bg-dmc-orange hover:text-white text-gray-200 border border-neutral-800 font-bold py-2.5 rounded-xl text-xs transition flex items-center justify-center gap-2">
-                        Read Full Article <i class="fa-solid fa-arrow-right"></i>
-                    </button>
-                </div>
-            `).join('');
-        }
-
-        function openBlogModal(id) {
-            const blog = blogsData.find(b => b.id === id);
-            if (!blog) return;
-            document.getElementById('modalBlogTitle').innerText = blog.title;
-            document.getElementById('modalBlogContent').innerHTML = `
-                <div class="flex items-center gap-2 text-xs text-dmc-orange font-bold pb-2 border-b border-neutral-800">
-                    <span>${blog.category}</span> • <span>${blog.readTime}</span> • <span class="text-gray-400">Curated by Douro Moto Co.</span>
-                </div>
-                ${blog.content}
-                <div class="mt-6 p-4 rounded-2xl bg-black/50 border border-dmc-orange/30 text-xs text-gray-300">
-                    <div class="font-bold text-white mb-1"><i class="fa-solid fa-shield-halved text-dmc-orange mr-1"></i> Safety First Moto</div>
-                    Drive safe, wear certified gear, and keep your machine maintained. Contact us at <a href="mailto:douromoto@gmail.com" class="text-dmc-orange underline font-bold">douromoto@gmail.com</a>.
-                </div>
-            `;
-            document.getElementById('blogModal').classList.remove('hidden');
-            document.getElementById('blogModal').classList.add('flex');
-        }
-
-        function closeBlogModal() {
-            document.getElementById('blogModal').classList.remove('flex');
-            document.getElementById('blogModal').classList.add('hidden');
-        }
-
-        function openFeedbackModal() {
-            document.getElementById('feedbackModal').classList.remove('hidden');
-            document.getElementById('feedbackModal').classList.add('flex');
-        }
-        function closeFeedbackModal() {
-            document.getElementById('feedbackModal').classList.remove('flex');
-            document.getElementById('feedbackModal').classList.add('hidden');
-        }
-        function submitFeedback() {
-            const name = document.getElementById('fbName').value;
-            const msg = document.getElementById('fbMsg').value;
-            if(!msg) { alert('Please enter your feedback message.'); return; }
-            alert(`Thank you ${name || 'Rider'}! Your feedback has been noted. You can also email us directly at douromoto@gmail.com.`);
-            closeFeedbackModal();
-            document.getElementById('fbName').value = '';
-            document.getElementById('fbMsg').value = '';
-        }
-    </script>
+    fetchLiveProducts();
+  </script>
 </body>
 </html>
