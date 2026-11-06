@@ -1,139 +1,587 @@
-<div class="flex items-center gap-2">
-  <button onclick="openChecklistModal()" class="w-8 h-8 rounded-full bg-cardBg border border-cardBorder flex items-center justify-center text-neutral-300 active:scale-95 transition-transform" title="Rider Checklist">
-    <svg class="w-4 h-4 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
-  </button>
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-[#0d0d0d]">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>DOURO MOTO CO. | Riding Gears & Accessories</title>
+  <meta name="theme-color" content="#0d0d0d" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-  <a href="tel:+919662489679" class="w-8 h-8 rounded-full bg-cardBg border border-cardBorder flex items-center justify-center text-neutral-300 active:scale-95 transition-transform">
-    <svg class="w-4 h-4 fill-current text-brand" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-  </a>
+  <link rel="icon" type="image/jpeg" href="./dmc%20black%20logo.jpg" />
+  <link rel="apple-touch-icon" href="./dmc%20black%20logo.jpg" />
 
-  <a href="https://instagram.com/douromotoco" target="_blank" rel="noopener noreferrer" 
-    class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-cardBg border border-cardBorder text-xs font-semibold text-neutral-200 active:scale-95 transition-transform">
-    <svg class="w-3.5 h-3.5 fill-pink-500" viewBox="0 0 24 24">
-      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-    </svg>
-    <span>Feed</span>
-  </a>
-</div>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Teko:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: '#FF5400',
+            brandDark: '#CC4300',
+            darkSurface: '#121212',
+            cardBg: '#181818',
+            cardBorder: '#272727'
+          },
+          fontFamily: {
+            teko: ['Teko', 'sans-serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
 
-<section id="shopView" class="space-y-4">
-  
-  <div class="px-4 pt-3">
-    <div class="relative w-full h-[380px] rounded-3xl overflow-hidden border border-cardBorder shadow-2xl bg-neutral-900">
-      <video 
-        id="heroBannerVideo" 
-        src="./hero-video.mp4" 
-        autoplay 
-        muted 
-        loop 
-        playsinline 
-        webkit-playsinline 
-        preload="auto"
-        poster="./dmc%20black%20logo.jpg" 
-        class="w-full h-full object-cover">
-      </video>
-      
-      <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent pointer-events-none"></div>
+  <style>
+    * { -webkit-tap-highlight-color: transparent; }
+    body {
+      padding-top: env(safe-area-inset-top);
+      padding-bottom: calc(4.8rem + env(safe-area-inset-bottom));
+      user-select: none;
+    }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    
+    .sheet-modal {
+      transition: transform 0.28s cubic-bezier(0.32, 0.72, 0, 1), opacity 0.2s ease-in-out;
+    }
+    .sheet-modal.closed {
+      transform: translateY(100%);
+      opacity: 0;
+      pointer-events: none;
+    }
+  </style>
 
-      <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end pointer-events-none">
-        <div>
-          <span class="bg-brand text-white text-[9px] font-extrabold uppercase px-2.5 py-0.5 rounded-md tracking-wider shadow">Douro Moto Co.</span>
-          <h2 class="font-teko text-3xl uppercase tracking-wider text-white mt-1 leading-none drop-shadow">Engineered For The Ride</h2>
-          <p class="text-[11px] text-neutral-300 font-medium drop-shadow">Touring Armor • Technical Apparel • Accessories</p>
-        </div>
-      </div>
-    </div>
-  </div>
+  <script src="https://elfsightcdn.com/platform.js" async></script>
+</head>
+<body class="bg-[#0d0d0d] text-neutral-100 font-sans antialiased min-h-screen flex flex-col">
 
-  <div class="px-4 space-y-2.5">
-    <div class="relative">
-      <input type="text" id="searchInput" oninput="handleSearch()" placeholder="Search jackets, boots, helmets, gear..." 
-        class="w-full bg-cardBg border border-cardBorder rounded-xl pl-10 pr-4 py-2 text-sm text-neutral-100 placeholder-neutral-500 focus:outline-none focus:border-brand transition-colors" />
-      <svg class="w-4 h-4 text-neutral-400 absolute left-3.5 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <circle cx="11" cy="11" r="8" stroke-width="2"></circle>
-        <path stroke-width="2" stroke-linecap="round" d="m21 21-4.35-4.35"></path>
-      </svg>
-    </div>
+  <header class="sticky top-0 z-40 bg-[#0d0d0d]/90 backdrop-blur-md border-b border-cardBorder px-4 py-2.5 flex items-center justify-between">
+    <div class="flex items-center gap-2.5">
+      <div class="w-10 h-10 rounded-full border border-cardBorder bg-black overflow-hidden flex items-center justify-center">
+        <img src="./dmc%20black%20logo.jpg" alt="DMC Logo" class="w-full h-full object-contain" 
+          onerror="this.parentElement.innerHTML='<span class=\'font-teko text-xl text-brand font-bold\'>DMC</span>'" />
+      </div>
+      <div>
+        <h1 class="font-teko text-2xl leading-none tracking-wider uppercase text-white">Douro Moto Co.</h1>
+        <p class="text-[10px] text-brand tracking-widest uppercase font-bold">Riding Gears</p>
+      </div>
+    </div>
+    
+    <div class="flex items-center gap-2">
+      <button onclick="openChecklistModal()" class="w-8 h-8 rounded-full bg-cardBg border border-cardBorder flex items-center justify-center text-neutral-300 active:scale-95 transition-transform" title="Rider Checklist">
+        <svg class="w-4 h-4 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+      </button>
 
-    <div class="flex gap-2 overflow-x-auto no-scrollbar py-1" id="categoryTabs">
-    </div>
-  </div>
+      <a href="tel:+919662489679" class="w-8 h-8 rounded-full bg-cardBg border border-cardBorder flex items-center justify-center text-neutral-300 active:scale-95 transition-transform">
+        <svg class="w-4 h-4 fill-current text-brand" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+      </a>
 
-  <div class="px-4 pb-4">
-    <div id="productGrid" class="grid grid-cols-2 gap-3">
-      <div class="col-span-2 text-center py-16 text-neutral-500 text-xs flex items-center justify-center gap-2">
-        <svg class="animate-spin h-4 w-4 text-brand" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path></svg>
-        <span>Syncing catalog from Google Sheet...</span>
-      </div>
-    </div>
-  </div>
-</section>
+      <a href="https://instagram.com/douromotoco" target="_blank" rel="noopener noreferrer" 
+        class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-cardBg border border-cardBorder text-xs font-semibold text-neutral-200 active:scale-95 transition-transform">
+        <svg class="w-3.5 h-3.5 fill-pink-500" viewBox="0 0 24 24">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+        </svg>
+        <span>Feed</span>
+      </a>
+    </div>
+  </header>
 
-<section id="reelsView" class="p-4 hidden space-y-4">
-  <div class="bg-cardBg border border-cardBorder rounded-2xl p-4 text-center">
-    <div class="w-12 h-12 mx-auto rounded-full mb-2 border border-brand/50 overflow-hidden bg-black flex items-center justify-center">
-      <img src="./dmc%20black%20logo.jpg" alt="DMC" class="w-full h-full object-contain" 
-        onerror="this.parentElement.innerHTML='<span class=\'font-teko text-xl text-brand font-bold\'>DMC</span>'" />
-    </div>
-    <h2 class="font-teko text-2xl uppercase tracking-wider text-brand">Douro Moto Co. Community</h2>
-    <p class="text-xs text-neutral-400">Watch our latest gear unboxings, reviews & ride logs</p>
-    <a href="https://instagram.com/douromotoco" target="_blank" rel="noopener noreferrer" 
-      class="inline-block mt-2 text-[11px] text-neutral-300 font-bold underline underline-offset-4">
-      Open @douromotoco
-    </a>
-  </div>
+  <main class="flex-1 w-full max-w-lg mx-auto">
+    
+    <section id="shopView" class="space-y-4">
+      
+      <div class="px-4 pt-3">
+        <div class="relative w-full h-[380px] rounded-3xl overflow-hidden border border-cardBorder shadow-2xl bg-neutral-900">
+          <video 
+            id="heroBannerVideo" 
+            src="./hero-video.mp4" 
+            autoplay 
+            muted 
+            loop 
+            playsinline 
+            webkit-playsinline 
+            preload="auto"
+            poster="./dmc%20black%20logo.jpg" 
+            class="w-full h-full object-cover">
+          </video>
+          
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent pointer-events-none"></div>
 
-  <div class="w-full min-h-[450px]">
-    <div class="elfsight-app-f7f7f3fb-fe77-4b29-a628-38c347803f9b" data-elfsight-app-lazy></div>
-  </div>
-</section>
+          <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end pointer-events-none">
+            <div>
+              <span class="bg-brand text-white text-[9px] font-extrabold uppercase px-2.5 py-0.5 rounded-md tracking-wider shadow">Douro Moto Co.</span>
+              <h2 class="font-teko text-3xl uppercase tracking-wider text-white mt-1 leading-none drop-shadow">Engineered For The Ride</h2>
+              <p class="text-[11px] text-neutral-300 font-medium drop-shadow">Touring Armor • Technical Apparel • Accessories</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
-<section id="infoView" class="p-4 hidden space-y-3">
-  <div class="bg-cardBg border border-cardBorder rounded-2xl p-5 space-y-4">
-    <div class="flex items-center gap-3">
-      <div class="w-14 h-14 rounded-full border border-cardBorder bg-black overflow-hidden flex items-center justify-center">
-        <img src="./dmc%20black%20logo.jpg" alt="Logo" class="w-full h-full object-contain" 
-          onerror="this.parentElement.innerHTML='<span class=\'font-teko text-2xl text-brand font-bold\'>DMC</span>'" />
-      </div>
-      <div>
-        <h2 class="font-teko text-3xl uppercase text-white leading-tight">Douro Moto Co.</h2>
-        <p class="text-brand text-xs font-semibold uppercase tracking-wider">Riding Gears & Apparel</p>
-      </div>
-    </div>
-    
-    <p class="text-neutral-300 text-xs leading-relaxed">
-      Premium motorcycle riding apparel, protective gear, modular luggage, and touring accessories. Engineered in Rajkot, Gujarat, INDIA for riders who demand uncompromising safety and real-road durability.
-    </p>
+      <div class="px-4 space-y-2.5">
+        <div class="relative">
+          <input type="text" id="searchInput" oninput="handleSearch()" placeholder="Search jackets, boots, helmets, gear..." 
+            class="w-full bg-cardBg border border-cardBorder rounded-xl pl-10 pr-4 py-2 text-sm text-neutral-100 placeholder-neutral-500 focus:outline-none focus:border-brand transition-colors" />
+          <svg class="w-4 h-4 text-neutral-400 absolute left-3.5 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="8" stroke-width="2"></circle>
+            <path stroke-width="2" stroke-linecap="round" d="m21 21-4.35-4.35"></path>
+          </svg>
+        </div>
 
-    <div class="divide-y divide-cardBorder text-xs pt-1">
-      <div class="py-3 flex justify-between items-center">
-        <span class="text-neutral-400">Call / WhatsApp</span>
-        <a href="tel:+919662489679" class="text-brand font-bold tracking-wide">+91 96624 89679</a>
-      </div>
-      <div class="py-3 flex justify-between items-center">
-        <span class="text-neutral-400">Email Enquiries</span>
-        <a href="mailto:douromoto@gmail.com" class="text-neutral-200 font-medium">douromoto@gmail.com</a>
-      </div>
-      <div class="py-3 flex justify-between items-center">
-        <span class="text-neutral-400">Location</span>
-        <span class="text-neutral-200 font-medium">Rajkot - Gujarat - INDIA</span>
-      </div>
-      <div class="py-3 flex justify-between items-center">
-        <span class="text-neutral-400">Delivery</span>
-        <span class="text-neutral-200 font-medium">Pan-India Express Dispatch</span>
-      </div>
-    </div>
+        <div class="flex gap-2 overflow-x-auto no-scrollbar py-1" id="categoryTabs">
+        </div>
+      </div>
 
-    <div class="grid grid-cols-2 gap-2 pt-2">
-      <a href="https://wa.me/919662489679?text=Hi%20Douro%20Moto%20Co.,%20I%20have%20an%20inquiry." target="_blank" 
-        class="bg-brand hover:bg-brandDark text-white py-2.5 rounded-xl text-center text-xs font-bold uppercase tracking-wider transition-colors flex items-center justify-center gap-1.5 shadow-lg shadow-brand/20">
-        <span>WhatsApp</span>
-      </a>
-      <a href="tel:+919662489679" 
-        class="bg-neutral-800 hover:bg-neutral-700 border border-cardBorder text-white py-2.5 rounded-xl text-center text-xs font-bold uppercase tracking-wider transition-colors flex items-center justify-center gap-1.5">
-        <span>Call Now</span>
-      </a>
-    </div>
-  </div>
-</section>
+      <div class="px-4 pb-4">
+        <div id="productGrid" class="grid grid-cols-2 gap-3">
+          <div class="col-span-2 text-center py-16 text-neutral-500 text-xs flex items-center justify-center gap-2">
+            <svg class="animate-spin h-4 w-4 text-brand" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path></svg>
+            <span>Syncing catalog from Google Sheet...</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="reelsView" class="p-4 hidden space-y-4">
+      <div class="bg-cardBg border border-cardBorder rounded-2xl p-4 text-center">
+        <div class="w-12 h-12 mx-auto rounded-full mb-2 border border-brand/50 overflow-hidden bg-black flex items-center justify-center">
+          <img src="./dmc%20black%20logo.jpg" alt="DMC" class="w-full h-full object-contain" 
+            onerror="this.parentElement.innerHTML='<span class=\'font-teko text-xl text-brand font-bold\'>DMC</span>'" />
+        </div>
+        <h2 class="font-teko text-2xl uppercase tracking-wider text-brand">Douro Moto Co. Community</h2>
+        <p class="text-xs text-neutral-400">Watch our latest gear unboxings, reviews & ride logs</p>
+        <a href="https://instagram.com/douromotoco" target="_blank" rel="noopener noreferrer" 
+          class="inline-block mt-2 text-[11px] text-neutral-300 font-bold underline underline-offset-4">
+          Open Instagram Feed
+        </a>
+      </div>
+
+      <div class="w-full min-h-[450px]">
+        <div class="elfsight-app-f7f7f3fb-fe77-4b29-a628-38c347803f9b" data-elfsight-app-lazy></div>
+      </div>
+    </section>
+
+    <section id="infoView" class="p-4 hidden space-y-3">
+      <div class="bg-cardBg border border-cardBorder rounded-2xl p-5 space-y-4">
+        <div class="flex items-center gap-3">
+          <div class="w-14 h-14 rounded-full border border-cardBorder bg-black overflow-hidden flex items-center justify-center">
+            <img src="./dmc%20black%20logo.jpg" alt="Logo" class="w-full h-full object-contain" 
+              onerror="this.parentElement.innerHTML='<span class=\'font-teko text-2xl text-brand font-bold\'>DMC</span>'" />
+          </div>
+          <div>
+            <h2 class="font-teko text-3xl uppercase text-white leading-tight">Douro Moto Co.</h2>
+            <p class="text-brand text-xs font-semibold uppercase tracking-wider">Riding Gears & Apparel</p>
+          </div>
+        </div>
+        
+        <p class="text-neutral-300 text-xs leading-relaxed">
+          Premium motorcycle riding apparel, protective gear, modular luggage, and touring accessories. Engineered in Rajkot, Gujarat, INDIA for riders who demand uncompromising safety and real-road durability.
+        </p>
+
+        <div class="divide-y divide-cardBorder text-xs pt-1">
+          <div class="py-3 flex justify-between items-center">
+            <span class="text-neutral-400">Call / WhatsApp</span>
+            <a href="tel:+919662489679" class="text-brand font-bold tracking-wide">+91 96624 89679</a>
+          </div>
+          <div class="py-3 flex justify-between items-center">
+            <span class="text-neutral-400">Email Enquiries</span>
+            <a href="mailto:douromoto@gmail.com" class="text-neutral-200 font-medium">douromoto@gmail.com</a>
+          </div>
+          <div class="py-3 flex justify-between items-center">
+            <span class="text-neutral-400">Location</span>
+            <span class="text-neutral-200 font-medium">Rajkot - Gujarat - INDIA</span>
+          </div>
+          <div class="py-3 flex justify-between items-center">
+            <span class="text-neutral-400">Delivery</span>
+            <span class="text-neutral-200 font-medium">Pan-India Express Dispatch</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-2 pt-2">
+          <a href="https://wa.me/919662489679?text=Hi%20Douro%20Moto%20Co.,%20I%20have%20an%20inquiry." target="_blank" 
+            class="bg-brand hover:bg-brandDark text-white py-2.5 rounded-xl text-center text-xs font-bold uppercase tracking-wider transition-colors flex items-center justify-center gap-1.5 shadow-lg shadow-brand/20">
+            <span>WhatsApp</span>
+          </a>
+          <a href="tel:+919662489679" 
+            class="bg-neutral-800 hover:bg-neutral-700 border border-cardBorder text-white py-2.5 rounded-xl text-center text-xs font-bold uppercase tracking-wider transition-colors flex items-center justify-center gap-1.5">
+            <span>Call Now</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="sheetBackdrop" onclick="closeProductModal()" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-200"></div>
+  <div id="detailSheet" class="sheet-modal fixed inset-x-0 bottom-0 max-w-lg mx-auto z-50 bg-[#141414] border-t border-cardBorder rounded-t-3xl p-5 shadow-2xl closed max-h-[85vh] overflow-y-auto no-scrollbar">
+    <div class="w-12 h-1.5 bg-neutral-700 rounded-full mx-auto mb-4 cursor-pointer" onclick="closeProductModal()"></div>
+    <div id="sheetContent" class="space-y-4"></div>
+  </div>
+
+  <div id="checklistBackdrop" onclick="closeChecklistModal()" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-200"></div>
+  <div id="checklistSheet" class="sheet-modal fixed inset-x-0 bottom-0 max-w-lg mx-auto z-50 bg-[#141414] border-t border-cardBorder rounded-t-3xl p-5 shadow-2xl closed max-h-[85vh] overflow-y-auto no-scrollbar">
+    <div class="w-12 h-1.5 bg-neutral-700 rounded-full mx-auto mb-4 cursor-pointer" onclick="closeChecklistModal()"></div>
+    <div class="space-y-4">
+      <div class="border-b border-cardBorder pb-3">
+        <h3 class="font-teko text-2xl uppercase tracking-wider text-white">Touring Ride Essential Checklist</h3>
+        <p class="text-xs text-neutral-400">Check off your mandatory gear and spares before your road trip</p>
+      </div>
+      <div class="space-y-2.5 text-xs text-neutral-300" id="checklistItems">
+        <label class="flex items-center gap-3 bg-darkSurface p-2.5 rounded-xl border border-cardBorder cursor-pointer">
+          <input type="checkbox" class="w-4 h-4 rounded accent-brand" />
+          <span>Full-Armor Riding Jacket & Pants</span>
+        </label>
+        <label class="flex items-center gap-3 bg-darkSurface p-2.5 rounded-xl border border-cardBorder cursor-pointer">
+          <input type="checkbox" class="w-4 h-4 rounded accent-brand" />
+          <span>ECE / DOT Certified Helmet + Clean Visor</span>
+        </label>
+        <label class="flex items-center gap-3 bg-darkSurface p-2.5 rounded-xl border border-cardBorder cursor-pointer">
+          <input type="checkbox" class="w-4 h-4 rounded accent-brand" />
+          <span>Abrasion-Resistant Gloves (Full Gauntlet or Short)</span>
+        </label>
+        <label class="flex items-center gap-3 bg-darkSurface p-2.5 rounded-xl border border-cardBorder cursor-pointer">
+          <input type="checkbox" class="w-4 h-4 rounded accent-brand" />
+          <span>Reinforced Ankle Riding Boots</span>
+        </label>
+        <label class="flex items-center gap-3 bg-darkSurface p-2.5 rounded-xl border border-cardBorder cursor-pointer">
+          <input type="checkbox" class="w-4 h-4 rounded accent-brand" />
+          <span>Waterproof Rain Liners or External Rain Suit</span>
+        </label>
+        <label class="flex items-center gap-3 bg-darkSurface p-2.5 rounded-xl border border-cardBorder cursor-pointer">
+          <input type="checkbox" class="w-4 h-4 rounded accent-brand" />
+          <span>Puncture Kit & Portable Tire Inflator</span>
+        </label>
+        <label class="flex items-center gap-3 bg-darkSurface p-2.5 rounded-xl border border-cardBorder cursor-pointer">
+          <input type="checkbox" class="w-4 h-4 rounded accent-brand" />
+          <span>Vibration-Dampened Mobile Mount & Bungees</span>
+        </label>
+      </div>
+      <button onclick="closeChecklistModal()" class="w-full bg-cardBg hover:bg-neutral-800 border border-cardBorder text-neutral-200 py-3 rounded-xl font-bold text-xs uppercase tracking-wider">
+        Close Checklist
+      </button>
+    </div>
+  </div>
+
+  <nav class="fixed bottom-0 inset-x-0 z-40 bg-[#0d0d0d]/95 backdrop-blur-md border-t border-cardBorder px-6 py-2 pb-[max(0.6rem,env(safe-area-inset-bottom))]">
+    <div class="max-w-md mx-auto flex justify-around items-center">
+      <button onclick="switchTab('shop')" id="nav-shop" class="flex flex-col items-center text-brand font-bold text-[11px] active:scale-95 transition-all">
+        <svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+        <span>Shop</span>
+      </button>
+      <button onclick="switchTab('reels')" id="nav-reels" class="flex flex-col items-center text-neutral-400 font-medium text-[11px] active:scale-95 transition-all">
+        <svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Reels</span>
+      </button>
+      <button onclick="switchTab('info')" id="nav-info" class="flex flex-col items-center text-neutral-400 font-medium text-[11px] active:scale-95 transition-all">
+        <svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-width="2"/><line x1="12" y1="16" x2="12" y2="12" stroke-width="2"/></svg>
+        <span>Store Info</span>
+      </button>
+    </div>
+  </nav>
+
+  <script>
+    const STORE_PHONE = "+919662489679";
+    const WA_NUMBER = "919662489679";
+    
+    // REPLACE THIS URL with your newly published Douro Moto Co. Google Sheet CSV link
+    const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTpieVgKIPCjaSDXmtE2-_DIRJ6erKTca0X0cUd4Pwm43c3n0eUxLndl9bh8uv3BcCJro7MMb9TpqVO/pub?output=csv";
+
+    let PRODUCTS = [];
+    let CATEGORIES = ["All"];
+    let selectedCategory = "All";
+    let searchQuery = "";
+    let selectedProductSize = "L";
+
+    function triggerHaptic() {
+      if ("vibrate" in navigator) navigator.vibrate(10);
+    }
+
+    // Parse CSV handling quotes and delimiters accurately
+    function parseCSV(text) {
+      const lines = text.trim().split(/\r?\n/);
+      if (lines.length < 2) return [];
+      
+      const headers = lines[0].split(',').map(h => h.trim().toLowerCase());
+      const result = [];
+
+      for (let i = 1; i < lines.length; i++) {
+        let line = lines[i];
+        if (!line.trim()) continue;
+
+        let row = [];
+        let inQuotes = false;
+        let token = "";
+
+        for (let j = 0; j < line.length; j++) {
+          let char = line[j];
+          if (char === '"' || char === "'") {
+            inQuotes = !inQuotes;
+          } else if (char === ',' && !inQuotes) {
+            row.push(token.trim());
+            token = "";
+          } else {
+            token += char;
+          }
+        }
+        row.push(token.trim());
+
+        let obj = {};
+        headers.forEach((h, idx) => {
+          let val = row[idx] ? row[idx].replace(/^["']|["']$/g, '').trim() : "";
+          obj[h] = val;
+        });
+
+        if (obj.name && obj.name !== "") {
+          obj.features = obj.features ? obj.features.split('|').map(f => f.trim()).filter(Boolean) : [];
+          result.push(obj);
+        }
+      }
+      return result;
+    }
+
+    // Fetch Google Sheet live data
+    async function fetchLiveProducts() {
+      try {
+        if (SHEET_CSV_URL.includes("YOUR_GOOGLE_SHEET_CSV")) {
+          throw new Error("Placeholder URL");
+        }
+        const response = await fetch(SHEET_CSV_URL + '&_t=' + Date.now());
+        if (!response.ok) throw new Error("Could not load sheet");
+        const csvData = await response.text();
+        const parsed = parseCSV(csvData);
+        
+        if (parsed.length > 0) {
+          PRODUCTS = parsed;
+          const uniqueCats = ["All", ...new Set(PRODUCTS.map(p => p.category).filter(Boolean))];
+          CATEGORIES = uniqueCats;
+          
+          initCategoryTabs();
+          renderProducts();
+          return;
+        }
+      } catch (err) {
+        console.warn("Using fallback demo catalog until Google Sheet URL is configured.", err);
+      }
+
+      // Fallback Demo Products if sheet URL isn't configured yet
+      PRODUCTS = [
+        {
+          id: "DMC-01",
+          name: "DMC Apex Pro Touring Jacket",
+          category: "Jackets",
+          badge: "CE Level 2",
+          image: "./dmc%20black%20logo.jpg",
+          features: ["CE Level 2 Armor on Shoulders, Elbows & Back", "CORDURA 1000D outer shell", "Removable thermal & waterproof liners"]
+        },
+        {
+          id: "DMC-02",
+          name: "DMC All-Terrain Adventure Boots",
+          category: "Boots",
+          badge: "Waterproof",
+          image: "./dmc%20black%20logo.jpg",
+          features: ["Reinforced shin and ankle protection", "Oil & slip resistant Vibram sole", "Dry-Tex waterproof breathable membrane"]
+        }
+      ];
+      CATEGORIES = ["All", "Jackets", "Boots"];
+      initCategoryTabs();
+      renderProducts();
+    }
+
+    function initCategoryTabs() {
+      const tabs = document.getElementById("categoryTabs");
+      tabs.innerHTML = CATEGORIES.map(cat => {
+        const isActive = cat === selectedCategory;
+        return `
+          <button onclick="setCategory('${cat}')" 
+            class="px-4 py-1.5 rounded-full text-xs font-bold whitespace-nowrap active:scale-95 transition-all ${
+              isActive ? 'bg-brand text-white shadow-md shadow-brand/30' : 'bg-cardBg border border-cardBorder text-neutral-400'
+            }">
+            ${cat}
+          </button>
+        `;
+      }).join('');
+    }
+
+    function setCategory(category) {
+      triggerHaptic();
+      selectedCategory = category;
+      initCategoryTabs();
+      renderProducts();
+    }
+
+    function handleSearch() {
+      searchQuery = document.getElementById("searchInput").value.toLowerCase();
+      renderProducts();
+    }
+
+    function renderProducts() {
+      const grid = document.getElementById("productGrid");
+      const filtered = PRODUCTS.filter(p => {
+        const matchesCat = selectedCategory === "All" || p.category === selectedCategory;
+        const matchesQuery = (p.name && p.name.toLowerCase().includes(searchQuery)) || 
+                             (p.category && p.category.toLowerCase().includes(searchQuery));
+        return matchesCat && matchesQuery;
+      });
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `
+          <div class="col-span-2 text-center py-16 text-neutral-500 text-xs">
+            No gear found matching your search.
+          </div>
+        `;
+        return;
+      }
+
+      grid.innerHTML = filtered.map(p => `
+        <div onclick="openProductModal('${p.id}')" class="bg-cardBg border border-cardBorder rounded-2xl overflow-hidden flex flex-col justify-between active:scale-[0.98] transition-transform cursor-pointer shadow-lg group">
+          <div class="relative aspect-square w-full bg-neutral-900 overflow-hidden flex items-center justify-center">
+            <img src="${p.image}" alt="${p.name}" class="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform" 
+              onerror="this.src='./dmc%20black%20logo.jpg'; this.classList.add('p-6');" loading="lazy" />
+            ${p.badge ? `<span class="absolute top-2 left-2 bg-brand text-[9px] font-black uppercase tracking-wider text-white px-2 py-0.5 rounded shadow">${p.badge}</span>` : ''}
+          </div>
+          <div class="p-3 flex flex-col flex-1 justify-between">
+            <div>
+              <span class="text-[9px] uppercase tracking-wider font-semibold text-brand">${p.category}</span>
+              <h3 class="text-xs font-bold text-white line-clamp-2 mt-0.5 leading-snug">${p.name}</h3>
+            </div>
+            <div class="mt-3 flex items-center justify-between border-t border-cardBorder/60 pt-2">
+              <span class="text-[10px] text-neutral-400 font-medium">Explore</span>
+              <span class="text-[10px] bg-neutral-800 border border-cardBorder text-neutral-200 font-bold px-2 py-1 rounded-lg flex items-center gap-1 group-hover:bg-brand group-hover:border-brand transition-colors">
+                <span>View</span>
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+              </span>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function openProductModal(productId) {
+      triggerHaptic();
+      const product = PRODUCTS.find(p => p.id === productId);
+      if (!product) return;
+
+      selectedProductSize = "L";
+      renderModalContent(product);
+
+      document.getElementById("sheetBackdrop").classList.remove("pointer-events-none", "opacity-0");
+      document.getElementById("detailSheet").classList.remove("closed");
+    }
+
+    function selectSize(size, productId) {
+      selectedProductSize = size;
+      const product = PRODUCTS.find(p => p.id === productId);
+      if (product) renderModalContent(product);
+    }
+
+    function renderModalContent(product) {
+      const isSizedItem = ["Jackets", "Pants", "Boots", "Gloves", "Helmets"].includes(product.category);
+      const sizes = isSizedItem ? (product.category === "Boots" ? ["41", "42", "43", "44", "45"] : ["S", "M", "L", "XL", "2XL"]) : ["Universal Fit"];
+
+      const waMsg = encodeURIComponent(`Hi Douro Moto Co., I am inquiring about: ${product.name} (Ref: ${product.id}) in Size: ${selectedProductSize}. Please confirm stock availability.`);
+      const waLink = `https://wa.me/${WA_NUMBER}?text=${waMsg}`;
+
+      const content = document.getElementById("sheetContent");
+      content.innerHTML = `
+        <div class="flex gap-3 items-center">
+          <div class="w-20 h-20 bg-neutral-900 rounded-xl border border-cardBorder p-1 flex-shrink-0 flex items-center justify-center">
+            <img src="${product.image}" class="w-full h-full object-contain" onerror="this.src='./dmc%20black%20logo.jpg';" />
+          </div>
+          <div>
+            <span class="text-[10px] uppercase font-bold text-brand tracking-widest">${product.category}</span>
+            <h3 class="text-sm font-bold text-white leading-tight mt-0.5">${product.name}</h3>
+            <p class="text-[11px] text-neutral-400 mt-1">Ref: ${product.id}</p>
+          </div>
+        </div>
+
+        ${isSizedItem ? `
+          <div class="space-y-1.5">
+            <div class="flex justify-between items-center text-xs">
+              <span class="text-neutral-400 font-medium">Select Sizing:</span>
+              <span class="text-brand font-bold">Selected: ${selectedProductSize}</span>
+            </div>
+            <div class="flex gap-2">
+              ${sizes.map(s => `
+                <button onclick="selectSize('${s}', '${product.id}')" class="flex-1 py-1.5 rounded-lg text-xs font-bold border transition-colors ${selectedProductSize === s ? 'bg-brand text-white border-brand' : 'bg-cardBg border-cardBorder text-neutral-300'}">
+                  ${s}
+                </button>
+              `).join('')}
+            </div>
+          </div>
+        ` : ''}
+
+        <div class="bg-darkSurface border border-cardBorder rounded-xl p-3 space-y-2">
+          <p class="text-[10px] uppercase font-bold text-neutral-400 tracking-wider">Features & Specifications</p>
+          <div class="space-y-1.5">
+            ${product.features.length > 0 ? product.features.map(f => `
+              <div class="flex items-start gap-2 text-xs text-neutral-300">
+                <span class="w-1.5 h-1.5 rounded-full bg-brand mt-1.5 flex-shrink-0"></span>
+                <span>${f}</span>
+              </div>
+            `).join('') : '<p class="text-xs text-neutral-400">Tested motorcycle touring accessory.</p>'}
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-2 pt-1">
+          <a href="${waLink}" target="_blank" rel="noopener noreferrer" 
+            class="bg-brand hover:bg-brandDark text-white py-3 rounded-xl font-bold text-xs flex items-center justify-center gap-1.5 tracking-wider uppercase active:scale-95 transition-all shadow-lg shadow-brand/20">
+            <span>Inquire on WhatsApp</span>
+          </a>
+          <a href="tel:${STORE_PHONE}" 
+            class="bg-neutral-800 hover:bg-neutral-700 border border-cardBorder text-white py-3 rounded-xl font-bold text-xs flex items-center justify-center gap-1.5 tracking-wider uppercase active:scale-95 transition-all">
+            <span>Call Shop</span>
+          </a>
+        </div>
+      `;
+    }
+
+    function closeProductModal() {
+      document.getElementById("sheetBackdrop").classList.add("pointer-events-none", "opacity-0");
+      document.getElementById("detailSheet").classList.add("closed");
+    }
+
+    function openChecklistModal() {
+      triggerHaptic();
+      document.getElementById("checklistBackdrop").classList.remove("pointer-events-none", "opacity-0");
+      document.getElementById("checklistSheet").classList.remove("closed");
+    }
+
+    function closeChecklistModal() {
+      document.getElementById("checklistBackdrop").classList.add("pointer-events-none", "opacity-0");
+      document.getElementById("checklistSheet").classList.add("closed");
+    }
+
+    function switchTab(tabId) {
+      triggerHaptic();
+      ['shop', 'reels', 'info'].forEach(id => {
+        document.getElementById(id + 'View').classList.add('hidden');
+        const nav = document.getElementById('nav-' + id);
+        nav.classList.remove('text-brand', 'font-bold');
+        nav.classList.add('text-neutral-400', 'font-medium');
+      });
+
+      document.getElementById(tabId + 'View').classList.remove('hidden');
+      const activeNav = document.getElementById('nav-' + tabId);
+      activeNav.classList.remove('text-neutral-400', 'font-medium');
+      activeNav.classList.add('text-brand', 'font-bold');
+
+      const heroVid = document.getElementById("heroBannerVideo");
+      if (heroVid) {
+        if (tabId === 'shop') {
+          heroVid.play().catch(() => {});
+        } else {
+          heroVid.pause();
+        }
+      }
+
+      window.dispatchEvent(new Event('resize'));
+    }
+
+    fetchLiveProducts();
+  </script>
+</body>
+</html>
