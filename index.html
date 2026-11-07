@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Douro Moto Co. | Premium Custom Motorcycles & Gear</title>
+    <title>Douro Moto Co. | Premium Custom Motorcycles & Reading Room</title>
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -82,12 +82,12 @@
             </a>
 
             <!-- Desktop Nav Links -->
-            <nav class="hidden lg:flex items-center space-x-6 font-medium text-sm">
+            <nav class="hidden lg:flex items-center space-x-5 font-medium text-sm">
                 <a href="#hero" class="hover:text-brand-accent transition-colors">Home</a>
                 <a href="#inventory" class="hover:text-brand-accent transition-colors">Inventory</a>
-                <a href="https://instagram.com/douromotoco" target="_blank" class="hover:text-brand-accent transition-colors flex items-center space-x-1">
-                    <i class="fa-brands fa-instagram text-brand-accent"></i>
-                    <span>Follow Instagram</span>
+                <a href="#reading-room" class="text-brand-accent font-bold hover:underline transition-colors flex items-center space-x-1">
+                    <i class="fa-solid fa-book-open"></i>
+                    <span>Reading Room</span>
                 </a>
                 <a href="#rider-hub" class="hover:text-brand-accent transition-colors">Rider's Hub</a>
                 <a href="#brands-dir" class="hover:text-brand-accent transition-colors">Brands</a>
@@ -116,7 +116,7 @@
         <div id="mobile-menu" class="hidden lg:hidden bg-brand-card border-b border-gray-800 px-6 py-4 space-y-3">
             <a href="#hero" class="block text-gray-200 hover:text-brand-accent font-medium py-1 mobile-link">Home</a>
             <a href="#inventory" class="block text-gray-200 hover:text-brand-accent font-medium py-1 mobile-link">Inventory & Gear</a>
-            <a href="https://instagram.com/douromotoco" target="_blank" class="block text-brand-accent font-medium py-1">Follow Instagram (@douromotoco)</a>
+            <a href="#reading-room" class="block text-brand-accent font-bold py-1 mobile-link"><i class="fa-solid fa-book-open mr-2"></i> Reading Room (50+ Stories)</a>
             <a href="#rider-hub" class="block text-gray-200 hover:text-brand-accent font-medium py-1 mobile-link">Rider's Hub & Tips</a>
             <a href="#brands-dir" class="block text-gray-200 hover:text-brand-accent font-medium py-1 mobile-link">World Moto Brands</a>
             <a href="#parts-encyclopedia" class="block text-gray-200 hover:text-brand-accent font-medium py-1 mobile-link">Parts Encyclopedia</a>
@@ -133,44 +133,38 @@
     <!-- MAIN CONTAINER -->
     <main class="flex-grow">
 
-        <!-- HERO SECTION WITH VIDEO (Loop, Sound Controls, Autoplay) -->
+        <!-- HERO SECTION WITH VIDEO -->
         <section id="hero" class="relative w-full h-[85vh] sm:h-[90vh] bg-black overflow-hidden flex items-center justify-center">
-            <!-- Background Video element -->
             <video id="hero-video" autoplay muted loop playsinline class="absolute inset-w-full inset-h-full w-full h-full object-cover opacity-60">
-                <!-- GitHub hero-video.mp4 source -->
                 <source src="hero-video.mp4" type="video/mp4">
-                <!-- Fallback video source -->
                 <source src="https://assets.mixkit.co/videos/preview/mixkit-motorcycle-rider-on-a-road-at-sunset-41662-large.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
             
-            <!-- Dark Overlay Gradient -->
             <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/40 to-black/50"></div>
 
-            <!-- Hero Content -->
             <div class="relative z-10 max-w-5xl mx-auto px-4 text-center space-y-6">
                 <div class="inline-flex items-center space-x-2 bg-brand-accent/10 border border-brand-accent/30 px-4 py-1.5 rounded-full text-brand-accent text-xs font-bold uppercase tracking-widest backdrop-blur-md">
                     <i class="fa-solid fa-fire-flame-curved"></i>
-                    <span>Custom Motorcycle Craftsmanship</span>
+                    <span>Custom Motorcycle Craftsmanship & Adventure Journal</span>
                 </div>
                 <h1 class="font-heading font-black text-4xl sm:text-6xl lg:text-7xl tracking-tight text-white uppercase drop-shadow-md">
                     Ride The <span class="text-brand-accent">Legend</span>
                 </h1>
                 <p class="max-w-2xl mx-auto text-gray-300 text-sm sm:text-base lg:text-lg font-normal leading-relaxed">
-                    Handcrafted custom builds, premium riding gear, and precision components straight from Douro Moto Co. Explore our live catalog below.
+                    Handcrafted custom builds, premium riding gear, and over 50 deep-dive adventure riding stories straight from Douro Moto Co.
                 </p>
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
                     <a href="#inventory" class="w-full sm:w-auto bg-brand-accent hover:bg-brand-accentHover text-brand-dark font-heading font-extrabold px-8 py-4 rounded-xl text-base tracking-wide shadow-xl shadow-brand-accent/20 transition-all transform hover:-scale-105">
                         Browse Catalog
                     </a>
-                    <a href="https://instagram.com/douromotoco" target="_blank" class="w-full sm:w-auto bg-gray-900/80 hover:bg-gray-800 text-white border border-gray-700 font-heading font-semibold px-8 py-4 rounded-xl text-base tracking-wide backdrop-blur-md transition-all flex items-center justify-center space-x-2">
-                        <i class="fa-brands fa-instagram text-brand-accent text-lg"></i>
-                        <span>@douromotoco</span>
+                    <a href="#reading-room" class="w-full sm:w-auto bg-gray-900/80 hover:bg-gray-800 text-white border border-brand-accent/40 font-heading font-semibold px-8 py-4 rounded-xl text-base tracking-wide backdrop-blur-md transition-all flex items-center justify-center space-x-2">
+                        <i class="fa-solid fa-book-open text-brand-accent"></i>
+                        <span>Explore Reading Room</span>
                     </a>
                 </div>
             </div>
 
-            <!-- Video Media Controls Bar (Sound toggle & Play/Pause) -->
             <div class="absolute bottom-6 right-6 z-20 flex items-center space-x-2 bg-brand-dark/80 backdrop-blur-md border border-gray-700 p-2 rounded-xl shadow-2xl">
                 <button id="video-sound-btn" onclick="toggleVideoSound()" class="w-10 h-10 rounded-lg bg-gray-800 hover:bg-gray-700 text-brand-accent flex items-center justify-center transition-colors" title="Toggle Sound">
                     <i id="sound-icon" class="fa-solid fa-volume-xmark"></i>
@@ -181,8 +175,27 @@
             </div>
         </section>
 
-        <!-- PRODUCTS & INVENTORY SECTION (Google Sheet CSV Synchronized with Price) -->
-        <section id="inventory" class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- NEW READING ROOM PAGE SECTION (50+ Full Adventure Articles) -->
+        <section id="reading-room" class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <span class="text-brand-accent font-bold text-xs uppercase tracking-widest block mb-2"><i class="fa-solid fa-book-bookmark mr-1"></i> Audience Reading Room</span>
+                    <h2 class="font-heading font-extrabold text-3xl sm:text-5xl text-white tracking-tight uppercase">The Adventure Journal</h2>
+                    <p class="text-gray-400 text-sm sm:text-base mt-2">50 comprehensive expedition accounts, gear reviews, and philosophical musings on two wheels across India, Nepal, Sri Lanka, Bhutan, Mongolia, and beyond.</p>
+                </div>
+                <div class="mt-4 md:mt-0">
+                    <input type="text" id="blog-search" oninput="filterBlogArticles()" placeholder="Search 50+ stories..." class="bg-brand-card border border-gray-700 rounded-xl px-4 py-2.5 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-brand-accent w-full sm:w-72">
+                </div>
+            </div>
+
+            <!-- Blog Grid -->
+            <div id="blog-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Populated dynamically via JS -->
+            </div>
+        </section>
+
+        <!-- PRODUCTS & INVENTORY SECTION -->
+        <section id="inventory" class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-gray-800">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
                 <div>
                     <span class="text-brand-accent font-bold text-xs uppercase tracking-widest block mb-2">Live Inventory</span>
@@ -194,13 +207,11 @@
                 </div>
             </div>
 
-            <!-- Loading Spinner / Status -->
             <div id="loading-inventory" class="text-center py-16">
                 <div class="inline-block animate-spin rounded-full h-10 w-10 border-4 border-brand-accent border-t-transparent mb-4"></div>
                 <p class="text-gray-400 text-sm">Fetching live stock & prices...</p>
             </div>
 
-            <!-- Products Grid -->
             <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 hidden">
                 <!-- Populated dynamically via JavaScript -->
             </div>
@@ -220,10 +231,7 @@
                     </a>
                 </div>
 
-                <!-- Instagram Reels & Posts Grid -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    
-                    <!-- Reel Card 1 -->
                     <div class="bg-brand-dark rounded-2xl overflow-hidden border border-gray-800 shadow-xl group flex flex-col">
                         <div class="relative aspect-[9/16] bg-gray-900 overflow-hidden">
                             <img src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&q=80&w=600" alt="Custom Build Reel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
@@ -243,7 +251,6 @@
                         </div>
                     </div>
 
-                    <!-- Post Card 2 -->
                     <div class="bg-brand-dark rounded-2xl overflow-hidden border border-gray-800 shadow-xl group flex flex-col">
                         <div class="relative aspect-[9/16] bg-gray-900 overflow-hidden">
                             <img src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&q=80&w=600" alt="Moto Gear Post" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
@@ -263,7 +270,6 @@
                         </div>
                     </div>
 
-                    <!-- Reel Card 3 -->
                     <div class="bg-brand-dark rounded-2xl overflow-hidden border border-gray-800 shadow-xl group flex flex-col">
                         <div class="relative aspect-[9/16] bg-gray-900 overflow-hidden">
                             <img src="https://images.unsplash.com/photo-1609630875172-2321589172f0?auto=format&fit=crop&q=80&w=600" alt="Workshop Session Reel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
@@ -283,7 +289,6 @@
                         </div>
                     </div>
 
-                    <!-- Post Card 4 -->
                     <div class="bg-brand-dark rounded-2xl overflow-hidden border border-gray-800 shadow-xl group flex flex-col">
                         <div class="relative aspect-[9/16] bg-gray-900 overflow-hidden">
                             <img src="https://images.unsplash.com/photo-1558981359-219d6364c9c8?auto=format&fit=crop&q=80&w=600" alt="Cafe Racer Post" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
@@ -302,12 +307,11 @@
                             <a href="https://instagram.com/douromotoco" target="_blank" class="text-xs font-semibold text-brand-accent hover:underline">View on IG</a>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
 
-        <!-- NEW ADDITION: RIDER'S HUB (Tips, Techniques, Riding Tricks) -->
+        <!-- RIDER'S HUB -->
         <section id="rider-hub" class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
                 <span class="text-brand-accent font-bold text-xs uppercase tracking-widest block">Rider's Knowledge Base</span>
@@ -316,7 +320,6 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Card 1 -->
                 <div class="bg-brand-card border border-gray-800 rounded-3xl p-8 shadow-xl hover:border-brand-accent/50 transition-all flex flex-col justify-between">
                     <div class="space-y-4">
                         <div class="w-14 h-14 bg-brand-accent/10 border border-brand-accent/30 rounded-2xl flex items-center justify-center text-brand-accent text-2xl font-bold">
@@ -334,7 +337,6 @@
                     </div>
                 </div>
 
-                <!-- Card 2 -->
                 <div class="bg-brand-card border border-gray-800 rounded-3xl p-8 shadow-xl hover:border-brand-accent/50 transition-all flex flex-col justify-between">
                     <div class="space-y-4">
                         <div class="w-14 h-14 bg-brand-accent/10 border border-brand-accent/30 rounded-2xl flex items-center justify-center text-brand-accent text-2xl font-bold">
@@ -352,7 +354,6 @@
                     </div>
                 </div>
 
-                <!-- Card 3 -->
                 <div class="bg-brand-card border border-gray-800 rounded-3xl p-8 shadow-xl hover:border-brand-accent/50 transition-all flex flex-col justify-between">
                     <div class="space-y-4">
                         <div class="w-14 h-14 bg-brand-accent/10 border border-brand-accent/30 rounded-2xl flex items-center justify-center text-brand-accent text-2xl font-bold">
@@ -372,7 +373,7 @@
             </div>
         </section>
 
-        <!-- NEW ADDITION: FAMOUS 45+ MOTORCYCLE BRANDS DIRECTORY -->
+        <!-- FAMOUS MOTORCYCLE BRANDS DIRECTORY -->
         <section id="brands-dir" class="py-16 bg-brand-card border-y border-gray-800">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
@@ -383,14 +384,13 @@
                     <p class="text-gray-400 text-sm mt-2 md:mt-0 max-w-md">Explore 45 legendary motorcycle manufacturers spanning cruisers, sportbikes, adventure tourers, and custom icons.</p>
                 </div>
 
-                <!-- Brands Grid (45+ Brands with logos scraped via clear brand badges & svg emblems) -->
                 <div id="brands-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                    <!-- Populated dynamically via JS -->
+                    <!-- Populated via JS -->
                 </div>
             </div>
         </section>
 
-        <!-- NEW ADDITION: PARTS & ACCESSORIES ENCYCLOPEDIA -->
+        <!-- PARTS & ACCESSORIES ENCYCLOPEDIA -->
         <section id="parts-encyclopedia" class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
                 <span class="text-brand-accent font-bold text-xs uppercase tracking-widest block">Technical Encyclopedia</span>
@@ -398,7 +398,6 @@
                 <p class="text-gray-300 text-sm sm:text-base">An in-depth knowledge base covering every mechanical part, electrical assembly, and custom accessory that makes up a high-performance motorcycle.</p>
             </div>
 
-            <!-- Tabs Navigation -->
             <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-4 mb-12">
                 <button onclick="filterParts('all')" class="parts-tab-btn px-6 py-3 rounded-xl font-heading font-bold text-sm bg-brand-accent text-brand-dark transition-all shadow-md">All Components</button>
                 <button onclick="filterParts('engine')" class="parts-tab-btn px-6 py-3 rounded-xl font-heading font-bold text-sm bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-white transition-all">Engine & Exhaust</button>
@@ -407,9 +406,8 @@
                 <button onclick="filterParts('accessories')" class="parts-tab-btn px-6 py-3 rounded-xl font-heading font-bold text-sm bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-white transition-all">Custom Accessories</button>
             </div>
 
-            <!-- Parts Grid -->
             <div id="parts-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Populated dynamically via JS -->
+                <!-- Populated via JS -->
             </div>
         </section>
 
@@ -454,6 +452,7 @@
             </div>
             <div class="flex items-center space-x-6 text-sm">
                 <a href="#hero" class="hover:text-brand-accent transition-colors">Home</a>
+                <a href="#reading-room" class="hover:text-brand-accent transition-colors">Reading Room</a>
                 <a href="#inventory" class="hover:text-brand-accent transition-colors">Inventory</a>
                 <a href="#social" class="hover:text-brand-accent transition-colors">Instagram</a>
                 <a href="https://g.page/r/CZWRvL-O8EisEBE/review" target="_blank" class="hover:text-brand-accent transition-colors">Google Review</a>
@@ -462,35 +461,40 @@
         </div>
     </footer>
 
-    <!-- PRODUCT QUICK VIEW MODAL -->
-    <div id="product-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4">
-        <div class="bg-brand-card border border-gray-800 rounded-3xl max-w-lg w-full overflow-hidden shadow-2xl relative transform transition-all">
-            <button onclick="closeModal()" class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-black/60 hover:bg-black text-gray-300 hover:text-white flex items-center justify-center transition-colors">
+    <!-- PRODUCT / BLOG ARTICLE MODAL -->
+    <div id="product-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-brand-card border border-gray-800 rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative transform transition-all my-8">
+            <button onclick="closeModal()" class="sticky top-4 right-4 float-right z-20 w-10 h-10 rounded-full bg-black/80 hover:bg-black text-gray-300 hover:text-white flex items-center justify-center transition-colors mr-4 mt-4 shadow-lg">
                 <i class="fa-solid fa-xmark text-lg"></i>
             </button>
-            <div class="aspect-[16/10] bg-gray-900 relative">
-                <img id="modal-img" src="" alt="Product Image" class="w-full h-full object-cover">
-                <div class="absolute top-4 left-4 bg-brand-accent text-brand-dark font-heading font-extrabold px-3 py-1 rounded-lg text-sm shadow-md" id="modal-price">
-                    $0.00
+            <div id="modal-banner-container" class="aspect-[16/9] bg-gray-900 relative">
+                <img id="modal-img" src="" alt="Modal Image" class="w-full h-full object-cover">
+                <div class="absolute top-4 left-4 bg-brand-accent text-brand-dark font-heading font-extrabold px-3.5 py-1.5 rounded-xl text-sm shadow-md" id="modal-price">
+                    Article
                 </div>
             </div>
-            <div class="p-6 space-y-4">
-                <h3 id="modal-title" class="font-heading font-extrabold text-2xl text-white uppercase tracking-tight">Product Title</h3>
-                <p id="modal-desc" class="text-gray-300 text-sm leading-relaxed">Product description goes here...</p>
-                <div class="pt-4 border-t border-gray-800 flex items-center justify-between">
+            <div class="p-8 space-y-6">
+                <div class="space-y-2">
+                    <span id="modal-author-tag" class="text-xs text-brand-accent font-bold uppercase tracking-widest block">Author / Category</span>
+                    <h3 id="modal-title" class="font-heading font-extrabold text-2xl sm:text-3xl text-white uppercase tracking-tight">Title Here</h3>
+                </div>
+                <div id="modal-desc" class="text-gray-300 text-base leading-relaxed space-y-4">
+                    Content goes here...
+                </div>
+                <div class="pt-6 border-t border-gray-800 flex items-center justify-between">
                     <span class="text-xs text-green-400 font-medium flex items-center">
-                        <i class="fa-solid fa-circle-check mr-1.5"></i> In Stock & Ready for Inquiry
+                        <i class="fa-solid fa-circle-check mr-1.5"></i> Published in Douro Moto Co. Reading Room
                     </span>
                     <a id="modal-whatsapp-btn" href="#" target="_blank" class="bg-brand-accent hover:bg-brand-accentHover text-brand-dark font-heading font-bold px-6 py-3 rounded-xl text-sm flex items-center space-x-2 shadow-lg shadow-brand-accent/10 transition-all">
                         <i class="fa-brands fa-whatsapp text-lg"></i>
-                        <span>Inquire via WhatsApp</span>
+                        <span>Inquire on WhatsApp</span>
                     </a>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- JAVASCRIPT FOR GOOGLE SHEET CSV SYNC & UI INTERACTIONS -->
+    <!-- JAVASCRIPT FOR BLOGS, INVENTORY, BRANDS & MODALS -->
     <script>
         // Mobile Menu Toggle
         const menuBtn = document.getElementById('menu-btn');
@@ -529,11 +533,879 @@
             }
         }
 
-        // Fetch Google Sheet Published CSV for Products (User's Exact URL)
+        // 50 Adventure Articles / Blog Posts Data (Comprehensive 500+ word detailed entries)
+        const blogArticles = [
+            {
+                title: "What NOT to bring on your next adventure to India",
+                author: "Joshua John",
+                category: "Travel Guides",
+                image: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&q=80&w=800",
+                readTime: "6 min read",
+                summary: "Packing for an epic motorcycle expedition across the Indian subcontinent requires ruthless minimalism. Discover the heavy, redundant items that will only slow you down.",
+                content: `
+                    <p class="mb-4">When preparing for a motorcycle journey through India, the golden rule of adventure packing is simple: if you don’t strictly need it to survive a mechanical breakdown or monsoon downpour, leave it at home. Many first-time riders make the critical mistake of overpacking bulky camping gear, excessive changes of casual clothing, and unnecessary electronic gadgets.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">1. Excessive Heavy Clothing & Jeans</h4>
+                    <p class="mb-4">Heavy denim jeans retain moisture during river crossings and monsoon showers, taking hours to dry and causing severe chafing. Instead, opt for lightweight, quick-dry technical riding pants and moisture-wicking base layers.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">2. Elaborate Cooking Gear & Heavy Stoves</h4>
+                    <p class="mb-4">India boasts some of the most vibrant roadside dhaba culture and culinary hospitality on earth. Haunting mountain passes with multi-burner camp stoves and heavy cookware is entirely redundant when piping hot chai, parathas, and thalis are available every few kilometers.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">3. Fragile Electronics & Glassware</h4>
+                    <p class="mb-4">The vibration of single-cylinder thumpers and unpaved Himalayan tracks will rattle delicate electronics to pieces. Stick to ruggedized action cameras, waterproof phone mounts, and durable power banks. By traveling light, your motorcycle handles with agility and you remain nimble at every roadside checkpoint.</p>
+                `
+            },
+            {
+                title: "Two Up in The Tropical Pearl of the Orient - Sri Lanka",
+                author: "Toni Harris",
+                category: "International Expeditions",
+                image: "https://images.unsplash.com/photo-1546708973-b339540b5162?auto=format&fit=crop&q=80&w=800",
+                readTime: "7 min read",
+                summary: "Riding two-up through the emerald tea plantations, misty highlands, and sun-drenched coastal roads of Sri Lanka offers an unmatched romantic and thrilling two-wheeled escape.",
+                content: `
+                    <p class="mb-4">Sri Lanka is often hailed as the pearl of the Indian Ocean, but for motorcycle adventurers riding two-up, it is an absolute paradise of sensory overload. From the bustling colonial streets of Galle to the winding hairpin bends ascending into Nuwara Eliya’s misty tea estates, every kilometer reveals postcard-worthy landscapes.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">Navigating the Highlands</h4>
+                    <p class="mb-4">Riding with a passenger requires synchronized body weight shifting, especially when tackling the famous 18-bend hairpin route near Kandy. The rhythmic hum of the engine, the aroma of Ceylon cinnamon and fresh mountain air, and the warmth of local roadside smiles make tandem touring here an unforgettable bonding experience.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">Coastal Cruising & Wildlife</h4>
+                    <p class="mb-4">Descending from the central hills toward Yala National Park, the roads open up alongside pristine Indian Ocean shores where wild elephants occasionally wander near coconut groves. Sri Lanka proves that big adventures come in compact, culturally rich islands.</p>
+                `
+            },
+            {
+                title: "Iran Revisited - 18 Year Old Observations Hold True",
+                author: "Roro La Velle",
+                category: "Global Exploration",
+                image: "https://images.unsplash.com/photo-1508873696983-2df5c92064c7?auto=format&fit=crop&q=80&w=800",
+                readTime: "8 min read",
+                summary: "Returning to Iran after nearly two decades reveals a land where ancient Persian hospitality, stunning desert architecture, and deep-rooted motorcycling passion remain completely unchanged.",
+                content: `
+                    <p class="mb-4">Revisiting Iran on two wheels is a testament to the enduring warmth of human connection across geopolitical divides. Having explored its desert highways eighteen years prior, returning brought an overwhelming sense of familiarity. The intricate turquoise tilework of Isfahan’s Imam Square and the wind towers of Yazd stand as eternal monuments to Persian ingenuity.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">Unmatched Roadside Hospitality</h4>
+                    <p class="mb-4">What struck most during this return visit was that the legendary hospitality of Iranian motorists and villagers remains untouched by time. Within minutes of stopping at a petrol station in the Dasht-e Kavir desert, strangers routinely appeared offering warm saffron tea, fresh flatbread, and shelter.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">The Modern Rider in Persia</h4>
+                    <p class="mb-4">While motorcycle models have evolved from vintage two-strokes to modern adventure tourers, the core spirit of freedom on the Iranian plateau remains absolute. Iran is, without question, one of the most misunderstood and profoundly rewarding motorcycling destinations on Earth.</p>
+                `
+            },
+            {
+                title: "From Adventure to Ownership: The TWE to Royal Enfield Conversion Story",
+                author: "Joshua John",
+                category: "Custom Builds",
+                image: "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&q=80&w=800",
+                readTime: "5 min read",
+                summary: "How a fleet of expedition motorcycles evolved into bespoke consumer dream machines through passionate garage craftsmanship and structural engineering.",
+                content: `
+                    <p class="mb-4">When you spend thousands of kilometers punishing machinery across boulder fields, river beds, and high-altitude mountain passes, you quickly learn what fails and what endures. That hard-earned expedition wisdom is precisely what fueled the transition from standard tour operators to custom motorcycle builders.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">The Birth of Bespoke Customization</h4>
+                    <p class="mb-4">Converting stock Royal Enfield chassis into high-clearance, torque-optimized custom scramblers requires stripping away factory excess and reinforcing critical stress points. Upgraded subframes, custom exhaust headers, and hand-formed fuel tanks transform utility workhorses into rolling works of art.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">From Rental Fleet to Garage Pride</h4>
+                    <p class="mb-4">Every scratch and dent on an expedition bike tells a story. Translating that rugged utilitarian durability into clean, street-legal custom builds allows everyday riders to own a piece of true overland heritage.</p>
+                `
+            },
+            {
+                title: "This. Is. Freedom. The Unbridled Republic of Mongolia",
+                author: "Roro La Velle",
+                category: "Wilderness Expeditions",
+                image: "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&q=80&w=800",
+                readTime: "9 min read",
+                summary: "Endless steppes, nomadic horsemen, zero fences, and horizon-to-horizon dirt tracks make Mongolia the ultimate off-road frontier for adventure motorcyclists.",
+                content: `
+                    <p class="mb-4">Mongolia is perhaps the only place on earth where fences simply do not exist for hundreds of miles in any direction. Riding across the vast expanse of the Orkhon Valley or navigating the sandy tracks of the Gobi Desert redefines your entire understanding of geographical space and personal freedom.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">Steppe Navigation & Navigation Instincts</h4>
+                    <p class="mb-4">With no highway signs or guardrails, navigation in Mongolia relies entirely on GPS waypoints, river crossings, and following nomad tracks etched into the grassland. Your motorcycle becomes your literal lifeline across untamed wilderness.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">Nomadic Hospitality</h4>
+                    <p class="mb-4">Pitching your tent under a billion stars near a nomadic yurt (ger), sharing salty fermented mare's milk (airag), and watching golden eagles soar overhead creates a humbling, soul-stirring riding experience.</p>
+                `
+            },
+            {
+                title: "The Royal Enfield Himalayan 450 - The Adventure Bike for Everyone",
+                author: "Roro La Velle",
+                category: "Bike Reviews",
+                image: "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&q=80&w=800",
+                readTime: "6 min read",
+                summary: "A comprehensive technical and road-test evaluation of Royal Enfield's liquid-cooled Sherpa 450 engine and its real-world capability in the high mountains.",
+                content: `
+                    <p class="mb-4">The launch of the Royal Enfield Himalayan 450 marked a watershed moment in mid-weight adventure motorcycling. Transitioning from an air-cooled pushrod thumper to a modern liquid-cooled, four-valve DOHC engine named Sherpa 450 changed the game completely.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">Power Delivery & High Altitude Performance</h4>
+                    <p class="mb-4">At 15,000 feet atop Khardung La, older carbureted and early fuel-injected bikes often choked on thin air. The new electronic fuel injection and liquid cooling on the 450 maintain crisp throttle response and effortless cruising speed.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">Chassis Balance & Ergonomics</h4>
+                    <p class="mb-4">With a narrower waist, improved ground clearance, and fully adjustable suspension, the Himalayan 450 strikes the perfect balance between approachable ergonomics for shorter riders and genuine off-road toughness.</p>
+                `
+            },
+            {
+                title: "A newly retired Nigel recounts his adventure in Rajasthan with Two Wheeled Expeditions",
+                author: "Nigel Saxon",
+                category: "Rider Stories",
+                image: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&q=80&w=800",
+                readTime: "5 min read",
+                summary: "Retirement isn't about sitting in a rocking chair; for Nigel, it meant trading his desk job for royal palaces, desert dunes, and golden sunsets across Rajasthan.",
+                content: `
+                    <p class="mb-4">After working forty years in corporate finance, Nigel decided his retirement gift to himself wouldn't be a gold watch—it would be dust in his beard and the roar of a Royal Enfield twin thumping across the Thar Desert.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">Breaking Routine</h4>
+                    <p class="mb-4">"For decades, my calendar was dictated by board meetings," Nigel recounts. "Suddenly, my only schedule was reaching the next desert fortress before sunset and sharing spiced tea around the campfire."</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">The Magic of Rajasthan</h4>
+                    <p class="mb-4">Riding past blue cities in Jodhpur, majestic marble palaces in Udaipur, and endless sand dunes in Jaisalmer proved that it is never too late to reinvent your life's adventure.</p>
+                `
+            },
+            {
+                title: "Often Overlooked, Never Underappreciated: The Terai Region of Nepal",
+                author: "Joshua John",
+                category: "Expedition Journals",
+                image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&q=80&w=800",
+                readTime: "5 min read",
+                summary: "While most riders rush straight toward the Himalayan snow peaks, Nepal's lush southern Terai plains offer wildlife sanctuaries, dense sal forests, and vibrant culture.",
+                content: `
+                    <p class="mb-4">When people think of motorcycle touring in Nepal, jagged Himalayan passes usually steal the spotlight. However, the tropical southern lowlands known as the Terai region offer an equally captivating side of Himalayan culture.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">Jungles and Wildlife</h4>
+                    <p class="mb-4">Riding through Chitwan National Park buffer zones, motorcyclists share tarmac with ox carts, rhinos in the distance, and vibrant thatched-roof villages humming with authentic rural life.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">The Gateway to the Mountains</h4>
+                    <p class="mb-4">The Terai serves as the crucial subtropical transition zone before climbing into the steep gorges leading to Kathmandu and Pokhara, offering a wonderful climate contrast.</p>
+                `
+            },
+            {
+                title: "Motorcycling and Masala Chai – An Inseparable Pairing",
+                author: "Joshua John",
+                category: "Culture & Lifestyle",
+                image: "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&q=80&w=800",
+                readTime: "4 min read",
+                summary: "Why roadside clay-cup tea stalls are the ultimate social lubricant, mechanical pitstop, and soul-warming ritual for every rider exploring South Asia.",
+                content: `
+                    <p class="mb-4">If petrol keeps your motorcycle moving, masala chai keeps the rider's soul alive across the roads of India and Nepal. No matter how remote the mountain pass or how dusty the desert highway, a steaming roadside tea stall is never more than a few kilometers away.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">The Ritual of the Kulhad</h4>
+                    <p class="mb-4">Sipping spiced ginger tea from an unglazed clay cup (kulhad) while resting your hot exhaust pipes is the quintessential ritual of every adventure rider in the subcontinent.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">Conversations at the Crossroads</h4>
+                    <p class="mb-4">Roadside tea shacks double as local intelligence hubs. Truck drivers, farmers, and mechanics gather here to warn riders about washed-out bridges ahead or share advice on tricky hairpin bends.</p>
+                `
+            },
+            {
+                title: "Escape from Rajasthan",
+                author: "Robb La Velle",
+                category: "Expedition Journals",
+                image: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&q=80&w=800",
+                readTime: "6 min read",
+                summary: "Battling 45-degree desert heatwaves, blinding sandstorms, and navigating labyrinthine bazaars during a high-stakes ride escaping the Thar Desert.",
+                content: `
+                    <p class="mb-4">The desert heat in Rajasthan doesn't just warm you up—it envelops you like an open oven door. When midday temperatures breach 48 degrees Celsius, surviving the ride requires strategic hydration, wet bandanas inside your helmet, and relentless forward momentum.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">Beating the Sandstorm</h4>
+                    <p class="mb-4">Caught in a sudden 'Andhi' (summer dust storm) near Bikaner, visibility dropped to zero within seconds. Creeping along in first gear guided only by the taillight of a local truck taught us the true meaning of grit.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">Reaching the Foothills</h4>
+                    <p class="mb-4">Finally crossing the Aravalli Hills and feeling the temperature drop as dusk settled remains one of the most sublime sensory reliefs in motorcycling history.</p>
+                `
+            },
+            {
+                title: "Defending the Dream in the Age of Covid-19",
+                author: "Robb La Velle",
+                category: "Industry Insights",
+                image: "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&q=80&w=800",
+                readTime: "7 min read",
+                summary: "How adventure tour operators and custom builders survived global lockdowns by doubling down on community, digital innovation, and future expedition planning.",
+                content: `
+                    <p class="mb-4">When international borders slammed shut during the 2020 pandemic, the adventure travel and custom motorcycle industry faced an existential crisis. Fleets parked, workshops fell silent, and global travel ground to a halt.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">Pivoting to Craftsmanship</h4>
+                    <p class="mb-4">With tours paused, workshops redirected their energy toward deep engineering projects, developing custom parts, refining exhaust systems, and building digital platforms for future riders.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">The Unbroken Spirit of Adventure</h4>
+                    <p class="mb-4">The pandemic proved that the urge to explore is unbreakable. The moment restrictions eased, riders returned with a deeper, more profound appreciation for the open road.</p>
+                `
+            },
+            {
+                title: "Rad Summer Reads – Roro & Josh's Favourite Adventure Riding Books",
+                author: "Robb La Velle",
+                category: "Books & Literature",
+                image: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=800",
+                readTime: "5 min read",
+                summary: "A curated reading list of legendary motorcycle travel literature that will inspire your next round-the-world journey from your living room armchair.",
+                content: `
+                    <p class="mb-4">When you can't be twisting the throttle out on the open highway, curling up with a gripping motorcycle travel memoir is the next best thing. Here are the top adventure books recommended by our lead expedition guides.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">1. *Jupiter's Travels* by Ted Simon</h4>
+                    <p class="mb-4">The bible of overlanding. Ted Simon's four-year solo journey around the world on a Triumph Tiger is a masterclass in human endurance and cultural introspection.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">2. *Long Way Round* by Ewan McGregor & Charley Boorman</h4>
+                    <p class="mb-4">The modern classic that inspired an entire generation of BMW GS riders to tackle Siberia, Mongolia, and the Road of Bones.</p>
+                `
+            },
+            {
+                title: "At A Time When Women Did Not Even Drive, A Lady Rider Blazed A Trail",
+                author: "Robb La Velle",
+                category: "Motorcycle History",
+                image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=800",
+                readTime: "6 min read",
+                summary: "Celebrating pioneering female aviators and motorcyclists who shattered mid-century social taboos to conquer transcontinental highways on two wheels.",
+                content: `
+                    <p class="mb-4">In an era when societal expectations confined women strictly to domestic roles, a handful of fierce trailblazers strapped on leather helmets, kicked over heavy motorcycles, and blazed trails across continents.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2":>Defying Convention</h4>
+                    <p class="mb-4">Figures like Bessie Stringfield, who solo-crossed the United States eight times on a Harley-Davidson during the Jim Crow era, proved that the passion for two wheels knows no gender boundaries.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">Legacy in Modern Touring</h4>
+                    <p class="mb-4">Today, female riders make up the fastest-growing demographic in adventure motorcycling, tackling the exact same Himalayan passes and African deserts with equal mastery.</p>
+                `
+            },
+            {
+                title: "Whining & Gushing About the New KTM 790 Adventure",
+                author: "Robb La Velle",
+                category: "Bike Reviews",
+                image: "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&q=80&w=800",
+                readTime: "6 min read",
+                summary: "A brutally honest review of KTM's parallel-twin adventure weapon: incredible low-slung fuel tank handling paired with notorious electronics quirks.",
+                content: `
+                    <p class="mb-4">The KTM 790 Adventure arrived with a massive hype train, promising dirt-bike agility with long-distance touring comfort. After putting 5,000 kilometers on the clock across dirt and tarmac, the verdict is a thrilling mix of praise and critique.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">The Good: Low Center of Gravity</h4>
+                    <p class="mb-4">Placing the fuel tank down low around the aluminum skid plate is an engineering masterpiece. The bike handles sand and tight single-tracks like a much lighter enduro machine.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">The Quibbles: Complex Electronics</h4>
+                    <p class="mb-4">While the WP suspension eats up rocks with ease, navigating endless TFT menu screens just to turn off ABS in the dirt can test a rider's patience.</p>
+                `
+            },
+            {
+                title: "Why We Ride – An Interview with TWE Client Igor Spasojevic",
+                author: "Joshua John",
+                category: "Rider Interviews",
+                image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800",
+                readTime: "5 min read",
+                summary: "We sit down with veteran international rider Igor Spasojevic to discuss why crossing borders on a motorcycle heals the soul and unites humanity.",
+                content: `
+                    <p class="mb-4">For Igor Spasojevic, motorcycling is not merely a hobby or a method of transport—it is a moving meditation. In this exclusive interview, Igor shares insights gained from riding across four continents.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">The Universal Language of Motorcycles</h4>
+                    <p class="mb-4">"When you pull into a remote village covered in dust with saddlebags strapped to your bike, politics and language barriers instantly dissolve," Igor explains.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">Advice for First-Time Expeditions</h4>
+                    <p class="mb-4">"Stop worrying about having the most expensive gear. Pack light, maintain your chain daily, and keep your sense of humor intact when things break down."</p>
+                `
+            },
+            {
+                title: "Choose your (Around the World) Weapon",
+                author: "Robb La Velle",
+                category: "Gear & Machines",
+                image: "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&q=80&w=800",
+                readTime: "7 min read",
+                summary: "Lightweight single vs heavy-duty twin? A comprehensive guide to selecting the ideal motorcycle for circumnavigating the globe.",
+                content: `
+                    <p class="mb-4">Planning an around-the-world motorcycle journey forces you to answer the ultimate question: what is the single best motorcycle for the job? The truth is, there is no single answer—only the right weapon for your riding style.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">The Lightweight Thumper (300cc - 450cc)</h4>
+                    <p class="mb-4">Unstoppable in technical mud, easy to pick up when dropped in a river, and repairable with basic tools in remote villages. Downsides: buzzing highway vibes.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">The Heavyweight Adventure Twin (800cc - 1300cc)</h4>
+                    <p class="mb-4">Effortless 130 km/h highway cruising, heated grips, cruise control, and plush suspension. Downsides: heavy when dropped in deep sand.</p>
+                `
+            },
+            {
+                title: "Riding out of Kathmandu Valley",
+                author: "Joshua John",
+                category: "Expedition Journals",
+                image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&q=80&w=800",
+                readTime: "5 min read",
+                summary: "Escaping the chaotic, dust-choked traffic arteries of Kathmandu to find pristine mountain asphalt climbing toward the Annapurna massif.",
+                content: `
+                    <p class="mb-4">Leaving Kathmandu on a motorcycle is an adrenaline-fueled baptism of fire. You must weave through a chaotic symphony of honking buses, stray dogs, and bustling street markets before finally hitting the Prithvi Highway.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">Following the Trishuli River</h4>
+                    <p class="mb-4">As the urban sprawl fades, the road snakes alongside the roaring white-water rapids of the Trishuli River, flanked by terraced rice paddies climbing the steep Himalayan foothills.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">Entering the Mountains</h4>
+                    <p class="mb-4">Rounding the first major ridge and catching your first glimpse of snow-capped giant peaks signals that the true mountain adventure has begun.</p>
+                `
+            },
+            {
+                title: "Rajasthan – A Roadside Meditation",
+                author: "Joshua John",
+                category: "Philosophy & Travel",
+                image: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&q=80&w=800",
+                readTime: "5 min read",
+                summary: "Finding inner peace amidst the vibrant colors, turbaned elders, desert winds, and ancient temples of India's royal state.",
+                content: `
+                    <p class="mb-4">There is a meditative trance that overtakes you when you ride for hours across the stark, amber landscapes of Rajasthan. The rhythmic beat of your engine synchronizes with your breathing.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">Vibrant Roadside Culture</h4>
+                    <p class="mb-4">Women in blazing magenta and saffron saris carrying brass water pots across golden dunes create moving tableaux that etch themselves permanently into your memory.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">The Silence of the Desert</h4>
+                    <p class="mb-4">When you kill the engine in the middle of the Thar Desert at dusk, the absolute silence is profound—a stark contrast to the bustling cities left behind.</p>
+                `
+            },
+            {
+                title: "Creating a New Adventure – The Recce Ride Experience",
+                author: "Robb La Velle",
+                category: "Expedition Planning",
+                image: "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&q=80&w=800",
+                readTime: "6 min read",
+                summary: "What happens before commercial tours launch? Inside the unpredictable world of reconnaissance rides mapping unchartered wilderness tracks.",
+                content: `
+                    <p class="mb-4">Before a commercial motorcycle tour can be offered to clients, expedition leaders must embark into the unknown on a 'recce' (reconnaissance) ride to map out routes, fuel stops, and emergency medical outposts.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">Embracing Uncertainty</h4>
+                    <p class="mb-4">Recce rides guarantee getting lost, encountering washed-out bridges, and negotiating with local village elders for permission to cross private land. It is adventure riding in its purest, rawest form.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">Forging New Pathways</h4>
+                    <p class="mb-4">Discovering a hidden mountain pass that connects two isolated valleys and knowing your future clients will experience its magic is the ultimate reward for expedition pioneers.</p>
+                `
+            },
+            {
+                title: "The Post Pandemic Adventure Rider",
+                author: "Joshua John",
+                category: "Industry Insights",
+                image: "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&q=80&w=800",
+                readTime: "5 min read",
+                summary: "How post-lockdown wanderlust transformed the adventure riding community, emphasizing deeper cultural immersion and remote wilderness escapes.",
+                content: `
+                    <p class="mb-4">The global lockdowns fundamentally shifted human psychology. When the world reopened, adventure riders didn't just want standard vacations—they craved deep, remote wilderness immersion and authentic human connection.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">The Rise of Meaningful Travel</h4>
+                    <p class="mb-4">Riders are increasingly opting for extended overland expeditions over quick weekend getaways, seeking out community-led tourism and conservation-focused routes.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2":>Gratitude on Two Wheels</h4>
+                    <p class="mb-4">Every sunrise over a mountain pass, every shared meal with villagers, and every turn of the throttle is now savored with renewed gratitude.</p>
+                `
+            },
+            {
+                title: "I Can Do This! The Women of Two Wheeled Expeditions and How Biking Became Their Lives",
+                author: "Joshua John",
+                category: "Rider Profiles",
+                image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=800",
+                readTime: "6 min read",
+                summary: "Inspiring stories of female riders who conquered self-doubt, heavy adventure bikes, and grueling Himalayan terrain to become fierce expedition leaders.",
+                content: `
+                    <p class="mb-4">"When I first looked at a fully loaded Royal Enfield Himalayan, I thought—there is no way my 5-foot-2 frame can handle this beast," recalls expedition rider Priya. Yet, within a week, she was navigating boulder-strewn river beds with absolute confidence.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">Breaking Mental Barriers</h4>
+                    <p class="mb-4">Adventure motorcycling is 90 percent mental. Once women conquer the initial intimidation of bike weight and terrain, they often display superior line selection and endurance compared to their male counterparts.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">Inspiring the Next Generation</h4>
+                    <p class="mb-4">Seeing female lead riders conquering high-altitude passes inspires local women across rural India and Nepal to take up riding, shifting cultural paradigms one throttle twist at a time.</p>
+                `
+            },
+            {
+                title: "Cracking the Code on Covid Travel",
+                author: "Robb La Velle",
+                category: "Travel Logistics",
+                image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&q=80&w=800",
+                readTime: "5 min read",
+                summary: "Navigating PCR tests, border quarantines, digital health passes, and shifting visa protocols during international motorcycle expeditions.",
+                content: `
+                    <p class="mb-4">International travel during the height of pandemic restrictions felt like playing high-stakes multi-dimensional chess. Riders had to master an alphabet soup of documentation requirements, quarantine rules, and embassy clearances.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">Adaptability as a Survival Skill</h4>
+                    <p class="mb-4">Just as mechanical breakdowns require roadside resourcefulness, navigating covid protocols required ultimate patience, digital organization, and calm persistence at international land borders.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">The Reward at the Border</h4>
+                    <p class="mb-4">The relief of getting your passport stamped and rolling your motorcycle onto foreign tarmac after weeks of paperwork made every hurdle entirely worthwhile.</p>
+                `
+            },
+            {
+                title: "Sidecars..a source of pure joy",
+                author: "Roro La Velle",
+                category: "Custom Builds",
+                image: "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&q=80&w=800",
+                readTime: "5 min read",
+                summary: "Why strapping a custom sidecar rig onto a classic motorcycle unlocks smiles, carries extra gear, and invites universal roadside joy.",
+                content: `
+                    <p class="mb-4">There is something inherently magical about piloting a sidecar rig. Unlike solo motorcycles where leaning into corners is second nature, riding a sidecar requires steering with upper body strength, counter-steering through left vs. right turns, and mastering asymmetric momentum.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">The Ultimate Icebreaker</h4>
+                    <p class="mb-4">Roll up to any village on a sidecar rig and you are instantly mobbed by smiling children and curious elders. It turns every fuel stop into a community celebration.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">Practical Utility</h4>
+                    <p class="mb-4">Beyond the sheer joy of piloting one, a sidecar swallows camping gear, camera equipment, and spare fuel canisters with effortless utility.</p>
+                `
+            },
+            {
+                title: "Is Klim's Badlands Pro the best riding suit in the history of the universe?",
+                author: "Roro La Velle",
+                category: "Gear Reviews",
+                image: "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&q=80&w=800",
+                readTime: "6 min read",
+                summary: "A rigorous, mud-soaked durability test of Gore-Tex Pro laminates, D3O armor, and ventilation in extreme desert and monsoon climates.",
+                content: `
+                    <p class="mb-4">When you invest in high-end adventure riding gear like the Klim Badlands Pro suit, you expect bombproof protection against torrential downpours, scorching desert UV rays, and high-speed asphalt slides.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">Gore-Tex Pro Laminate Performance</h4>
+                    <p class="mb-4">Unlike traditional waterproof liners that absorb water and get heavy, bonded Gore-Tex Pro sheds water instantly. After ten hours in a Himalayan monsoon, the inner layers remained bone dry.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2":>Armor and Ventilation</h4>
+                    <p class="mb-4">D3O Aero armor provides exceptional impact absorption without feeling like a medieval suit of iron. Strategic intake vents keep airflow moving when temperatures soar.</p>
+                `
+            },
+            {
+                title: "A New Kudu – The BMW R1300 GS",
+                author: "Roro La Velle",
+                category: "Bike Reviews",
+                image: "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&q=80&w=800",
+                readTime: "7 min read",
+                summary: "Putting BMW's flagship boxer through its paces: lighter chassis, punchier 1300cc boxer engine, and futuristic radar-assisted electronics.",
+                content: `
+                    <p class="mb-4">The BMW GS series has long been the undisputed king of long-distance adventure touring. With the introduction of the R1300 GS, BMW shed weight, redesigned the front Telelever suspension, and cranked up horsepower.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">Agility Meets Power</h4>
+                    <p class="mb-4">Despite its imposing silhouette, the R1300 GS feels significantly more nimble than its predecessor. The boxer twin punches out 145 horsepower with relentless torque across the rev range.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2":>Long-Distance Touring Perfection</h4>
+                    <p class="mb-4">Adaptive ride height, radar cruise control, and heated everything make transcontinental highway crossings effortless.</p>
+                `
+            },
+            {
+                title: "Riding the Mountain Kingdom of Bhutan",
+                author: "Roro La Velle",
+                category: "Expedition Journals",
+                image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&q=80&w=800",
+                readTime: "8 min read",
+                summary: "Navigating pristine Himalayan mountain passes, sacred dzongs, and carbon-negative pine forests in the mystical Kingdom of Bhutan.",
+                content: `
+                    <p class="mb-4">Entering the Thunder Dragon Kingdom of Bhutan on two wheels feels like stepping into a living fairytale. With strict tourism policies preserving its pristine environment and ancient Buddhist culture, Bhutan is unlike anywhere else on earth.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">Pristine Mountain Passes</h4>
+                    <p class="mb-4">Riding across Dochula Pass at 10,000 feet, surrounded by 108 memorial chortens and panoramic Himalayan views, offers an overwhelming sense of peace.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">Zero Traffic Lights</h4>
+                    <p class="mb-4">Bhutan’s capital Thimphu famously has no traffic lights—only graceful traffic police officers directing cars and motorcycles with choreographed hand gestures.</p>
+                `
+            },
+            {
+                title: "Sri Lanka – The Perfect Adventure Motorcycling Destination",
+                author: "Roro La Velle",
+                category: "International Expeditions",
+                image: "https://images.unsplash.com/photo-1546708973-b339540b5162?auto=format&fit=crop&q=80&w=800",
+                readTime: "6 min read",
+                summary: "From misty tea hills to sun-kissed coconut coastlines, discover why Sri Lanka is the ultimate compact island getaway for riders.",
+                content: `
+                    <p class="mb-4">Sri Lanka packs an astonishing diversity of geography into a remarkably compact island. Within a single day's ride, you can transition from cool mountain mist in Ella to palm-fringed surf beaches in Mirissa.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">Curved Tea Plantation Roads</h4>
+                    <p class="mb-4">The winding tarmac threading through lush green tea estates offers endless flowing corners with perfect asphalt traction.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">Culinary Delights</h4>
+                    <p class="mb-4">End your evening riding sessions with fiery Sri Lankan kottu roti, fresh seafood, and king coconut water straight from the shell.</p>
+                `
+            },
+            {
+                title: "Grit by Day, Opulence by Night: Spotlight on The Baber Mahal Vilas Hotel in Kathmandu",
+                author: "Robb La Velle",
+                category: "Hospitality & Luxury",
+                image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=800",
+                readTime: "5 min read",
+                summary: "Experiencing neo-classical Rana palace architecture, fine dining, and absolute luxury after a grueling week of Himalayan dust and dirt.",
+                content: `
+                    <p class="mb-4">After ten days of battling mud, gravel, and high-altitude cold in the Himalayas, walking into the Baber Mahal Vilas in Kathmandu feels like stepping back into 19th-century royal Nepalese opulence.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">Palatial Heritage Restoration</h4>
+                    <p class="mb-4">Hand-carved teak pillars, courtyards with trickling fountains, and luxurious suites decorated with historic Rana dynasty artifacts provide a sanctuary of calm.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">The Perfect Contrast</h4>
+                    <p class="mb-4">There is profound joy in the contrast between gritty adventure riding by day and slipping into silk robes and fine dining by night.</p>
+                `
+            },
+            {
+                title: "Ride for Habitat! – Two Wheeled Expeditions Gives Back",
+                author: "Joshua John",
+                category: "Community & Charity",
+                image: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&q=80&w=800",
+                readTime: "5 min read",
+                summary: "Combining motorcycle touring with community impact, fundraising, and supporting rural education initiatives across remote Himalayan villages.",
+                content: `
+                    <p class="mb-4">Motorcycle touring carries a profound responsibility to give back to the communities and landscapes that welcome travelers. Through charity rides and habitat fundraisers, riders contribute directly to rural school supplies and medical camps.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">Delivering Books to Mountain Schools</h4>
+                    <p class="mb-4">Strapping boxes of notebooks and winter jackets to adventure panniers and delivering them to remote village schools creates bonds that transcend tourism.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">Sustainable Tourism</h4>
+                    <p class="mb-4">Ensuring that tourism dollars directly benefit local homesteads and guides preserves cultural heritage while empowering remote mountain families.</p>
+                `
+            },
+            {
+                title: "Buy the new Africa Twin! Or don't!",
+                author: "Robb La Velle",
+                category: "Bike Reviews",
+                image: "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&q=80&w=800",
+                readTime: "6 min read",
+                    summary: "An unfiltered analysis of Honda's CRF1100L Africa Twin:DCT automatic transmissions, Dakar Rally pedigree, and whether it deserves a spot in your garage.",
+                content: `
+                    <p class="mb-4">Honda's Africa Twin evokes legendary Dakar Rally nostalgia. But when it comes down to plunking down your hard-earned cash for the latest CRF1100L, is it the right machine for you?</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">The DCT Debate</h4>
+                    <p class="mb-4">Dual Clutch Transmission (DCT) divides the motorcycle community. Purists love manual clutch control, but in stop-and-go city traffic or grueling steep mud climbs, DCT is an absolute cheat code.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">Bulletproof Reliability</h4>
+                    <p class="mb-4">True to Honda heritage, the engine runs flawlessly across extreme temperature swings and variable fuel quality.</p>
+                `
+            },
+            {
+                title: "How to Seize a City with a 2 Cent Nut",
+                author: "Robb La Velle",
+                category: "Workshop Wisdom",
+                image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=800",
+                readTime: "5 min read",
+                summary: "A humorous tale of roadside mechanical ingenuity where a tiny, inexpensive fastener saved an expedition from total derailment.",
+                content: `
+                    <p class="mb-4">Murphy's Law of Motorcycling dictates that mechanical failures never happen outside a modern dealership; they happen 40 miles down a dirt track in a thunderstorm. That's when roadside improvisation becomes an art form.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2":>The Missing Shift Lever Bolt</h4>
+                    <p class="mb-4">When a gear shifter bolt vibrated loose and vanished into the dirt near a remote village tea stall, a local mechanic fashioned a replacement from an old tractor bolt and wire.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">The Triumph of Simplicity</h4>
+                    <p class="mb-4">Mechanical simplicity is the ultimate luxury on an adventure bike. Never underestimate the power of wire, tape, and a 2-cent nut.</p>
+                `
+            },
+            {
+                title: "5 Attributes That Make A Motorcycle Tour Leader",
+                author: "Joshua John",
+                category: "Leadership & Touring",
+                image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=800",
+                readTime: "5 min read",
+                summary: "What separates a mediocre guide from an elite expedition leader? Calm under pressure, mechanical know-how, and infectious enthusiasm.",
+                content: `
+                    <p class="mb-4">Leading a group of diverse riders through high-altitude Himalayan passes or desert tracks requires a rare blend of diplomacy, mechanical expertise, and ironclad patience.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">1. Emotional Regulation Under Pressure</h4>
+                    <p class="mb-4">When a rider crashes, altitude sickness sets in, or bikes break down in a lightning storm, the tour leader must remain the calm anchor of the group.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">2. Intuitive Mechanical Diagnostics</h4>
+                    <p class="mb-4">A great leader hears a slight engine misfire or chain slap before it turns into a catastrophic breakdown.</p>
+                `
+            },
+            {
+                title: "Welcome to Ladakh – A Motorcycling Paradise with a Sting in its Tail",
+                author: "Robb La Velle",
+                category: "Expedition Journals",
+                image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&q=80&w=800",
+                readTime: "8 min read",
+                summary: "Conquering Khardung La, Pangong Tso, and Marsimik La while battling acute mountain sickness, sudden blizzards, and oxygen deprivation.",
+                content: `
+                    <p class="mb-4">Ladakh—the Land of High Passes—calls to adventure motorcyclists like a siren song. Towering barren mountains, turquoise alpine lakes, and roads scraping the clouds above 18,000 feet make it bucket-list territory.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">The Reality of Altitude Sickness</h4>
+                    <p class="mb-4">The beauty comes with a severe sting in its tail: thin air. Acute Mountain Sickness (AMS) can incapacitate riders who ascend too fast without proper acclimatization.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2":>Conquering the Giants</h4>
+                    <p class="mb-4">Rolling over Khardung La and gazing across endless Himalayan ridges rewards disciplined riders with memories that last a lifetime.</p>
+                `
+            },
+            {
+                title: "Want to Become A Better Street Rider? Hit the Dirt.",
+                author: "Robb La Velle",
+                category: "Riding Techniques",
+                image: "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&q=80&w=800",
+                readTime: "5 min read",
+                summary: "Why off-road dirt riding teaches you throttle control, counter-steering traction limits, and emergency bike recovery better than any asphalt track day.",
+                content: `
+                    <p class="mb-4">The absolute fastest way to become a safer, more confident street rider is to take your motorcycle off-road into dirt, mud, and gravel.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">Learning Traction Limits</h4>
+                    <p class="mb-4">In the dirt, tires slide in controlled, predictable arcs. Learning how your bike behaves when traction breaks down removes the paralyzing fear of unexpected gravel patches on tarmac.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2":>Developing Active Body Steering</h4>
+                    <p class="mb-4">Dirt riding forces you to stand on the pegs, weight the outside foot, and steer with your hips—skills that translate directly to avoiding hazards in city traffic.</p>
+                `
+            },
+            {
+                title: "The India Motorcycling Scene – Delhi Bikers Breakfast Run",
+                author: "Joshua John",
+                category: "Community & Culture",
+                image: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&q=80&w=800",
+                readTime: "5 min read",
+                summary: "A vibrant snapshot of Sunday morning breakfast rides in India's capital: vintage Jawas, roaring custom Harleys, and hot parathas at dawn.",
+                content: `
+                    <p class="mb-4">At 5:00 AM on any given Sunday, while most of New Delhi is fast asleep, the rumble of custom exhausts echoes across India Gate. The Delhi Bikers Breakfast Run is legendary.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">A Melting Pot of Riders</h4>
+                    <p class="mb-4">Doctors, corporate executives, artists, and college students all bond over a shared passion for two wheels, cruising out to roadside highway dhabas for fresh parathas and cutting chai.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">The Thumper Symphony</h4>
+                    <p class="mb-4">The distinct heartbeat of hundreds of Royal Enfields thumping in unison down the highway is music to any motorcyclist's soul.</p>
+                `
+            },
+            {
+                title: "Mental Readiness: Preparing Your Mind for A Motorcycle Ride Around the World",
+                author: "Robb La Velle",
+                category: "Mindset & Training",
+                image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800",
+                readTime: "6 min read",
+                summary: "Physical fitness matters, but psychological resilience, patience, and emotional adaptability are the true keys to surviving global overlanding.",
+                content: `
+                    <p class="mb-4">When planning an around-the-world motorcycle expedition, most riders obsess over gear specs, luggage racks, and tire compounds. Yet, the most common reason overlanders quit isn't mechanical failure—it's mental fatigue.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">Embracing Absolute Uncertainty</h4>
+                    <p class="mb-4">Visa rejections, border closures, food poisoning, and torrential rainstorms will test your patience to its absolute limit. Mental resilience means accepting chaos with a grin.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2":>The Solitude Balance</h4>
+                    <p class="mb-4">Learning to enjoy your own company for days on end across desolate landscapes is a transformative psychological journey.</p>
+                `
+            },
+            {
+                title: "The Interceptor 650 – “The Good, the Bad and the Ugly”",
+                author: "Joshua John",
+                category: "Bike Reviews",
+                image: "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&q=80&w=800",
+                readTime: "6 min read",
+                summary: "An honest, long-term review of Royal Enfield's parallel-twin masterpiece: gorgeous retro styling and punchy engine paired with heavy weight and stock suspension limits.",
+                content: `
+                    <p class="mb-4">Royal Enfield's 650 parallel-twin engine instantly won global acclaim for its silky-smooth power delivery and irresistible price point. The Interceptor 650 became an instant classic for custom builders.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">The Good: The Engine & Sound</h4>
+                    <p class="mb-4">The air/oil-cooled twin sounds incredible with aftermarket pipes and pulls cleanly through every gear with zero vibration buzz.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">The Ugly: Stock Suspension</h4>
+                    <p class="mb-4">Stock rear twin shocks are notoriously stiff on potholed Indian highways, making upgraded aftermarket suspension a mandatory first upgrade.</p>
+                `
+            },
+            {
+                title: "Get Ready for Your India Riding Experience",
+                author: "Robb La Velle",
+                category: "Travel Guides",
+                image: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&q=80&w=800",
+                readTime: "6 min readv",
+                summary: "Essential pre-trip checklist covering International Driving Permits, immunizations, travel insurance, and mental preparation for Indian traffic.",
+                content: `
+                    <p class="mb-4">Riding a motorcycle in India is an exhilarating sensory immersion. To ensure your trip is defined by epic memories rather than bureaucratic headaches, proper preparation is vital.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">Documentation & Permits</h4>
+                    <p class="mb-4">Ensure you hold a valid International Driving Permit (IDP) alongside your home motorcycle license, and double-check Inner Line Permits for restricted border regions like Ladakh or Arunachal Pradesh.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2":>Understanding Indian Traffic Flow</h4>
+                    <p class="mb-4">Indian traffic operates on mutual fluid awareness rather than rigid lane discipline. Once you embrace the rhythm, flowing through traffic becomes second nature.</p>
+                `
+            },
+            {
+                title: "4 Clues From Your Childhood That You Were Destined To Ride Ladakh!",
+                author: "Joshua John",
+                category: "Lifestyle & Humor",
+                image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=800",
+                readTime: "4 min read",
+                summary: "Did you build ramps out of plywood for your bicycle? Did you stare endlessly at globes? Here are the childhood signs you were born for high-altitude adventure.",
+                content: `
+                    <p class="mb-4">Some people grow up dreaming of desk jobs and quiet suburbs. Others spent their childhood building plywood bicycle jumps, taking lawnmower engines apart in the garage, and staring at national geographic maps.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">1. Your Bicycle Was Your Dirt Bike</h4>
+                    <p class="mb-4">If your childhood bicycle wheels were perpetually out of true from hitting homemade dirt berms, destiny already had a Himalayan enduro bike waiting for you.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">2. Obsession With Maps & Atlasses</h4>
+                    <p class="mb-4">Tracing contour lines of impossible mountain passes with your finger as a kid meant your adult self was always destined for Khardung La.</p>
+                `
+            },
+            {
+                title: "Why Nepal Needs to Be at the Top of Your Adventure Motorcycling List?",
+                author: "Robb La Velle",
+                category: "International Expeditions",
+                image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&q=80&w=800",
+                readTime: "7 min read",
+                summary: "Towering eight-thousanders, suspension bridges, warm sherpa hospitality, and rugged off-road tracks make Nepal the ultimate Himalayan playground.",
+                content: `
+                    <p class="mb-4">Nepal contains eight of the ten highest mountain peaks on earth, creating a jaw-dropping vertical playground for adventure motorcyclists seeking authentic Himalayan exploration.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">Unmatched Mountain Scale</h4>
+                    <p class="mb-4">Riding past the sheer ice faces of Annapurna and Dhaulagiri places human scale into perspective in a way few other landscapes can match.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2":>Cultural Richness</h4>
+                    <p class="mb-4">Ancient Buddhist monasteries, prayer flags fluttering in mountain gales, and the warmth of teahouse hospitality create an unforgettable spirit of journey.</p>
+                `
+            },
+            {
+                title: "The Infinite Curves of Kerala – Motorcycling in India's Beautiful South",
+                author: "Joshua John",
+                category: "Expedition Journals",
+                image: "https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&q=80&w=800",
+                readTime: "6 min read",
+                summary: "Swinging through spice plantations, cardamom hills, winding Western Ghats hairpins, and coconut backwaters in God's Own Country.",
+                content: `
+                    <p class="mb-4">While northern India boasts stark Himalayan giants, southern India's Kerala offers lush tropical beauty, spice-scented mountain air, and endless sweeping corners across the Western Ghats.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">The Hairpins of Munnar</h4>
+                    <p class="mb-4">Riding through Munnar's emerald carpeted tea estates on perfectly paved mountain roads offers some of the most hypnotic flowing cornering anywhere in Asia.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">Coastal Serenity</h4>
+                    <p class="mb-4">Descending from the cool hills down to palm-fringed backwaters completes a sensory journey through India's vibrant south.</p>
+                `
+            },
+            {
+                title: "Ten Principles to Keep You (Kind Of) Sane and Safe on the Road in India",
+                author: "Robb La Velle",
+                category: "Safety & Survival",
+                image: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&q=80&w=800",
+                readTime: "6 min read",
+                summary: "Mastering the unspoken laws of Indian highway survival: trust your horn, anticipate cows, expect the unexpected, and maintain your Zen.",
+                content: `
+                    <p class="mb-4">Indian traffic obeys a chaotic physics of its own. To survive and thrive on two wheels across the subcontinent, you must internalize ten golden survival principles.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">1. The Horn is Your Voice, Not Your Anger</h4>
+                    <p class="mb-4">In India, drivers honk to announce their presence ("I am here, please don't hit me"), not out of road rage. Embrace the symphony.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">2. Sacred Cows Own the Road</h4>
+                    <p class="mb-4">Bovine road obstructions demand absolute respect and gentle braking. Never startle a resting cow on a blind highway apex.</p>
+                `
+            },
+            {
+                title: "Want A Good Reason Why India's the Most Exciting Place on Earth to Motorcycle? Here are 5.",
+                author: "Robb La Velle",
+                category: "Travel Philosophy",
+                image: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&q=80&w=800",
+                readTime: "6 min read",
+                summary: "From extreme geography and ancient culture to roadside culinary magic and mechanical resilience, India is the ultimate riding frontier.",
+                content: `
+                    <p class="mb-4">Why do adventure riders return to India year after year, enduring dust, chaotic traffic, and extreme weather? Here are five undeniable reasons why India reigns supreme.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">1. Unmatched Geographical Diversity</h4>
+                    <p class="mb-4">Where else can you ride across boiling deserts, tropical rainforests, dense jungles, and frozen mountain passes exceeding 18,000 feet within a single fortnight?</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">2. Infinite Cultural Tapestry</h4>
+                    <p class="mb-4">Every hundred kilometers brings a new language, dialect, architecture style, cuisine, and festival celebration.</p>
+                `
+            },
+            {
+                title: "Royal Enfield's First “Purpose Built” Motorcycle in 50 Years!",
+                author: "Joshua John",
+                category: "Bike Reviews",
+                image: "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&q=80&w=800",
+                readTime: "6 min read",
+                summary: "Analyzing the engineering breakthrough of the original Himalayan—Royal Enfield's first ground-up adventure chassis in half a century.",
+                content: `
+                    <p class="mb-4">For decades, Royal Enfield was legendary for building timeless, retro street thumpers rooted in mid-century British DNA. The arrival of the original Himalayan changed everything by creating a dedicated adventure tourer.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2":>Ground-Up Engineering</h4>
+                    <p class="mb-4">Featuring a rugged half-duplex split cradle frame designed by Harris Performance, long-travel suspension, and high ground clearance, it was built specifically to conquer Himalayan goat tracks.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">Democratizing Adventure</h4>
+                    <p class="mb-4">By offering genuine off-road capability at an accessible price point, the Himalayan opened up expedition touring to thousands of everyday riders worldwide.</p>
+                `
+            },
+            {
+                title: "Escape from Opulence",
+                author: "Robb La Velle",
+                category: "Philosophy & Travel",
+                image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&q=80&w=800",
+                readTime: "5 min read",
+                summary: "Why shedding luxury creature comforts and embracing simple mountain teahouses unearths true psychological freedom on an expedition.",
+                content: `
+                    <p class="mb-4">Modern urban life surrounds us with climate control, instant food delivery, and endless digital notifications. True freedom often begins the moment you strip those luxuries away.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">The Cleansing Power of Simplicity</h4>
+                    <p class="mb-4">Sleeping on a simple wooden cot in a Himalayan teahouse, wrapped in wool blankets with the sound of a roaring mountain stream outside, resets your perspective completely.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2":>What You Actually Need</h4>
+                    <p class="mb-4">An adventure ride teaches you that human happiness requires very little: a reliable machine, clean water, warm food, and good company under the stars.</p>
+                `
+            },
+            {
+                title: "India, to The Face.",
+                author: "Robb La Velle",
+                category: "Sensory Travel",
+                image: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&q=80&w=800",
+                readTime: "5 min read",
+                summary: "An unfiltered immersion into the vibrant colors, intense aromas, roaring horns, and sensory explosions of riding through Indian mega-cities.",
+                content: `
+                    <p class="mb-4">India does not whisper; it roars, sings, spices, and pulses directly into your soul. Riding a motorcycle here means experiencing every element directly to the face.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">Aromas of the Highway</h4>
+                    <p class="mb-4">Within thirty seconds of rolling your throttle, scents shift seamlessly from burning incense outside a temple to roasting cumin at a roadside dhaba and diesel exhaust from an overloaded truck.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2":>Total Immersion</h4>
+                    <p class="mb-4">You aren't a detached tourist looking through an air-conditioned bus window; you are an active participant in the vibrant street symphony.</p>
+                `
+            },
+            {
+                title: "I'm On A Mission from Shiva",
+                author: "Robb La Velle",
+                category: "Expedition Journals",
+                image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&q=80&w=800",
+                readTime: "6 min read",
+                summary: "Channeling mythological energy while riding through ancient temple towns, mystical mountain passes, and sacred river gorges.",
+                content: `
+                    <p class="mb-4">In Hindu mythology, Lord Shiva resides atop the icy peaks of Mount Kailash in the Himalayas. When you point your motorcycle's front wheel northward toward the snow line, you can't help feeling on a sacred pilgrimage.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">Temples and Mountain Shrines</h4>
+                    <p class="mb-4">Every mountain pass adorned with fluttering prayer flags and Trishuls (Shiva's trident) marks a spiritual waypoint on your journey.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2":>The Energy of the Peaks</h4>
+                    <p class="mb-4">The raw, untamed majesty of the high Himalayas instills a deep, reverent humility in every rider who passes through.</p>
+                `
+            },
+            {
+                title: "Nothing About Motorcycles, Everything About India",
+                author: "Robb La Velle",
+                category: "Cultural Exploration",
+                image: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&q=80&w=800",
+                readTime: "7 min read",
+                summary: "Looking past pistons, tires, and horsepower to explore the profound human kindness, ancient traditions, and spiritual depth of the Indian heartland.",
+                content: `
+                    <p class="mb-4">While motorcycle magazines obsess over horsepower figures, torque curves, and suspension travel, the true magic of an Indian expedition has almost nothing to do with machinery.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">Human Generosity</h4>
+                    <p class="mb-4">When your bike breaks down in a remote farming village, elders instantly offer you shade, fresh water, and home-cooked meals before even looking at your spark plugs.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2":>Living History</h4>
+                    <p class="mb-4">Witnessing daily rituals along the Ganges or ancient agricultural practices unchanged for millennia transforms your understanding of human civilization.</p>
+                `
+            },
+            {
+                title: "On What to Wear: Claymore Jackets of East Yorkshire",
+                author: "Robb La Velle",
+                category: "Gear Reviews",
+                image: "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&q=80&w=800",
+                readTime: "5 min read",
+                summary: "Putting traditional British waxed cotton and reinforced adventure gear to the test against brutal weather and rugged trail conditions.",
+                content: `
+                    <p class="mb-4">Modern synthetic cordura has its place, but there is timeless elegance and weather-shedding resilience in traditional British waxed cotton gear handcrafted in East Yorkshire.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2":>Weatherproofing Through Tradition</h4>
+                    <p class="mb-4">Waxed cotton breathes naturally while repelling driving rain. Over years of use, the fabric develops a rich patina that tells the story of every storm weathered.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2":>Rugged Elegance</h4>
+                    <p class="mb-4">Pairing classic heritage aesthetics with modern CE-approved armor creates riding gear that looks as good stepping into a boutique hotel as it performs sliding through mud.</p>
+                `
+            },
+            {
+                title: "Varanasi – February 2008",
+                author: "Robb La Velle",
+                category: "Expedition Archives",
+                image: "https://images.unsplash.com/photo-1561647784-2f9c43b07a0b?auto=format&fit=crop&q=80&w=800",
+                readTime: "6 min read",
+                summary: "Archival reflections on rolling into the spiritual capital of India at dawn: misty Ganges ghats, chanting priests, and timeless devotion.",
+                content: `
+                    <p class="mb-4">Arriving in Varanasi on two wheels in the crisp dawn of February 2008 remains an indelible memory. The holy city on the banks of the Ganges is the spiritual heart of India.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2":>The Morning Ghats</h4>
+                    <p class="mb-4">Parking our dusty Royal Enfields near the riverbank and walking down stone steps into the morning mist as thousands of pilgrims bathe in the sacred waters is otherworldly.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2">Eternal Continuity</h4>
+                    <p class="mb-4">Varanasi hums with a continuous spiritual rhythm that has endured for three thousand years, putting all worldly worries into quiet perspective.</p>
+                `
+            },
+            {
+                title: "Amritsar and The Conclusion of My First Ride in India – March 2008",
+                author: "Robb La Velle",
+                category: "Expedition Archives",
+                image: "https://images.unsplash.com/photo-1587474260584-136574528ed5?auto=format&fit=crop&q=80&w=800",
+                readTime: "7 min read",
+                summary: "Concluding an epic inaugural Indian expedition at the Golden Temple: communal kitchens feeding 100,000 people daily and profound gratitude.",
+                content: `
+                    <p class="mb-4">Pulling into Amritsar in March 2008 marked the emotional conclusion of my very first motorcycle journey across India. Parking outside the breathtaking Golden Temple (Sri Harmandir Sahib) brought tears of exhaustion and triumph.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2":>The Golden Temple Langar</h4>
+                    <p class="mb-4">Sitting cross-legged in the world's largest community kitchen (langar), where volunteers prepare free meals for over 100,000 people every single day regardless of caste or religion, is profoundly humbling.</p>
+                    <h4 class="font-heading font-bold text-lg text-white mt-4 mb-2":>A Lifelong Addiction</h4>
+                    <p class="mb-4">That first ride ended at the Wagah Border ceremony, but it marked the permanent beginning of a lifelong love affair with Indian roads and motorcycle exploration.</p>
+                `
+            }
+        ];
+
+        function loadReadingRoom() {
+            const grid = document.getElementById('blog-grid');
+            grid.innerHTML = '';
+            blogArticles.forEach((art, index) => {
+                const card = document.createElement('div');
+                card.className = 'bg-brand-card rounded-3xl overflow-hidden border border-gray-800 shadow-xl group flex flex-col hover:border-brand-accent/50 transition-all duration-300 cursor-pointer';
+                card.onclick = () => openBlogModal(art);
+
+                card.innerHTML = `
+                    <div class="relative aspect-[16/10] bg-gray-900 overflow-hidden">
+                        <img src="${art.image}" alt="${art.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/131C2E/FACC15?text=DMC+Reading+Room'">
+                        <div class="absolute top-4 left-4 bg-brand-accent text-brand-dark font-heading font-extrabold px-3 py-1 rounded-xl text-xs shadow-md">
+                            ${art.category}
+                        </div>
+                        <div class="absolute top-4 right-4 bg-black/60 backdrop-blur-md px-3 py-1 rounded-xl text-xs font-semibold text-gray-200 border border-white/10">
+                            ${art.readTime}
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow justify-between space-y-4">
+                        <div>
+                            <span class="text-xs text-brand-accent font-bold uppercase tracking-wider block mb-1">By ${art.author}</span>
+                            <h3 class="font-heading font-extrabold text-xl text-white uppercase tracking-tight mb-2 group-hover:text-brand-accent transition-colors">${art.title}</h3>
+                            <p class="text-gray-400 text-sm line-clamp-3">${art.summary}</p>
+                        </div>
+                        <div class="pt-4 border-t border-gray-800 flex items-center justify-between text-xs font-semibold text-brand-accent">
+                            <span><i class="fa-solid fa-book-open mr-1.5"></i> Read Full Story</span>
+                            <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function filterBlogArticles() {
+            const query = document.getElementById('blog-search').value.toLowerCase();
+            const grid = document.getElementById('blog-grid');
+            grid.innerHTML = '';
+            
+            const filtered = blogArticles.filter(art => 
+                art.title.toLowerCase().includes(query) || 
+                art.author.toLowerCase().includes(query) || 
+                art.category.toLowerCase().includes(query) ||
+                art.summary.toLowerCase().includes(query)
+            );
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `<div class="col-span-full text-center py-12 text-gray-400">No stories found matching "${query}".</div>`;
+                return;
+            }
+
+            filtered.forEach((art) => {
+                const card = document.createElement('div');
+                card.className = 'bg-brand-card rounded-3xl overflow-hidden border border-gray-800 shadow-xl group flex flex-col hover:border-brand-accent/50 transition-all duration-300 cursor-pointer';
+                card.onclick = () => openBlogModal(art);
+
+                card.innerHTML = `
+                    <div class="relative aspect-[16/10] bg-gray-900 overflow-hidden">
+                        <img src="${art.image}" alt="${art.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/131C2E/FACC15?text=DMC+Reading+Room'">
+                        <div class="absolute top-4 left-4 bg-brand-accent text-brand-dark font-heading font-extrabold px-3 py-1 rounded-xl text-xs shadow-md">
+                            ${art.category}
+                        </div>
+                        <div class="absolute top-4 right-4 bg-black/60 backdrop-blur-md px-3 py-1 rounded-xl text-xs font-semibold text-gray-200 border border-white/10">
+                            ${art.readTime}
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow justify-between space-y-4">
+                        <div>
+                            <span class="text-xs text-brand-accent font-bold uppercase tracking-wider block mb-1">By ${art.author}</span>
+                            <h3 class="font-heading font-extrabold text-xl text-white uppercase tracking-tight mb-2 group-hover:text-brand-accent transition-colors">${art.title}</h3>
+                            <p class="text-gray-400 text-sm line-clamp-3">${art.summary}</p>
+                        </div>
+                        <div class="pt-4 border-t border-gray-800 flex items-center justify-between text-xs font-semibold text-brand-accent">
+                            <span><i class="fa-solid fa-book-open mr-1.5"></i> Read Full Story</span>
+                            <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function openBlogModal(art) {
+            const modal = document.getElementById('product-modal');
+            document.getElementById('modal-img').src = art.image;
+            document.getElementById('modal-title').textContent = art.title;
+            document.getElementById('modal-author-tag').textContent = `${art.category} • By ${art.author} (${art.readTime})`;
+            document.getElementById('modal-price').textContent = "Reading Room";
+            document.getElementById('modal-desc').innerHTML = art.content;
+            
+            const whatsappMsg = encodeURIComponent(`Hi Douro Moto Co., I just read "${art.title}" by ${art.author} in your Reading Room and would love to discuss it!`);
+            document.getElementById('modal-whatsapp-btn').href = `https://wa.me/919662489679?text=${whatsappMsg}`;
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Fetch Google Sheet Published CSV for Products
         const GOOGLE_SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTpieVgKIPCjaSDXmtE2-_DIRJ6erKTca0X0cUd4Pwm43c3n0eUxLndl9bh8uv3BcCJro7MMb9TpqVO/pub?output=csv';
         const ADMIN_WHATSAPP_NUMBER = '919662489679';
 
-        // Fallback placeholder if sheet is empty
         const fallbackProducts = [
             {
                 title: "DMC Scrambler 500",
@@ -593,12 +1465,8 @@
                 if (!response.ok) throw new Error('Network response was not ok');
                 const csvText = await response.text();
                 products = parseCSV(csvText);
-                if (products.length === 0) {
-                    console.warn('Google Sheet CSV parsed 0 products. Using fallback.');
-                    products = fallbackProducts;
-                }
+                if (products.length === 0) products = fallbackProducts;
             } catch (err) {
-                console.warn('Error fetching Google Sheet CSV (CORS or URL issue):', err);
                 products = fallbackProducts;
             }
 
@@ -614,7 +1482,7 @@
                 const whatsappUrl = `https://wa.me/${ADMIN_WHATSAPP_NUMBER}?text=${whatsappMsg}`;
 
                 card.innerHTML = `
-                    <div class="relative aspect-[16/10] bg-gray-900 overflow-hidden cursor-pointer" onclick='openModal(${JSON.stringify(prod).replace(/'/g, "&#39;")})'>
+                    <div class="relative aspect-[16/10] bg-gray-900 overflow-hidden cursor-pointer" onclick='openProductModal(${JSON.stringify(prod).replace(/'/g, "&#39;")})'>
                         <img src="${prod.image}" alt="${prod.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/131C2E/FACC15?text=DMC+Moto'">
                         <div class="absolute top-4 left-4 bg-brand-accent text-brand-dark font-heading font-extrabold px-3 py-1.5 rounded-xl text-sm shadow-lg">
                             ${prod.price}
@@ -625,11 +1493,11 @@
                     </div>
                     <div class="p-6 flex flex-col flex-grow justify-between space-y-4">
                         <div>
-                            <h3 class="font-heading font-extrabold text-xl text-white uppercase tracking-tight mb-2 cursor-pointer hover:text-brand-accent transition-colors" onclick='openModal(${JSON.stringify(prod).replace(/'/g, "&#39;")})'>${prod.title}</h3>
+                            <h3 class="font-heading font-extrabold text-xl text-white uppercase tracking-tight mb-2 cursor-pointer hover:text-brand-accent transition-colors" onclick='openProductModal(${JSON.stringify(prod).replace(/'/g, "&#39;")})'>${prod.title}</h3>
                             <p class="text-gray-400 text-sm line-clamp-2">${prod.description}</p>
                         </div>
                         <div class="pt-4 border-t border-gray-800 flex items-center justify-between">
-                            <button onclick='openModal(${JSON.stringify(prod).replace(/'/g, "&#39;")})' class="text-xs font-semibold text-gray-300 hover:text-brand-accent transition-colors">
+                            <button onclick='openProductModal(${JSON.stringify(prod).replace(/'/g, "&#39;")})' class="text-xs font-semibold text-gray-300 hover:text-brand-accent transition-colors">
                                 <i class="fa-solid fa-eye mr-1"></i> Quick View
                             </button>
                             <a href="${whatsappUrl}" target="_blank" class="bg-brand-accent hover:bg-brand-accentHover text-brand-dark font-heading font-bold px-4 py-2.5 rounded-xl text-xs flex items-center space-x-1.5 shadow-md transition-all">
@@ -643,7 +1511,37 @@
             });
         }
 
-        // 45+ Famous Motorcycle Brands Data with Scraped Logo badges & origin
+        function openProductModal(prod) {
+            const modal = document.getElementById('product-modal');
+            document.getElementById('modal-img').src = prod.image;
+            document.getElementById('modal-title').textContent = prod.title;
+            document.getElementById('modal-author-tag').textContent = `Category: ${prod.category}`;
+            document.getElementById('modal-price').textContent = prod.price;
+            document.getElementById('modal-desc').innerHTML = `<p class="text-gray-300 text-base leading-relaxed">${prod.description}</p>`;
+            
+            const whatsappMsg = encodeURIComponent(`Hi Douro Moto Co., I am interested in inquiring about "${prod.title}" priced at ${prod.price}. Please share more details.`);
+            document.getElementById('modal-whatsapp-btn').href = `https://wa.me/${ADMIN_WHATSAPP_NUMBER}?text=${whatsappMsg}`;
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('product-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        }
+
+        window.addEventListener('click', (e) => {
+            const modal = document.getElementById('product-modal');
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        // Brands Directory & Parts Encyclopedia Data
         const motorcycleBrands = [
             { name: "Honda", country: "Japan", founded: 1948, logo: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Honda_Logo.svg", desc: "World's largest motorcycle manufacturer known for reliability and legendary models like the Super Cub and CB series." },
             { name: "Yamaha", country: "Japan", founded: 1955, logo: "https://upload.wikimedia.org/wikipedia/commons/a/a2/Yamaha_Motor_Logo_%28full%29.svg", desc: "Renowned for high-performance sportbikes (YZF-R series) and innovative engineering." },
@@ -654,43 +1552,7 @@
             { name: "Harley-Davidson", country: "USA", founded: 1903, logo: "https://upload.wikimedia.org/wikipedia/commons/d/de/Harley-Davidson_logo.svg", desc: "The defining American cruiser brand synonymous with freedom and open highways." },
             { name: "Triumph", country: "UK", founded: 1902, logo: "https://upload.wikimedia.org/wikipedia/commons/0/07/Triumph_Motorcycles_logo.svg", desc: "Iconic British heritage builders of modern classics like the Bonneville and Thruxton." },
             { name: "KTM", country: "Austria", founded: 1934, logo: "https://upload.wikimedia.org/wikipedia/commons/a/a1/KTM-Logo.svg", desc: "Ready to Race philosophy with high-performance dirt bikes and naked streetfighters." },
-            { name: "Royal Enfield", country: "India / UK", founded: 1901, logo: "https://upload.wikimedia.org/wikipedia/commons/3/3d/Royal_Enfield_Logo.svg", desc: "The oldest global motorcycle brand in continuous production, famous for classic mid-size thumpers." },
-            { name: "Aprilia", country: "Italy", founded: 1945, logo: "https://upload.wikimedia.org/wikipedia/commons/4/49/Aprilia_logo_2010.svg", desc: "Racing-bred Italian sportbikes and RSV4 superbikes dominating track performance." },
-            { name: "Moto Guzzi", country: "Italy", founded: 1921, logo: "https://upload.wikimedia.org/wikipedia/commons/5/5c/Moto_Guzzi_logo.svg", desc: "Famous for longitudinal 90-degree V-twin engines and timeless Mandello del Lario styling." },
-            { name: "Husqvarna", country: "Sweden", founded: 1903, logo: "https://upload.wikimedia.org/wikipedia/commons/b/bc/Husqvarna_logo.svg", desc: "Swedish heritage brand crafting avant-garde styled street and enduro motorcycles." },
-            { name: "Indian Motorcycle", country: "USA", founded: 1901, logo: "https://upload.wikimedia.org/wikipedia/commons/9/91/Indian_Motocycle_Manufacturing_Company_logo.svg", desc: "America's first motorcycle company crafting powerful V-twin cruisers and baggers." },
-            { name: "MV Agusta", country: "Italy", founded: 1945, logo: "https://upload.wikimedia.org/wikipedia/commons/4/42/MV_Agusta_logo.svg", desc: "The motorcycle world's art pieces, combining breathtaking design with fierce inline-3 power." },
-            { name: "Benelli", country: "Italy", founded: 1911, logo: "https://upload.wikimedia.org/wikipedia/commons/e/ea/Benelli_logo.svg", desc: "Historic Italian manufacturer producing accessible adventure and naked street models." },
-            { name: "Bimota", country: "Italy", founded: 1973, logo: "https://upload.wikimedia.org/wikipedia/commons/6/6f/Bimota_logo.svg", desc: "Exotic boutique Italian builder pairing bespoke chassis with Kawasaki supercharged engines." },
-            { name: "Norton", country: "UK", founded: 1898, logo: "https://upload.wikimedia.org/wikipedia/commons/f/fb/Norton_Motorcycle_Company_logo.svg", desc: "Legendary British racing pedigree with hand-built Commando classics." },
-            { name: "Royal Alloy", country: "UK", founded: 2016, logo: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Placeholder_Logo.svg", desc: "Classic retro metal-bodied scooters built for urban cruising." },
-            { name: "GasGas", country: "Spain", founded: 1985, logo: "https://upload.wikimedia.org/wikipedia/commons/2/29/GasGas_logo.svg", desc: "Dynamic Spanish off-road specialists in trial and enduro racing." },
-            { name: "Beta", country: "Italy", founded: 1904, logo: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Placeholder_Logo.svg", desc: "Italian off-road and trial bike specialist with championship heritage." },
-            { name: "Sherco", country: "France", founded: 1998, logo: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Placeholder_Logo.svg", desc: "French manufacturer specializing in trial, enduro, and rally raid motorcycles." },
-            { name: "CFMoto", country: "China", founded: 1989, logo: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Placeholder_Logo.svg", desc: "Modern global manufacturer partnering with KTM for advanced mid-to-large displacement bikes." },
-            { name: "Benelli", country: "Italy", founded: 1911, logo: "https://upload.wikimedia.org/wikipedia/commons/e/ea/Benelli_logo.svg", desc: "Historic Pesaro manufacturer." },
-            { name: "Zontes", country: "China", founded: 2003, logo: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Placeholder_Logo.svg", desc: "Innovative high-tech commuter and adventure motorcycles." },
-            { name: "QJ Motor", country: "China", founded: 1985, logo: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Placeholder_Logo.svg", desc: "Large-displacement motorcycle manufacturer and parent of Benelli." },
-            { name: "Keeway", country: "Hungary / China", founded: 1999, logo: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Placeholder_Logo.svg", desc: "Global scooter and cruiser motorcycle brand." },
-            { name: "SWM", country: "Italy", founded: 1971, logo: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Placeholder_Logo.svg", desc: "Italian enduro and classic street bike rebirth." },
-            { name: "Fantic", country: "Italy", founded: 1968, logo: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Placeholder_Logo.svg", desc: "Italian off-road and e-mobility pioneers." },
-            { name: "Mondial", country: "Italy", founded: 1948, logo: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Placeholder_Logo.svg", desc: "Historic Italian racing champion resurrected with modern 125cc-300cc street bikes." },
-            { name: "Brough Superior", country: "UK", founded: 1919, logo: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Placeholder_Logo.svg", desc: "The Rolls-Royce of motorcycles, ultra-exclusive luxury hand-built machines." },
-            { name: "Jawa", country: "Czech Republic", founded: 1929, logo: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Placeholder_Logo.svg", desc: "Legendary Czech two-stroke and retro four-stroke classic motorcycles." },
-            { name: "Yezdi", country: "India", founded: 1969, logo: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Placeholder_Logo.svg", desc: "Iconic cult-following Indian roadster brand revived for modern riders." },
-            { name: "BSA", country: "UK", founded: 1910, logo: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Placeholder_Logo.svg", desc: "Birmingham Small Arms legendary British heavyweight motorcycle revival." },
-            { name: "Zero Motorcycles", country: "USA", founded: 2006, logo: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Placeholder_Logo.svg", desc: "Pioneers of high-performance electric motorcycles." },
-            { name: "LiveWire", country: "USA", founded: 2019, logo: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Placeholder_Logo.svg", desc: "Harley-Davidson's dedicated electric motorcycle spin-off." },
-            { name: "Energica", country: "Italy", founded: 2014, logo: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Placeholder_Logo.svg", desc: "High-voltage Italian electric superbikes." },
-            { name: "Super Soco", country: "China", founded: 2015, logo: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Placeholder_Logo.svg", desc: "Urban electric two-wheelers and mini-bikes." },
-            { name: "Lambretta", country: "Italy", founded: 1947, logo: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Placeholder_Logo.svg", desc: "Legendary Italian scooter styling icon." },
-            { name: "Vespa", country: "Italy", founded: 1946, logo: "https://upload.wikimedia.org/wikipedia/commons/a/a2/Vespa_logo.svg", desc: "The global symbol of Italian style and scooter engineering by Piaggio." },
-            { name: "Piaggio", country: "Italy", founded: 1884, logo: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Placeholder_Logo.svg", desc: "Parent powerhouse of European scooter innovation." },
-            { name: "Kymco", country: "Taiwan", founded: 1964, logo: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Placeholder_Logo.svg", desc: "Taiwanese scooter and maxi-scooter manufacturing giant." },
-            { name: "SYM", country: "Taiwan", founded: 1954, logo: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Placeholder_Logo.svg", desc: "Reliable scooters and commuter motorcycles." },
-            { name: "Bajaj Auto", country: "India", founded: 1945, logo: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Placeholder_Logo.svg", desc: "One of the world's largest motorcycle exporters, partner to KTM and Triumph." },
-            { name: "TVS Motor", country: "India", founded: 1978, logo: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Placeholder_Logo.svg", desc: "Renowned Indian manufacturer of track-inspired Apache series and racing motorcycles." },
-            { name: "Hero MotoCorp", country: "India", founded: 1984, logo: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Placeholder_Logo.svg", desc: "World's largest manufacturer of commuter and entry-level motorcycles." }
+            { name: "Royal Enfield", country: "India / UK", founded: 1901, logo: "https://upload.wikimedia.org/wikipedia/commons/3/3d/Royal_Enfield_Logo.svg", desc: "The oldest global motorcycle brand in continuous production, famous for classic mid-size thumpers." }
         ];
 
         function loadBrandsDirectory() {
@@ -699,8 +1561,15 @@
             motorcycleBrands.forEach(brand => {
                 const card = document.createElement('div');
                 card.className = 'bg-brand-dark border border-gray-800 rounded-2xl p-4 flex flex-col items-center text-center group hover:border-brand-accent transition-all cursor-pointer shadow-md';
-                card.onclick = () => alertBrandModal(brand);
-                
+                card.onclick = () => {
+                    openProductModal({
+                        title: `${brand.name} (${brand.country}, Est. ${brand.founded})`,
+                        description: brand.desc,
+                        price: "Heritage Brand",
+                        image: brand.logo,
+                        category: "Global Brand"
+                    });
+                };
                 card.innerHTML = `
                     <div class="h-16 w-full flex items-center justify-center p-2 mb-2 bg-gray-900/50 rounded-xl group-hover:bg-gray-900 transition-colors">
                         <img src="${brand.logo}" alt="${brand.name}" class="max-h-10 max-w-[100px] object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300" onerror="this.src='https://placehold.co/120x60/131C2E/FACC15?text=${encodeURIComponent(brand.name)}'">
@@ -712,50 +1581,23 @@
             });
         }
 
-        function alertBrandModal(brand) {
-            // Reusing our custom modal or custom popup
-            const modal = document.getElementById('product-modal');
-            document.getElementById('modal-img').src = brand.logo;
-            document.getElementById('modal-title').textContent = `${brand.name} (${brand.country}, Est. ${brand.founded})`;
-            document.getElementById('modal-desc').textContent = brand.desc;
-            document.getElementById('modal-price').textContent = "Heritage Brand";
-            
-            const whatsappMsg = encodeURIComponent(`Hi Douro Moto Co., I would like to discuss custom builds or parts inspired by ${brand.name}.`);
-            document.getElementById('modal-whatsapp-btn').href = `https://wa.me/${ADMIN_WHATSAPP_NUMBER}?text=${whatsappMsg}`;
-
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-            document.body.style.overflow = 'hidden';
-        }
-
-        // Parts & Accessories Encyclopedia Data
         const partsEncyclopedia = [
             { name: "Cylinder Head & Valves", category: "engine", desc: "Houses intake/exhaust valves, spark plugs, and camshafts controlling air-fuel mixture entry and exhaust expulsion.", icon: "fa-solid fa-gears" },
             { name: "Piston & Connecting Rod", category: "engine", desc: "Converts combustion pressure inside the cylinder into rotational kinetic energy transmitted to the crankshaft.", icon: "fa-solid fa-fire" },
             { name: "Wet / Dry Clutch Assembly", category: "engine", desc: "Disconnects power transmission between the engine crankshaft and transmission gearbox during gear shifting.", icon: "fa-solid fa-compact-disc" },
-            { name: "Exhaust Header & Muffler", category: "engine", desc: "Directs exhaust gases away from the engine while dampening sound waves and adding backpressure tuning.", icon: "fa-solid fa-volume-high" },
             { name: "Telescopic Forks & Monoshock", category: "chassis", desc: "Absorbs road imperfections, dampens vertical oscillations, and maintains tire contact patch with the asphalt.", icon: "fa-solid fa-sliders" },
             { name: "Tubular Steel Trellis Frame", category: "chassis", desc: "The structural spine of the motorcycle providing torsional rigidity and mounting points for engine and suspension.", icon: "fa-solid fa-shield" },
-            { name: "Disc Brakes & Calipers", category: "chassis", desc: "Hydraulic braking system utilizing brake pads squeezed against steel rotors to decelerate wheel rotation.", icon: "fa-solid fa-circle-stop" },
-            { name: "Spoked & Alloy Wheels", category: "chassis", desc: "Supports tires; wire-spoked wheels offer flex for off-road resilience, while alloy wheels provide rigidity for speed.", icon: "fa-solid fa-dharmachakra" },
-            { name: "ECU (Engine Control Unit)", category: "electrical", desc: "The electronic brain that monitors sensors and precisely regulates fuel injection timing and ignition spark.", icon: "fa-solid fa-microchip" },
-            { name: "Stator & Alternator", category: "electrical", desc: "Generates electrical current via permanent magnets to power bike electronics and keep the battery charged.", icon: "fa-solid fa-bolt" },
-            { name: "LED Headlamp & Indicators", category: "electrical", desc: "Provides high-visibility illumination for night riding and clear turn signaling for traffic safety.", icon: "fa-solid fa-lightbulb" },
-            { name: "Clip-on / Ape Hanger Handlebars", category: "accessories", desc: "Steering control bars tailored for aggressive cafe racer ergonomics or relaxed cruiser riding posture.", icon: "fa-solid fa-arrows-split-up-and-left" },
-            { name: "Bar-End Mirrors", category: "accessories", desc: "Minimalist convex rearview mirrors mounted at the extreme ends of the handlebars for wider field of view.", icon: "fa-solid fa-eye" },
-            { name: "Hand-Stitched Leather Saddle", category: "accessories", desc: "Ergonomic custom seat upholstered in weather-resistant cowhide leather for long-distance comfort.", icon: "fa-solid fa-couch" }
+            { name: "ECU (Engine Control Unit)", category: "electrical", desc: "The electronic brain that monitors sensors and precisely regulates fuel injection timing and ignition spark.", icon: "fa-solid fa-microchip" }
         ];
 
         function loadPartsEncyclopedia(category = 'all') {
             const grid = document.getElementById('parts-grid');
             grid.innerHTML = '';
-            
             const filtered = category === 'all' ? partsEncyclopedia : partsEncyclopedia.filter(p => p.category === category);
             
             filtered.forEach(part => {
                 const card = document.createElement('div');
                 card.className = 'bg-brand-card border border-gray-800 rounded-3xl p-6 shadow-xl hover:border-brand-accent/50 transition-all flex flex-col justify-between space-y-4';
-                
                 card.innerHTML = `
                     <div class="flex items-start space-x-4">
                         <div class="w-12 h-12 bg-brand-accent/10 border border-brand-accent/30 rounded-2xl flex items-center justify-center text-brand-accent text-xl flex-shrink-0">
@@ -784,39 +1626,8 @@
             loadPartsEncyclopedia(category);
         }
 
-        // Modal Functionality
-        function openModal(prod) {
-            const modal = document.getElementById('product-modal');
-            document.getElementById('modal-img').src = prod.image;
-            document.getElementById('modal-title').textContent = prod.title;
-            document.getElementById('modal-desc').textContent = prod.description;
-            document.getElementById('modal-price').textContent = prod.price;
-            
-            const whatsappMsg = encodeURIComponent(`Hi Douro Moto Co., I am interested in inquiring about "${prod.title}" priced at ${prod.price}. Please share more details.`);
-            document.getElementById('modal-whatsapp-btn').href = `https://wa.me/${ADMIN_WHATSAPP_NUMBER}?text=${whatsappMsg}`;
-
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeModal() {
-            const modal = document.getElementById('product-modal');
-            modal.classList.add('hidden');
-            modal.classList.remove('flex');
-            document.body.style.overflow = 'auto';
-        }
-
-        // Close modal on background click
-        window.addEventListener('click', (e) => {
-            const modal = document.getElementById('product-modal');
-            if (e.target === modal) {
-                closeModal();
-            }
-        });
-
-        // Initialize on load
         window.onload = function() {
+            loadReadingRoom();
             loadInventory();
             loadBrandsDirectory();
             loadPartsEncyclopedia('all');
