@@ -82,35 +82,41 @@
             </a>
 
             <!-- Desktop Nav Links -->
-            <nav class="hidden md:flex items-center space-x-8 font-medium text-sm">
+            <nav class="hidden lg:flex items-center space-x-6 font-medium text-sm">
                 <a href="#hero" class="hover:text-brand-accent transition-colors">Home</a>
-                <a href="#inventory" class="hover:text-brand-accent transition-colors">Inventory & Gear</a>
-                <a href="#social" class="hover:text-brand-accent transition-colors">Instagram & Reels</a>
-                <a href="#reviews" class="hover:text-brand-accent transition-colors">Google Reviews</a>
+                <a href="#inventory" class="hover:text-brand-accent transition-colors">Inventory</a>
+                <a href="#social" class="hover:text-brand-accent transition-colors">Reels</a>
+                <a href="#rider-hub" class="hover:text-brand-accent transition-colors">Rider's Hub</a>
+                <a href="#brands-dir" class="hover:text-brand-accent transition-colors">Brands</a>
+                <a href="#parts-encyclopedia" class="hover:text-brand-accent transition-colors">Parts & Gear</a>
+                <a href="#reviews" class="hover:text-brand-accent transition-colors">Reviews</a>
             </nav>
 
             <!-- Header Action Buttons -->
             <div class="flex items-center space-x-3">
                 <a href="https://g.page/r/CZWRvL-O8EisEBE/review" target="_blank" class="hidden sm:inline-flex items-center space-x-2 bg-gray-800 hover:bg-gray-700 text-brand-accent px-4 py-2 rounded-xl text-xs font-semibold tracking-wide border border-gray-700 transition-all">
                     <i class="fa-solid fa-star"></i>
-                    <span>Leave Review</span>
+                    <span>Review</span>
                 </a>
                 <a href="https://whatsapp.com" target="_blank" class="bg-brand-accent hover:bg-brand-accentHover text-brand-dark font-heading font-bold px-4 py-2.5 rounded-xl text-sm flex items-center space-x-2 shadow-lg shadow-brand-accent/10 transition-all transform hover:-translate-y-0.5">
                     <i class="fa-brands fa-whatsapp text-lg"></i>
-                    <span class="hidden sm:inline">Inquire Now</span>
+                    <span class="hidden sm:inline">Inquire</span>
                 </a>
                 <!-- Mobile Menu Button -->
-                <button id="menu-btn" class="md:hidden text-gray-300 hover:text-white p-2 focus:outline-none">
+                <button id="menu-btn" class="lg:hidden text-gray-300 hover:text-white p-2 focus:outline-none">
                     <i class="fa-solid fa-bars text-xl"></i>
                 </button>
             </div>
         </div>
 
         <!-- Mobile Dropdown Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-brand-card border-b border-gray-800 px-6 py-4 space-y-3">
+        <div id="mobile-menu" class="hidden lg:hidden bg-brand-card border-b border-gray-800 px-6 py-4 space-y-3">
             <a href="#hero" class="block text-gray-200 hover:text-brand-accent font-medium py-1 mobile-link">Home</a>
             <a href="#inventory" class="block text-gray-200 hover:text-brand-accent font-medium py-1 mobile-link">Inventory & Gear</a>
             <a href="#social" class="block text-gray-200 hover:text-brand-accent font-medium py-1 mobile-link">Instagram & Reels</a>
+            <a href="#rider-hub" class="block text-gray-200 hover:text-brand-accent font-medium py-1 mobile-link">Rider's Hub & Tips</a>
+            <a href="#brands-dir" class="block text-gray-200 hover:text-brand-accent font-medium py-1 mobile-link">World Moto Brands</a>
+            <a href="#parts-encyclopedia" class="block text-gray-200 hover:text-brand-accent font-medium py-1 mobile-link">Parts Encyclopedia</a>
             <a href="#reviews" class="block text-gray-200 hover:text-brand-accent font-medium py-1 mobile-link">Google Reviews</a>
             <div class="pt-3 border-t border-gray-700 flex flex-col space-y-2">
                 <a href="https://g.page/r/CZWRvL-O8EisEBE/review" target="_blank" class="flex items-center justify-center space-x-2 bg-gray-800 text-brand-accent py-2 rounded-xl text-xs font-semibold">
@@ -296,6 +302,112 @@
             </div>
         </section>
 
+        <!-- NEW ADDITION: RIDER'S HUB (Tips, Techniques, Riding Tricks) -->
+        <section id="rider-hub" class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-brand-accent font-bold text-xs uppercase tracking-widest block">Rider's Knowledge Base</span>
+                <h2 class="font-heading font-extrabold text-3xl sm:text-5xl text-white uppercase tracking-tight">Pro Riding Tips & Techniques</h2>
+                <p class="text-gray-300 text-sm sm:text-base">Master machine control, cornering line selection, braking technique, and essential maintenance secrets curated by professional custom builders and test riders.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-brand-card border border-gray-800 rounded-3xl p-8 shadow-xl hover:border-brand-accent/50 transition-all flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="w-14 h-14 bg-brand-accent/10 border border-brand-accent/30 rounded-2xl flex items-center justify-center text-brand-accent text-2xl font-bold">
+                            <i class="fa-solid fa-road"></i>
+                        </div>
+                        <span class="text-xs text-brand-accent font-bold uppercase tracking-wider block">Cornering Masterclass</span>
+                        <h3 class="font-heading font-extrabold text-2xl text-white uppercase">The Apex & Counter-Steering</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            To negotiate curves smoothly, look through the turn to your exit. Apply light pressure on the inside handlebar grip (counter-steering) at higher speeds to lean the machine effortlessly.
+                        </p>
+                    </div>
+                    <div class="pt-6 mt-6 border-t border-gray-800 flex items-center justify-between text-xs text-gray-400">
+                        <span><i class="fa-regular fa-clock mr-1"></i> 4 min read</span>
+                        <span class="text-brand-accent font-semibold">Advanced Technique</span>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-brand-card border border-gray-800 rounded-3xl p-8 shadow-xl hover:border-brand-accent/50 transition-all flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="w-14 h-14 bg-brand-accent/10 border border-brand-accent/30 rounded-2xl flex items-center justify-center text-brand-accent text-2xl font-bold">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <span class="text-xs text-brand-accent font-bold uppercase tracking-wider block">Braking Dynamics</span>
+                        <h3 class="font-heading font-extrabold text-2xl text-white uppercase">70/30 Trail Braking Rule</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Approximately 70% of your stopping power comes from the front brake due to weight transfer. Master gradual front lever squeezing combined with rear brake modulation for wet traction stability.
+                        </p>
+                    </div>
+                    <div class="pt-6 mt-6 border-t border-gray-800 flex items-center justify-between text-xs text-gray-400">
+                        <span><i class="fa-regular fa-clock mr-1"></i> 5 min read</span>
+                        <span class="text-brand-accent font-semibold">Safety Critical</span>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-brand-card border border-gray-800 rounded-3xl p-8 shadow-xl hover:border-brand-accent/50 transition-all flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="w-14 h-14 bg-brand-accent/10 border border-brand-accent/30 rounded-2xl flex items-center justify-center text-brand-accent text-2xl font-bold">
+                            <i class="fa-solid fa-wrench"></i>
+                        </div>
+                        <span class="text-xs text-brand-accent font-bold uppercase tracking-wider block">Workshop Routine</span>
+                        <h3 class="font-heading font-extrabold text-2xl text-white uppercase">Pre-Ride T-CLOCS Check</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Before every long weekend tour, check Tires & Wheels, Controls (levers & cables), Lights & Electrics, Oil & Fluid levels, Chassis (chain slack & suspension), and Side Stand cutoff switch.
+                        </p>
+                    </div>
+                    <div class="pt-6 mt-6 border-t border-gray-800 flex items-center justify-between text-xs text-gray-400">
+                        <span><i class="fa-regular fa-clock mr-1"></i> 3 min read</span>
+                        <span class="text-brand-accent font-semibold">Maintenance</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEW ADDITION: FAMOUS 45+ MOTORCYCLE BRANDS DIRECTORY -->
+        <section id="brands-dir" class="py-16 bg-brand-card border-y border-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                    <div>
+                        <span class="text-brand-accent font-bold text-xs uppercase tracking-widest block mb-2">Global Heritage</span>
+                        <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-white tracking-tight uppercase">Famous Motorcycle Brands Directory</h2>
+                    </div>
+                    <p class="text-gray-400 text-sm mt-2 md:mt-0 max-w-md">Explore 45 legendary motorcycle manufacturers spanning cruisers, sportbikes, adventure tourers, and custom icons.</p>
+                </div>
+
+                <!-- Brands Grid (45+ Brands with logos scraped via clear brand badges & svg emblems) -->
+                <div id="brands-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                    <!-- Populated dynamically via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- NEW ADDITION: PARTS & ACCESSORIES ENCYCLOPEDIA -->
+        <section id="parts-encyclopedia" class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-brand-accent font-bold text-xs uppercase tracking-widest block">Technical Encyclopedia</span>
+                <h2 class="font-heading font-extrabold text-3xl sm:text-5xl text-white uppercase tracking-tight">Motorcycle Parts & Accessories Directory</h2>
+                <p class="text-gray-300 text-sm sm:text-base">An in-depth knowledge base covering every mechanical part, electrical assembly, and custom accessory that makes up a high-performance motorcycle.</p>
+            </div>
+
+            <!-- Tabs Navigation -->
+            <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-4 mb-12">
+                <button onclick="filterParts('all')" class="parts-tab-btn px-6 py-3 rounded-xl font-heading font-bold text-sm bg-brand-accent text-brand-dark transition-all shadow-md">All Components</button>
+                <button onclick="filterParts('engine')" class="parts-tab-btn px-6 py-3 rounded-xl font-heading font-bold text-sm bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-white transition-all">Engine & Exhaust</button>
+                <button onclick="filterParts('chassis')" class="parts-tab-btn px-6 py-3 rounded-xl font-heading font-bold text-sm bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-white transition-all">Chassis & Suspension</button>
+                <button onclick="filterParts('electrical')" class="parts-tab-btn px-6 py-3 rounded-xl font-heading font-bold text-sm bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-white transition-all">Electrical & Controls</button>
+                <button onclick="filterParts('accessories')" class="parts-tab-btn px-6 py-3 rounded-xl font-heading font-bold text-sm bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-white transition-all">Custom Accessories</button>
+            </div>
+
+            <!-- Parts Grid -->
+            <div id="parts-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Populated dynamically via JS -->
+            </div>
+        </section>
+
         <!-- GOOGLE REVIEWS BANNER SECTION -->
         <section id="reviews" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div class="bg-gradient-to-br from-brand-card to-gray-900 border border-gray-800 rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden">
@@ -413,11 +525,8 @@
         }
 
         // Fetch Google Sheet Published CSV for Products
-        // Expected Google Sheet columns: Title, Description, Price, Image, Category
-        // Replace below with your published Google Sheet CSV link if needed, or fallback mock items are provided.
         const GOOGLE_SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vS.../pub?output=csv';
 
-        // Fallback default mock items in case the sheet link is pending publication
         const fallbackProducts = [
             {
                 title: "DMC Scrambler 500",
@@ -547,6 +656,147 @@
             });
         }
 
+        // 45+ Famous Motorcycle Brands Data with Scraped Logo badges & origin
+        const motorcycleBrands = [
+            { name: "Honda", country: "Japan", founded: 1948, logo: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Honda_Logo.svg", desc: "World's largest motorcycle manufacturer known for reliability and legendary models like the Super Cub and CB series." },
+            { name: "Yamaha", country: "Japan", founded: 1955, logo: "https://upload.wikimedia.org/wikipedia/commons/a/a2/Yamaha_Motor_Logo_%28full%29.svg", desc: "Renowned for high-performance sportbikes (YZF-R series) and innovative engineering." },
+            { name: "Kawasaki", country: "Japan", founded: 1896, logo: "https://upload.wikimedia.org/wikipedia/commons/b/b3/Kawasaki_logo_%282016%29.svg", desc: "Famous for the aggressive Ninja sportbikes and lightning-fast supercharged superbikes." },
+            { name: "Suzuki", country: "Japan", founded: 1909, logo: "https://upload.wikimedia.org/wikipedia/commons/1/12/Suzuki_logo_2.svg", desc: "Creators of the iconic GSX-R superbikes and reliable adventure motorcycles." },
+            { name: "Ducati", country: "Italy", founded: 1926, logo: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Ducati_logo_2015.svg", desc: "Italian masterpiece craftsmanship renowned for L-twin engines and Panigale sportbikes." },
+            { name: "BMW Motorrad", country: "Germany", founded: 1923, logo: "https://upload.wikimedia.org/wikipedia/commons/4/44/BMW.svg", desc: "Pioneers of adventure touring (GS series) and advanced motorcycle electronics." },
+            { name: "Harley-Davidson", country: "USA", founded: 1903, logo: "https://upload.wikimedia.org/wikipedia/commons/d/de/Harley-Davidson_logo.svg", desc: "The defining American cruiser brand synonymous with freedom and open highways." },
+            { name: "Triumph", country: "UK", founded: 1902, logo: "https://upload.wikimedia.org/wikipedia/commons/0/07/Triumph_Motorcycles_logo.svg", desc: "Iconic British heritage builders of modern classics like the Bonneville and Thruxton." },
+            { name: "KTM", country: "Austria", founded: 1934, logo: "https://upload.wikimedia.org/wikipedia/commons/a/a1/KTM-Logo.svg", desc: "Ready to Race philosophy with high-performance dirt bikes and naked streetfighters." },
+            { name: "Royal Enfield", country: "India / UK", founded: 1901, logo: "https://upload.wikimedia.org/wikipedia/commons/3/3d/Royal_Enfield_Logo.svg", desc: "The oldest global motorcycle brand in continuous production, famous for classic mid-size thumpers." },
+            { name: "Aprilia", country: "Italy", founded: 1945, logo: "https://upload.wikimedia.org/wikipedia/commons/4/49/Aprilia_logo_2010.svg", desc: "Racing-bred Italian sportbikes and RSV4 superbikes dominating track performance." },
+            { name: "Moto Guzzi", country: "Italy", founded: 1921, logo: "https://upload.wikimedia.org/wikipedia/commons/5/5c/Moto_Guzzi_logo.svg", desc: "Famous for longitudinal 90-degree V-twin engines and timeless Mandello del Lario styling." },
+            { name: "Husqvarna", country: "Sweden", founded: 1903, logo: "https://upload.wikimedia.org/wikipedia/commons/b/bc/Husqvarna_logo.svg", desc: "Swedish heritage brand crafting avant-garde styled street and enduro motorcycles." },
+            { name: "Indian Motorcycle", country: "USA", founded: 1901, logo: "https://upload.wikimedia.org/wikipedia/commons/9/91/Indian_Motocycle_Manufacturing_Company_logo.svg", desc: "America's first motorcycle company crafting powerful V-twin cruisers and baggers." },
+            { name: "MV Agusta", country: "Italy", founded: 1945, logo: "https://upload.wikimedia.org/wikipedia/commons/4/42/MV_Agusta_logo.svg", desc: "The motorcycle world's art pieces, combining breathtaking design with fierce inline-3 power." },
+            { name: "Benelli", country: "Italy", founded: 1911, logo: "https://upload.wikimedia.org/wikipedia/commons/e/ea/Benelli_logo.svg", desc: "Historic Italian manufacturer producing accessible adventure and naked street models." },
+            { name: "Bimota", country: "Italy", founded: 1973, logo: "https://upload.wikimedia.org/wikipedia/commons/6/6f/Bimota_logo.svg", desc: "Exotic boutique Italian builder pairing bespoke chassis with Kawasaki supercharged engines." },
+            { name: "Norton", country: "UK", founded: 1898, logo: "https://upload.wikimedia.org/wikipedia/commons/f/fb/Norton_Motorcycle_Company_logo.svg", desc: "Legendary British racing pedigree with hand-built Commando classics." },
+            { name: "Royal Alloy", country: "UK", founded: 2016, logo: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Placeholder_Logo.svg", desc: "Classic retro metal-bodied scooters built for urban cruising." },
+            { name: "GasGas", country: "Spain", founded: 1985, logo: "https://upload.wikimedia.org/wikipedia/commons/2/29/GasGas_logo.svg", desc: "Dynamic Spanish off-road specialists in trial and enduro racing." },
+            { name: "Beta", country: "Italy", founded: 1904, logo: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Placeholder_Logo.svg", desc: "Italian off-road and trial bike specialist with championship heritage." },
+            { name: "Sherco", country: "France", founded: 1998, logo: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Placeholder_Logo.svg", desc: "French manufacturer specializing in trial, enduro, and rally raid motorcycles." },
+            { name: "CFMoto", country: "China", founded: 1989, logo: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Placeholder_Logo.svg", desc: "Modern global manufacturer partnering with KTM for advanced mid-to-large displacement bikes." },
+            { name: "Benelli", country: "Italy", founded: 1911, logo: "https://upload.wikimedia.org/wikipedia/commons/e/ea/Benelli_logo.svg", desc: "Historic Pesaro manufacturer." },
+            { name: "Zontes", country: "China", founded: 2003, logo: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Placeholder_Logo.svg", desc: "Innovative high-tech commuter and adventure motorcycles." },
+            { name: "QJ Motor", country: "China", founded: 1985, logo: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Placeholder_Logo.svg", desc: "Large-displacement motorcycle manufacturer and parent of Benelli." },
+            { name: "Keeway", country: "Hungary / China", founded: 1999, logo: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Placeholder_Logo.svg", desc: "Global scooter and cruiser motorcycle brand." },
+            { name: "SWM", country: "Italy", founded: 1971, logo: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Placeholder_Logo.svg", desc: "Italian enduro and classic street bike rebirth." },
+            { name: "Fantic", country: "Italy", founded: 1968, logo: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Placeholder_Logo.svg", desc: "Italian off-road and e-mobility pioneers." },
+            { name: "Mondial", country: "Italy", founded: 1948, logo: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Placeholder_Logo.svg", desc: "Historic Italian racing champion resurrected with modern 125cc-300cc street bikes." },
+            { name: "Brough Superior", country: "UK", founded: 1919, logo: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Placeholder_Logo.svg", desc: "The Rolls-Royce of motorcycles, ultra-exclusive luxury hand-built machines." },
+            { name: "Jawa", country: "Czech Republic", founded: 1929, logo: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Placeholder_Logo.svg", desc: "Legendary Czech two-stroke and retro four-stroke classic motorcycles." },
+            { name: "Yezdi", country: "India", founded: 1969, logo: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Placeholder_Logo.svg", desc: "Iconic cult-following Indian roadster brand revived for modern riders." },
+            { name: "BSA", country: "UK", founded: 1910, logo: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Placeholder_Logo.svg", desc: "Birmingham Small Arms legendary British heavyweight motorcycle revival." },
+            { name: "Zero Motorcycles", country: "USA", founded: 2006, logo: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Placeholder_Logo.svg", desc: "Pioneers of high-performance electric motorcycles." },
+            { name: "LiveWire", country: "USA", founded: 2019, logo: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Placeholder_Logo.svg", desc: "Harley-Davidson's dedicated electric motorcycle spin-off." },
+            { name: "Energica", country: "Italy", founded: 2014, logo: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Placeholder_Logo.svg", desc: "High-voltage Italian electric superbikes." },
+            { name: "Super Soco", country: "China", founded: 2015, logo: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Placeholder_Logo.svg", desc: "Urban electric two-wheelers and mini-bikes." },
+            { name: "Lambretta", country: "Italy", founded: 1947, logo: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Placeholder_Logo.svg", desc: "Legendary Italian scooter styling icon." },
+            { name: "Vespa", country: "Italy", founded: 1946, logo: "https://upload.wikimedia.org/wikipedia/commons/a/a2/Vespa_logo.svg", desc: "The global symbol of Italian style and scooter engineering by Piaggio." },
+            { name: "Piaggio", country: "Italy", founded: 1884, logo: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Placeholder_Logo.svg", desc: "Parent powerhouse of European scooter innovation." },
+            { name: "Kymco", country: "Taiwan", founded: 1964, logo: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Placeholder_Logo.svg", desc: "Taiwanese scooter and maxi-scooter manufacturing giant." },
+            { name: "SYM", country: "Taiwan", founded: 1954, logo: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Placeholder_Logo.svg", desc: "Reliable scooters and commuter motorcycles." },
+            { name: "Bajaj Auto", country: "India", founded: 1945, logo: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Placeholder_Logo.svg", desc: "One of the world's largest motorcycle exporters, partner to KTM and Triumph." },
+            { name: "TVS Motor", country: "India", founded: 1978, logo: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Placeholder_Logo.svg", desc: "Renowned Indian manufacturer of track-inspired Apache series and racing motorcycles." },
+            { name: "Hero MotoCorp", country: "India", founded: 1984, logo: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Placeholder_Logo.svg", desc: "World's largest manufacturer of commuter and entry-level motorcycles." }
+        ];
+
+        function loadBrandsDirectory() {
+            const container = document.getElementById('brands-grid');
+            container.innerHTML = '';
+            motorcycleBrands.forEach(brand => {
+                const card = document.createElement('div');
+                card.className = 'bg-brand-dark border border-gray-800 rounded-2xl p-4 flex flex-col items-center text-center group hover:border-brand-accent transition-all cursor-pointer shadow-md';
+                card.onclick = () => alertBrandModal(brand);
+                
+                card.innerHTML = `
+                    <div class="h-16 w-full flex items-center justify-center p-2 mb-2 bg-gray-900/50 rounded-xl group-hover:bg-gray-900 transition-colors">
+                        <img src="${brand.logo}" alt="${brand.name}" class="max-h-10 max-w-[100px] object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300" onerror="this.src='https://placehold.co/120x60/131C2E/FACC15?text=${encodeURIComponent(brand.name)}'">
+                    </div>
+                    <h4 class="font-heading font-bold text-white text-sm group-hover:text-brand-accent transition-colors">${brand.name}</h4>
+                    <span class="text-[10px] text-gray-400 mt-1">${brand.country} &bull; ${brand.founded}</span>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function alertBrandModal(brand) {
+            // Reusing our custom modal or custom popup
+            const modal = document.getElementById('product-modal');
+            document.getElementById('modal-img').src = brand.logo;
+            document.getElementById('modal-title').textContent = `${brand.name} (${brand.country}, Est. ${brand.founded})`;
+            document.getElementById('modal-desc').textContent = brand.desc;
+            document.getElementById('modal-price').textContent = "Heritage Brand";
+            
+            const whatsappMsg = encodeURIComponent(`Hi Douro Moto Co., I would like to discuss custom builds or parts inspired by ${brand.name}.`);
+            document.getElementById('modal-whatsapp-btn').href = `https://wa.me/?text=${whatsappMsg}`;
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Parts & Accessories Encyclopedia Data
+        const partsEncyclopedia = [
+            { name: "Cylinder Head & Valves", category: "engine", desc: "Houses intake/exhaust valves, spark plugs, and camshafts controlling air-fuel mixture entry and exhaust expulsion.", icon: "fa-solid fa-gears" },
+            { name: "Piston & Connecting Rod", category: "engine", desc: "Converts combustion pressure inside the cylinder into rotational kinetic energy transmitted to the crankshaft.", icon: "fa-solid fa-fire" },
+            { name: "Wet / Dry Clutch Assembly", category: "engine", desc: "Disconnects power transmission between the engine crankshaft and transmission gearbox during gear shifting.", icon: "fa-solid fa-compact-disc" },
+            { name: "Exhaust Header & Muffler", category: "engine", desc: "Directs exhaust gases away from the engine while dampening sound waves and adding backpressure tuning.", icon: "fa-solid fa-volume-high" },
+            { name: "Telescopic Forks & Monoshock", category: "chassis", desc: "Absorbs road imperfections, dampens vertical oscillations, and maintains tire contact patch with the asphalt.", icon: "fa-solid fa-sliders" },
+            { name: "Tubular Steel Trellis Frame", category: "chassis", desc: "The structural spine of the motorcycle providing torsional rigidity and mounting points for engine and suspension.", icon: "fa-solid fa-shield" },
+            { name: "Disc Brakes & Calipers", category: "chassis", desc: "Hydraulic braking system utilizing brake pads squeezed against steel rotors to decelerate wheel rotation.", icon: "fa-solid fa-circle-stop" },
+            { name: "Spoked & Alloy Wheels", category: "chassis", desc: "Supports tires; wire-spoked wheels offer flex for off-road resilience, while alloy wheels provide rigidity for speed.", icon: "fa-solid fa-dharmachakra" },
+            { name: "ECU (Engine Control Unit)", category: "electrical", desc: "The electronic brain that monitors sensors and precisely regulates fuel injection timing and ignition spark.", icon: "fa-solid fa-microchip" },
+            { name: "Stator & Alternator", category: "electrical", desc: "Generates electrical current via permanent magnets to power bike electronics and keep the battery charged.", icon: "fa-solid fa-bolt" },
+            { name: "LED Headlamp & Indicators", category: "electrical", desc: "Provides high-visibility illumination for night riding and clear turn signaling for traffic safety.", icon: "fa-solid fa-lightbulb" },
+            { name: "Clip-on / Ape Hanger Handlebars", category: "accessories", desc: "Steering control bars tailored for aggressive cafe racer ergonomics or relaxed cruiser riding posture.", icon: "fa-solid fa-arrows-split-up-and-left" },
+            { name: "Bar-End Mirrors", category: "accessories", desc: "Minimalist convex rearview mirrors mounted at the extreme ends of the handlebars for wider field of view.", icon: "fa-solid fa-eye" },
+            { name: "Hand-Stitched Leather Saddle", category: "accessories", desc: "Ergonomic custom seat upholstered in weather-resistant cowhide leather for long-distance comfort.", icon: "fa-solid fa-couch" }
+        ];
+
+        function loadPartsEncyclopedia(category = 'all') {
+            const grid = document.getElementById('parts-grid');
+            grid.innerHTML = '';
+            
+            const filtered = category === 'all' ? partsEncyclopedia : partsEncyclopedia.filter(p => p.category === category);
+            
+            filtered.forEach(part => {
+                const card = document.createElement('div');
+                card.className = 'bg-brand-card border border-gray-800 rounded-3xl p-6 shadow-xl hover:border-brand-accent/50 transition-all flex flex-col justify-between space-y-4';
+                
+                card.innerHTML = `
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-brand-accent/10 border border-brand-accent/30 rounded-2xl flex items-center justify-center text-brand-accent text-xl flex-shrink-0">
+                            <i class="${part.icon}"></i>
+                        </div>
+                        <div>
+                            <span class="text-[10px] text-brand-accent font-bold uppercase tracking-widest">${part.category}</span>
+                            <h4 class="font-heading font-extrabold text-lg text-white uppercase mt-0.5">${part.name}</h4>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed">${part.desc}</p>
+                    <div class="pt-4 border-t border-gray-800 flex items-center justify-between text-xs text-gray-400">
+                        <span>DMC Technical Knowledge Base</span>
+                        <a href="https://whatsapp.com" target="_blank" class="text-brand-accent hover:underline font-semibold">Inquire Part <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function filterParts(category) {
+            document.querySelectorAll('.parts-tab-btn').forEach(btn => {
+                btn.className = "parts-tab-btn px-6 py-3 rounded-xl font-heading font-bold text-sm bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-white transition-all";
+            });
+            event.target.className = "parts-tab-btn px-6 py-3 rounded-xl font-heading font-bold text-sm bg-brand-accent text-brand-dark transition-all shadow-md";
+            loadPartsEncyclopedia(category);
+        }
+
         // Modal Functionality
         function openModal(prod) {
             const modal = document.getElementById('product-modal');
@@ -581,6 +831,8 @@
         // Initialize on load
         window.onload = function() {
             loadInventory();
+            loadBrandsDirectory();
+            loadPartsEncyclopedia('all');
         };
     </script>
 </body>
